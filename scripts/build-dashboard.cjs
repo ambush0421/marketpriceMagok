@@ -2676,73 +2676,65 @@ const html = `<!doctype html>
       line-height: 1.55;
     }
     .workflow-steps {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(130px, 1fr));
-      gap: 10px;
-      margin: 12px 0 14px;
+      display: none;
     }
-    .workflow-step {
-      border: 1px solid #d7e6e3;
+    .dashboard-intent {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 6px 0 10px;
+      padding: 10px 12px;
+      border: 1px solid #dce7f1;
       border-radius: 8px;
-      background: #fff;
-      padding: 13px 14px;
+      background: #ffffff;
       color: var(--muted);
       font-size: 13px;
-      font-weight: 700;
-      min-height: 80px;
-      box-shadow: 0 6px 18px rgba(30, 40, 60, 0.05);
+      line-height: 1.45;
+      box-shadow: 0 8px 20px rgba(33, 51, 84, 0.05);
     }
-    .workflow-step strong {
-      display: block;
-      color: var(--brand);
+    .dashboard-intent strong {
+      color: var(--ink);
       font-size: 15px;
-      margin-bottom: 5px;
+      line-height: 1.25;
+      white-space: nowrap;
+    }
+    .dashboard-intent span {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .mode-switch {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(180px, 1fr));
-      gap: 10px;
-      margin: 12px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 8px;
     }
     .mode-button {
+      min-height: 36px;
       border: 1px solid #d7e6e3;
-      border-radius: 8px;
+      border-radius: 999px;
       background: #fff;
-      padding: 13px 14px;
+      padding: 7px 12px;
       text-align: left;
       cursor: pointer;
       color: var(--muted);
       font: inherit;
-      line-height: 1.45;
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1.2;
     }
     .mode-button strong {
-      display: block;
       color: var(--ink);
-      font-size: 15px;
-      margin-bottom: 3px;
+      font-size: 13px;
+      margin-right: 6px;
     }
     .mode-button.active {
-      border-color: rgba(21, 111, 120, 0.42);
+      border-color: rgba(21, 111, 120, 0.48);
       background: #eef8f7;
-      box-shadow: inset 0 0 0 1px rgba(21, 111, 120, 0.16), 0 8px 20px rgba(21, 111, 120, 0.08);
-    }
-    .dashboard-intent {
-      margin: 14px 0 12px;
-      padding: 20px 22px;
-      border: 1px solid #bfd8d4;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #ffffff 0%, #f0fbf8 100%);
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.6;
-      box-shadow: var(--shadow);
-    }
-    .dashboard-intent strong {
-      display: block;
-      color: var(--ink);
-      font-size: clamp(20px, 2.4vw, 30px);
-      line-height: 1.18;
-      margin-bottom: 8px;
+      color: var(--brand);
+      box-shadow: inset 0 0 0 1px rgba(21, 111, 120, 0.14);
     }
     .trend-board {
       margin: 0 0 14px;
@@ -3078,7 +3070,9 @@ const html = `<!doctype html>
       .consumer-hero { grid-template-columns: 1fr; min-height: 560px; align-items: end; padding: 22px; background-position: center; }
       .consumer-hero-mini { justify-self: stretch; }
       .consumer-hero-actions a { flex: 1 1 180px; }
-      .toolbar, .grid, .pyeong-toolbar, .pyeong-summary, .valuation-toolbar, .valuation-summary, .usage-controls, .usage-metrics, .mode-switch, .core-story, .commercial-summary { grid-template-columns: 1fr; }
+      .toolbar, .grid, .pyeong-toolbar, .pyeong-summary, .valuation-toolbar, .valuation-summary, .usage-controls, .usage-metrics, .core-story, .commercial-summary { grid-template-columns: 1fr; }
+      .dashboard-intent { align-items: flex-start; flex-direction: column; }
+      .dashboard-intent strong, .dashboard-intent span { white-space: normal; }
       .kpi-strip { align-items: flex-start; }
       .commercial-actions .button { flex: 1 1 120px; }
       th, td { padding: 8px 6px; font-size: 12px; }
@@ -3122,20 +3116,13 @@ const html = `<!doctype html>
     <p class="data-note"><strong>데이터 안내.</strong> 상업업무용 매매 활성 거래 ${records.length.toLocaleString("ko-KR")}건 중 기준값 산식에 ${analysisRecords.length.toLocaleString("ko-KR")}건을 반영했습니다. 해제 거래, 복수 후보필지, 지분거래, 일괄거래 후보는 평균과 추이에서 제외했습니다.</p>
 
     <div class="dashboard-intent">
-      <strong>먼저 건물을 검색하고, 선택 건물 요약만 보면 됩니다.</strong>
-      처음 보는 사용자는 아래 검색창에서 건물명·지번·도로명을 입력한 뒤 상담등급, 기준 평당가, 묶음거래 여부를 확인하세요. 상세 표와 전문가용 분석은 접힌 영역에 따로 모았습니다.
-    </div>
-
-    <div class="workflow-steps" aria-label="대시보드 사용 순서">
-      <div class="workflow-step"><strong>1. 검색</strong>건물명·지번·도로명 입력 후 Enter</div>
-      <div class="workflow-step"><strong>2. 요약</strong>상담등급·평당가·거래건수 확인</div>
-      <div class="workflow-step"><strong>3. 근거</strong>월별 그래프와 개별 거래표 확인</div>
-      <div class="workflow-step"><strong>4. 저장</strong>요약 복사, CSV 다운로드, 인쇄/PDF</div>
+      <strong>건물 검색부터 시작</strong>
+      <span>검색 후 상담등급, 기준 평당가, 묶음거래 여부만 먼저 확인하세요. 상세 분석은 접힌 영역에 모았습니다.</span>
     </div>
 
     <div class="mode-switch" id="dashboardUseMode" aria-label="대시보드 용도 선택">
-      <button type="button" class="mode-button active" data-dashboard-use="office"><strong>업무시설 보기</strong>사무실·오피스 기준으로 보기</button>
-      <button type="button" class="mode-button" data-dashboard-use="retail"><strong>상가 보기</strong>1층과 상층 가격을 나눠 보기</button>
+      <button type="button" class="mode-button active" data-dashboard-use="office"><strong>업무시설</strong>오피스 기준</button>
+      <button type="button" class="mode-button" data-dashboard-use="retail"><strong>상가</strong>층별 기준</button>
     </div>
 
     <div class="toolbar">
