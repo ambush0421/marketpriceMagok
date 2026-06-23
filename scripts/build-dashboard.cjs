@@ -1725,9 +1725,22 @@ const html = `<!doctype html>
     body {
       margin: 0;
       font-family: "Segoe UI", "Malgun Gothic", Arial, sans-serif;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at 9% 0%, rgba(21, 111, 120, 0.13), transparent 30%),
+        radial-gradient(circle at 92% 12%, rgba(255, 178, 74, 0.16), transparent 28%),
+        linear-gradient(180deg, #f7fafc 0%, #eef4fb 42%, #f6f7f9 100%);
       color: var(--ink);
       line-height: 1.5;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(15, 61, 67, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 61, 67, 0.028) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.42), transparent 70%);
+      z-index: -1;
     }
     header {
       position: relative;
@@ -1800,11 +1813,19 @@ const html = `<!doctype html>
     }
     p { margin: 0; }
     main {
+      position: relative;
       display: flex;
       flex-direction: column;
-      padding: 20px clamp(14px, 3vw, 42px) 38px;
+      gap: 2px;
+      padding: 20px clamp(14px, 3vw, 42px) 42px;
       max-width: 1480px;
       margin: 0 auto;
+    }
+    main > section,
+    main > details,
+    main > div,
+    main > p {
+      position: relative;
     }
     #consumerHero { order: 1; }
     .toolbar { order: 2; }
@@ -1828,14 +1849,23 @@ const html = `<!doctype html>
       align-items: end;
       gap: 22px;
       overflow: hidden;
-      margin: 2px 0 18px;
+      margin: 2px 0 20px;
       padding: clamp(24px, 5vw, 58px);
+      border: 1px solid rgba(255,255,255,0.42);
       border-radius: 8px;
       background-image: linear-gradient(90deg, rgba(9, 28, 31, 0.86) 0%, rgba(12, 43, 48, 0.62) 48%, rgba(12, 43, 48, 0.18) 100%), url("magok-commercial-hero.png");
       background-size: cover;
       background-position: center;
       color: #fff;
-      box-shadow: 0 22px 55px rgba(17, 24, 39, 0.2);
+      box-shadow: 0 28px 70px rgba(17, 24, 39, 0.22);
+    }
+    .consumer-hero::after {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 8px;
+      pointer-events: none;
     }
     .consumer-hero-content {
       max-width: 780px;
@@ -2677,36 +2707,52 @@ const html = `<!doctype html>
     }
     .pyeong-dashboard {
       margin-top: 14px;
-      background: #ffffff;
-      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.94);
+      border: 1px solid #d3e0ec;
       border-radius: 8px;
-      box-shadow: var(--shadow);
+      box-shadow: 0 18px 42px rgba(28, 50, 76, 0.09);
       padding: 14px;
+      backdrop-filter: blur(10px);
     }
     .compact-disclosure > summary {
-      min-height: 46px;
+      min-height: 50px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
       cursor: pointer;
-      font-weight: 900;
+      font-weight: 1000;
       list-style: none;
+      color: #0d2238;
+    }
+    .compact-disclosure > summary span:first-child {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .compact-disclosure > summary span:first-child::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #176f78, #ffb24a);
+      box-shadow: 0 0 0 4px rgba(21,111,120,0.08);
     }
     .compact-disclosure > summary::-webkit-details-marker { display: none; }
     .compact-disclosure > summary::after {
       content: "열기";
-      border: 1px solid var(--line);
+      border: 1px solid #cfe3df;
       border-radius: 999px;
-      padding: 4px 9px;
+      padding: 5px 10px;
       color: var(--brand);
-      background: #eef8f7;
+      background: linear-gradient(180deg, #ffffff 0%, #eef8f7 100%);
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 900;
+      box-shadow: 0 8px 18px rgba(33, 51, 84, 0.05);
     }
     .compact-disclosure[open] > summary {
       margin-bottom: 12px;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid #dce7f1;
       padding-bottom: 10px;
     }
     .compact-disclosure[open] > summary::after { content: "닫기"; }
@@ -3448,15 +3494,16 @@ const html = `<!doctype html>
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      margin: 6px 0 10px;
-      padding: 10px 12px;
-      border: 1px solid #dce7f1;
+      margin: 8px 0 12px;
+      padding: 12px 14px;
+      border: 1px solid #cbdfe7;
+      border-left: 5px solid #176f78;
       border-radius: 8px;
-      background: #ffffff;
+      background: rgba(255,255,255,0.94);
       color: var(--muted);
       font-size: 13px;
       line-height: 1.45;
-      box-shadow: 0 8px 20px rgba(33, 51, 84, 0.05);
+      box-shadow: 0 12px 26px rgba(33, 51, 84, 0.06);
     }
     .dashboard-intent strong {
       color: var(--ink);
@@ -3474,13 +3521,20 @@ const html = `<!doctype html>
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 0 0 8px;
+      margin: 0 0 10px;
+      padding: 4px;
+      width: fit-content;
+      max-width: 100%;
+      border: 1px solid #dce7f1;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.78);
+      box-shadow: 0 10px 22px rgba(33, 51, 84, 0.05);
     }
     .mode-button {
       min-height: 36px;
-      border: 1px solid #d7e6e3;
+      border: 1px solid transparent;
       border-radius: 999px;
-      background: #fff;
+      background: transparent;
       padding: 7px 12px;
       text-align: left;
       cursor: pointer;
