@@ -3024,6 +3024,37 @@ const html = `<!doctype html>
     }
     .pyeong-toolbar label { font-size: 11px; color: #587087; }
     .pyeong-toolbar select, .pyeong-toolbar input { min-height: 38px; border-color: #d7e2f1; font-weight: 800; }
+    .pyeong-filter-feedback {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      margin: 0 0 12px;
+      padding: 12px 14px;
+      border: 1px solid #cbdfe7;
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(21,111,120,0.08), rgba(255,255,255,0) 46%), #ffffff;
+      box-shadow: 0 10px 24px rgba(33, 51, 84, 0.06);
+    }
+    .pyeong-filter-feedback strong { display: block; color: #0d2238; font-size: 14px; line-height: 1.35; }
+    .pyeong-filter-feedback span { display: block; margin-top: 3px; color: #587087; font-size: 12px; font-weight: 800; line-height: 1.45; }
+    .pyeong-filter-feedback .filter-pulse {
+      min-width: 112px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: #eef8f7;
+      color: #0f5f67;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 1000;
+      white-space: nowrap;
+    }
+    .pyeong-filter-feedback.updated .filter-pulse { animation: pyeongPulse 720ms ease-out; }
+    @keyframes pyeongPulse {
+      0% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(21,111,120,0.28); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(21,111,120,0); }
+      100% { transform: scale(1); box-shadow: none; }
+    }
     .pyeong-summary {
       display: grid;
       grid-template-columns: repeat(4, minmax(120px, 1fr));
@@ -3828,6 +3859,7 @@ const html = `<!doctype html>
       .consumer-hero-mini { justify-self: stretch; }
       .consumer-hero-actions a { flex: 1 1 180px; }
       .toolbar, .grid, .pyeong-toolbar, .pyeong-summary, .valuation-toolbar, .valuation-summary, .usage-controls, .usage-metrics, .core-story, .commercial-summary, .quality-funnel, .expert-pack-metrics { grid-template-columns: 1fr; }
+      .pyeong-filter-feedback { grid-template-columns: 1fr; }
       .expert-pack-head { padding: 13px; }
       .expert-pack #valuationDashboardSection .valuation-toolbar { grid-template-columns: 1fr; }
       .expert-pack #valuationDashboardSection .detail-title { align-items: flex-start; flex-direction: column; }
@@ -4062,6 +4094,10 @@ const html = `<!doctype html>
         <label>월 표시 범위<select id="pyeongMonthWindow"><option value="36">최근 36개월</option><option value="60">최근 60개월</option><option value="all">전체 월</option></select></label>
         <label>최소 건물 거래<input id="pyeongMinCount" type="number" min="1" value="2"></label>
         <label>매트릭스 정렬<select id="pyeongSortBy"><option value="recent">최근기간</option><option value="latest">최근 평당가</option><option value="count">거래건수</option><option value="change">변동률</option><option value="name">건물명</option></select></label>
+      </div>
+      <div class="pyeong-filter-feedback" id="pyeongFilterFeedback" aria-live="polite">
+        <div><strong>필터를 바꾸면 아래 매트릭스와 우측 건물표가 다시 계산됩니다.</strong><span>현재 조건을 선택하면 표시 건물, 기간, 중위 평당가, 값 범위가 함께 바뀝니다.</span></div>
+        <div class="filter-pulse">적용 대기</div>
       </div>
       <div class="pyeong-summary" id="pyeongSummary"></div>
       <div class="pyeong-layout">
@@ -6343,6 +6379,15 @@ const html = `<!doctype html>
       const latestValues = rows.map((row) => row.latest?.value).filter(Number.isFinite);
       const modeText = (state.pyeongGranularity === "year" ? "년도별" : "월별") + " · " + basis.label;
       document.getElementById("pyeongModeBadge").textContent = modeText;
+      const pyeongUseLabel = state.pyeongUse === "retail" ? "상가/근린생활" : state.pyeongUse === "office" ? "업무시설" : "전체 용도";
+      const windowLabel = state.pyeongGranularity === "year" ? "연도 전체" : (state.pyeongMonthWindow === "all" ? "전체 월" : "최근 " + state.pyeongMonthWindow + "개월");
+      const sortLabel = document.getElementById("pyeongSortBy")?.selectedOptions?.[0]?.textContent || "정렬";
+      const feedback = document.getElementById("pyeongFilterFeedback");
+      if (feedback) {
+        feedback.classList.remove("updated");
+        feedback.innerHTML = '<div><strong>' + escapeSvg(pyeongUseLabel + " · " + modeText + " · " + windowLabel) + '</strong><span>최소 ' + escapeSvg(fmt.format(state.pyeongMinCount)) + '건 이상 건물만 표시 · ' + escapeSvg(sortLabel) + ' 기준 정렬 · 결과 ' + escapeSvg(fmt.format(rows.length)) + '개 건물 / ' + escapeSvg(fmt.format(periods.length)) + '개 기간</span></div><div class="filter-pulse">재계산 완료</div>';
+        requestAnimationFrame(() => feedback.classList.add("updated"));
+      }
       document.getElementById("pyeongSummary").innerHTML = \`
         <div class="pyeong-stat"><span>표시 건물</span><strong>\${fmt.format(rows.length)}개</strong></div>
         <div class="pyeong-stat"><span>표시 기간</span><strong>\${fmt.format(periods.length)}개</strong></div>
@@ -6679,7 +6724,7 @@ const html = `<!doctype html>
     document.getElementById("buildingAreaBand").addEventListener("change", (event) => { state.buildingAreaBand = event.target.value; renderTables(); });
     document.getElementById("pyeongGranularity").addEventListener("change", (event) => { state.pyeongGranularity = event.target.value; renderPyeongMatrix(); });
     document.getElementById("pyeongBasis").addEventListener("change", (event) => { state.pyeongBasis = event.target.value; renderPyeongMatrix(); });
-    document.getElementById("pyeongUseFilter").addEventListener("change", (event) => { state.dashboardUse = event.target.value; state.pyeongUse = event.target.value; renderTables(); });
+    document.getElementById("pyeongUseFilter").addEventListener("change", (event) => { state.dashboardUse = event.target.value; state.pyeongUse = event.target.value; renderTables(); renderPyeongMatrix(); });
     document.getElementById("pyeongMonthWindow").addEventListener("change", (event) => { state.pyeongMonthWindow = event.target.value; renderPyeongMatrix(); });
     document.getElementById("pyeongMinCount").addEventListener("input", (event) => { state.pyeongMinCount = Number(event.target.value) || 1; renderPyeongMatrix(); });
     document.getElementById("pyeongSortBy").addEventListener("change", (event) => { state.pyeongSortBy = event.target.value; renderPyeongMatrix(); });
