@@ -2441,7 +2441,16 @@ const html = `<!doctype html>
     .compact-disclosure[open] > summary::after { content: "닫기"; }
     .disclosure-body {
       display: grid;
-      gap: 10px;
+      gap: 14px;
+      min-width: 0;
+    }
+    .compact-disclosure .valuation-dashboard,
+    .compact-disclosure .trend-board,
+    .compact-disclosure .usage-split-board {
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+      box-shadow: none;
     }
     .pyeong-toolbar {
       display: grid;
@@ -2820,17 +2829,22 @@ const html = `<!doctype html>
     }
     .usage-split-board {
       margin: 0 0 14px;
+      max-width: 100%;
+      min-width: 0;
+      overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: #ffffff;
       box-shadow: var(--shadow);
-      padding: 14px;
+      padding: clamp(14px, 1.8vw, 18px);
     }
     .usage-split-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
       margin-top: 12px;
+      align-items: start;
+      min-width: 0;
     }
     .usage-panel {
       border: 1px solid var(--line);
@@ -2838,6 +2852,9 @@ const html = `<!doctype html>
       background: #fbfcfd;
       padding: 12px;
       min-width: 0;
+      max-width: 100%;
+      overflow: hidden;
+      box-shadow: none;
     }
     .usage-panel h3 {
       margin-bottom: 6px;
@@ -2875,6 +2892,18 @@ const html = `<!doctype html>
       display: block;
       margin-top: 4px;
       font-size: 15px;
+    }
+    .usage-panel table {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+    .usage-panel table thead,
+    .usage-panel table tbody,
+    .usage-panel table tr {
+      min-width: 100%;
     }
     .usage-mini-table {
       width: 100%;
@@ -3034,6 +3063,9 @@ const html = `<!doctype html>
       .valuation-layout { grid-template-columns: 1fr; }
       .trend-layout { grid-template-columns: 1fr; }
       .usage-split-layout { grid-template-columns: 1fr; }
+      .compact-disclosure .valuation-dashboard,
+      .compact-disclosure .trend-board,
+      .compact-disclosure .usage-split-board { padding: 12px; }
     }
     @media (max-width: 640px) {
       header { padding: 20px 14px 14px; }
