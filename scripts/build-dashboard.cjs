@@ -2142,6 +2142,114 @@ const html = `<!doctype html>
       border: 1px solid var(--line);
       border-radius: 8px;
       background: #fff;
+      min-width: 0;
+      max-width: 100%;
+      scrollbar-width: thin;
+    }
+    .table-scroll table {
+      width: max-content;
+      min-width: 100%;
+    }
+    .detail-table-pack {
+      position: relative;
+      overflow: hidden;
+      border-color: #cadce8;
+      background:
+        linear-gradient(135deg, rgba(21, 111, 120, 0.06) 0%, rgba(255,255,255,0) 46%),
+        linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      box-shadow: 0 18px 42px rgba(28, 50, 76, 0.1);
+    }
+    .detail-table-pack::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, #176f78, #66c3b8, #ffb24a);
+    }
+    .detail-table-pack > summary {
+      position: relative;
+      padding-top: 8px;
+    }
+    .detail-table-pack .disclosure-body {
+      overflow: hidden;
+    }
+    .detail-table-pack .analysis-band,
+    .detail-table-pack .grid,
+    .detail-table-pack section {
+      min-width: 0;
+    }
+    .detail-table-pack .analysis-band > section,
+    .detail-table-pack > .disclosure-body > section,
+    .detail-table-pack .grid > section {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid #dce7f1;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 12px 26px rgba(33, 51, 84, 0.05);
+      padding: 14px;
+    }
+    .detail-table-pack .analysis-band {
+      align-items: start;
+    }
+    .detail-table-pack h2 {
+      color: #0d2238;
+      font-size: clamp(17px, 1.6vw, 22px);
+      line-height: 1.18;
+    }
+    .detail-table-pack .muted {
+      line-height: 1.55;
+    }
+    .detail-table-pack .table-scroll {
+      width: 100%;
+      max-width: 100%;
+      border-color: #cadce8;
+      background: #ffffff;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 18px rgba(33, 51, 84, 0.04);
+    }
+    .detail-table-pack .table-scroll::before {
+      content: "좌우로 밀어 전체 열 보기";
+      position: sticky;
+      left: 0;
+      z-index: 5;
+      display: block;
+      padding: 7px 10px;
+      border-bottom: 1px solid #edf2f6;
+      background: linear-gradient(90deg, #fbfdff, #f3faf8);
+      color: #587087;
+      font-size: 11px;
+      font-weight: 900;
+    }
+    .detail-table-pack .table-scroll table {
+      min-width: 880px;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+    .detail-table-pack .table-scroll th {
+      background: #f4f7f9;
+      color: #587087;
+      font-size: 11px;
+      font-weight: 1000;
+      white-space: nowrap;
+    }
+    .detail-table-pack .table-scroll td {
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .detail-table-pack .table-scroll th:first-child,
+    .detail-table-pack .table-scroll td:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 3;
+      min-width: 148px;
+      max-width: 220px;
+      white-space: normal;
+      background: inherit;
+      box-shadow: 1px 0 0 #e0e8f0;
+    }
+    .detail-table-pack .table-scroll th:first-child {
+      z-index: 4;
+      background: #f4f7f9;
     }
     .badge {
       display: inline-block;
@@ -3648,6 +3756,7 @@ const html = `<!doctype html>
       .commercial-report { grid-template-columns: 1fr; }
       .commercial-actions { justify-content: flex-start; min-width: 0; }
       .analysis-band { grid-template-columns: 1fr; }
+      .detail-table-pack .table-scroll table { min-width: 760px; }
       .trust-board { grid-template-columns: 1fr; }
       .quality-funnel { grid-template-columns: 1fr 1fr; }
       .method-grid { grid-template-columns: 1fr; }
@@ -3679,6 +3788,12 @@ const html = `<!doctype html>
       .kpi-strip { align-items: flex-start; }
       .commercial-actions .button { flex: 1 1 120px; }
       th, td { padding: 8px 6px; font-size: 12px; }
+      .detail-table-pack .analysis-band > section,
+      .detail-table-pack > .disclosure-body > section,
+      .detail-table-pack .grid > section { padding: 12px; }
+      .detail-table-pack .table-scroll table { min-width: 680px; }
+      .detail-table-pack .table-scroll th:first-child,
+      .detail-table-pack .table-scroll td:first-child { min-width: 118px; max-width: 160px; }
     }
   </style>
 </head>
@@ -4005,7 +4120,7 @@ const html = `<!doctype html>
       </div>
     </details>
 
-    <details class="pyeong-dashboard compact-disclosure" id="userDetailAnalysisPack">
+    <details class="pyeong-dashboard compact-disclosure detail-table-pack" id="userDetailAnalysisPack">
       <summary><span>상세 표와 원자료 보기</span><span class="badge">업무·상가·전체 지번 분석</span></summary>
       <div class="disclosure-body">
 
