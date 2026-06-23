@@ -1961,34 +1961,46 @@ const html = `<!doctype html>
       font-weight: 800;
     }
     .kpis {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(130px, 1fr));
-      gap: 10px;
-      margin: 16px 0 8px;
+      margin: 4px 0 14px;
     }
-    .kpi, section {
+    .kpi-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 14px;
+      padding: 10px 14px;
+      border: 1px solid #dce7f1;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.78);
+      color: #5c6b82;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 10px 24px rgba(33, 51, 84, 0.06);
+    }
+    .kpi-strip span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+    .kpi-strip span + span::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+      background: #b8c5d6;
+      margin-right: 6px;
+    }
+    .kpi-strip strong {
+      color: #0d2238;
+      font-size: 14px;
+    }
+    .kpi-strip [hidden] { display: none; }
+    section {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 8px;
       box-shadow: var(--shadow);
-    }
-    .kpi {
-      padding: 13px 14px;
-      min-height: 82px;
-      border-color: #d7e6e3;
-      background: #ffffff;
-    }
-    .kpi span {
-      display: block;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-    }
-    .kpi strong {
-      display: block;
-      margin-top: 6px;
-      font-size: 22px;
-      color: #0f5f67;
     }
     .grid {
       display: grid;
@@ -3011,7 +3023,7 @@ const html = `<!doctype html>
       color: #9a4a12;
     }
     @media (max-width: 980px) {
-      .toolbar, .grid, .kpis, .pyeong-toolbar, .pyeong-summary, .valuation-toolbar, .core-story { grid-template-columns: 1fr 1fr; }
+      .toolbar, .grid, .pyeong-toolbar, .pyeong-summary, .valuation-toolbar, .core-story { grid-template-columns: 1fr 1fr; }
       .grid > section:first-child { grid-column: 1 / -1; }
       .detail-panel { grid-template-columns: 1fr; }
       .commercial-report { grid-template-columns: 1fr; }
@@ -3029,9 +3041,9 @@ const html = `<!doctype html>
       .consumer-hero { grid-template-columns: 1fr; min-height: 560px; align-items: end; padding: 22px; background-position: center; }
       .consumer-hero-mini { justify-self: stretch; }
       .consumer-hero-actions a { flex: 1 1 180px; }
-      .toolbar, .grid, .kpis, .pyeong-toolbar, .pyeong-summary, .valuation-toolbar, .valuation-summary, .usage-controls, .usage-metrics, .mode-switch, .core-story, .commercial-summary { grid-template-columns: 1fr; }
+      .toolbar, .grid, .pyeong-toolbar, .pyeong-summary, .valuation-toolbar, .valuation-summary, .usage-controls, .usage-metrics, .mode-switch, .core-story, .commercial-summary { grid-template-columns: 1fr; }
+      .kpi-strip { align-items: flex-start; }
       .commercial-actions .button { flex: 1 1 120px; }
-      .kpi strong { font-size: 21px; }
       th, td { padding: 8px 6px; font-size: 12px; }
     }
   </style>
@@ -3060,13 +3072,14 @@ const html = `<!doctype html>
       </div>
     </section>
 
-    <div class="kpis">
-      <div class="kpi"><span>분석 거래</span><strong id="kpiRecords">-</strong></div>
-      <div class="kpi"><span>조회 기간</span><strong id="kpiYears">-</strong></div>
-      <div class="kpi"><span>건물 그룹</span><strong id="kpiExact">-</strong></div>
-      <div class="kpi"><span>미확인 건</span><strong id="kpiMasked">-</strong></div>
-      <div class="kpi"><span>마곡동 중위</span><strong id="kpiUnit">-</strong></div>
-      <div class="kpi"><span>건물명 확인</span><strong id="kpiBuilding">-</strong></div>
+    <div class="kpis" aria-label="데이터 기준 요약">
+      <div class="kpi-strip">
+        <span>기준값 <strong id="kpiRecords">-</strong></span>
+        <span>기간 <strong id="kpiYears">-</strong></span>
+        <span>건물 <strong id="kpiBuilding">-</strong></span>
+        <span>중위 전용평당가 <strong id="kpiUnit">-</strong></span>
+        <span id="kpiMaskedWrap">확인 필요 <strong id="kpiMasked">-</strong></span>
+      </div>
     </div>
 
     <p class="data-note"><strong>데이터 안내.</strong> 상업업무용 매매 활성 거래 ${records.length.toLocaleString("ko-KR")}건 중 기준값 산식에 ${analysisRecords.length.toLocaleString("ko-KR")}건을 반영했습니다. 해제 거래, 복수 후보필지, 지분거래, 일괄거래 후보는 평균과 추이에서 제외했습니다.</p>
@@ -3500,17 +3513,16 @@ const html = `<!doctype html>
     function setKpis() {
       const rows = dashboardUseRecords();
       const parcelKeys = new Set(rows.map((record) => record.parcel_key));
-      document.getElementById("kpiRecords").textContent = fmt.format(rows.length);
-      document.getElementById("kpiYears").textContent = data.source.available_years.join("-");
-      document.getElementById("kpiExact").textContent = fmt.format([...parcelKeys].filter((key) => {
-        const group = data.parcelGroups.find((item) => item.parcel_key === key);
-        return group && !group.is_masked_parcel;
-      }).length);
-      document.getElementById("kpiMasked").textContent = fmt.format(data.metrics.unresolved_high_confidence_masked_records || 0);
+      const years = data.source.available_years || [];
+      const unresolved = data.metrics.unresolved_high_confidence_masked_records || 0;
+      document.getElementById("kpiRecords").textContent = fmt.format(rows.length) + "건";
+      document.getElementById("kpiYears").textContent = years.length ? years[0] + "-" + years.at(-1) : "-";
       document.getElementById("kpiBuilding").textContent = dashboardUseLabel() + " " + fmt.format(parcelKeys.size) + "개";
       const yearlyMedian = yearSummaryForDashboardUse().map((row) => row.median_exclusive_ppyeong_manwon).filter(Number.isFinite);
       const med = yearlyMedian.sort((a, b) => a - b)[Math.floor(yearlyMedian.length / 2)];
       document.getElementById("kpiUnit").textContent = money(med) + "만원/평";
+      document.getElementById("kpiMasked").textContent = fmt.format(unresolved) + "건";
+      document.getElementById("kpiMaskedWrap").hidden = unresolved === 0;
     }
 
     function drawYearChart() {
