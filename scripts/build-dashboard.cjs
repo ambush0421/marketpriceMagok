@@ -2486,6 +2486,54 @@ const html = `<!doctype html>
     .building-profile-copy { display: grid; gap: 10px; min-width: 0; }
     .building-profile-copy h2 { margin: 0; color: #06172e; font-size: clamp(25px, 2.2vw, 34px); line-height: 1.12; letter-spacing: 0; }
     .building-profile-copy p { color: #516079; font-weight: 800; }
+    .building-meta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      align-items: center;
+      min-width: 0;
+      margin: 0;
+    }
+    .building-meta-strip .meta-address {
+      flex: 1 1 320px;
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      min-width: min(100%, 280px);
+      padding: 7px 11px;
+      border: 1px solid #d7e2f1;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #263b55;
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.35;
+      box-shadow: 0 8px 18px rgba(33, 51, 84, 0.05);
+    }
+    .building-meta-strip .meta-chip {
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 7px 10px;
+      border: 1px solid #d7e6e3;
+      border-radius: 999px;
+      background: #f8fbff;
+      color: #33405c;
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .building-meta-strip .meta-chip strong {
+      color: #0f5f67;
+      font-weight: 1000;
+    }
+    .building-meta-strip .meta-chip.recent {
+      border-color: rgba(230,107,61,0.28);
+      background: #fff7ef;
+      color: #8b4621;
+    }
+    .building-meta-strip .meta-chip.recent strong { color: #c65325; }
     .building-profile-chips { display: flex; flex-wrap: wrap; gap: 8px; }
     .building-profile-chips span { display: inline-flex; align-items: center; min-height: 28px; padding: 0 10px; border-radius: 999px; background: #ffffff; border: 1px solid #d7e2f1; color: #33405c; font-size: 12px; font-weight: 900; }
     .building-profile-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
@@ -3787,6 +3835,7 @@ const html = `<!doctype html>
       .dashboard-intent strong, .dashboard-intent span { white-space: normal; }
       .kpi-strip { align-items: flex-start; }
       .commercial-actions .button { flex: 1 1 120px; }
+      .building-meta-strip .meta-address { flex-basis: 100%; }
       th, td { padding: 8px 6px; font-size: 12px; }
       .detail-table-pack .analysis-band > section,
       .detail-table-pack > .disclosure-body > section,
@@ -4669,7 +4718,8 @@ const html = `<!doctype html>
         document.getElementById("buildingSearchCrumb").textContent = "건물 선택 대기";
         document.getElementById("detailTitle").textContent = "건물을 선택하면 요약이 나옵니다";
         document.getElementById("detailBadge").textContent = "검색부터 시작";
-        document.getElementById("detailMeta").textContent = "건물명, 지번, 도로명을 검색하면 이 영역이 건물 상세 화면으로 바뀝니다.";
+        document.getElementById("detailMeta").className = "building-meta-strip";
+        document.getElementById("detailMeta").innerHTML = '<span class="meta-address">건물명, 지번, 도로명을 검색하면 상담등급과 월별 거래 흐름이 정리됩니다.</span>';
         document.getElementById("buildingProfileChips").innerHTML = '<span>검색 대기</span><span>상담 요약 준비</span><span>월별 그래프 준비</span>';
         document.getElementById("buildingMapLabel").textContent = "건물 선택 대기";
         document.getElementById("buildingInfoList").innerHTML = ["지번주소", "도로명", "용도", "사용승인", "거래층", "전용면적"].map((label) => '<div class="building-info-row"><dt>' + label + '</dt><dd>건물 선택 후 표시</dd></div>').join("");
@@ -4704,7 +4754,16 @@ const html = `<!doctype html>
       document.getElementById("buildingSearchCrumb").textContent = title;
       document.getElementById("detailTitle").textContent = title;
       document.getElementById("detailBadge").textContent = useCategoryLabel(state.selectedUseCategory);
-      document.getElementById("detailMeta").textContent = (group.road || group.parcel_label || "마곡동") + " · " + useCategoryLabel(state.selectedUseCategory) + " 거래 " + fmt.format(rows.length) + "건 · 관측월 " + fmt.format(points.length) + "개월 · 최근월 " + (latest?.month || "-") + coverageNote;
+      document.getElementById("detailMeta").className = "building-meta-strip";
+      const coverageText = years.length ? (publicStart && years[0] > publicStart ? "공개관측 " + years[0] + "-" + years.at(-1) + "년" : "관측 " + years[0] + "-" + years.at(-1) + "년") : "관측 없음";
+      document.getElementById("detailMeta").innerHTML = [
+        '<span class="meta-address">' + escapeSvg(group.road || group.parcel_label || "마곡동") + '</span>',
+        '<span class="meta-chip"><span>용도</span><strong>' + escapeSvg(useCategoryLabel(state.selectedUseCategory)) + '</strong></span>',
+        '<span class="meta-chip"><span>거래</span><strong>' + escapeSvg(fmt.format(rows.length)) + '건</strong></span>',
+        '<span class="meta-chip"><span>관측월</span><strong>' + escapeSvg(fmt.format(points.length)) + '개월</strong></span>',
+        '<span class="meta-chip recent"><span>최근월</span><strong>' + escapeSvg(latest?.month || "-") + '</strong></span>',
+        '<span class="meta-chip"><strong>' + escapeSvg(coverageText) + '</strong></span>',
+      ].join("");
       document.getElementById("buildingProfileChips").innerHTML = [group.is_masked_parcel ? "미확정 보조그룹" : (probableCount ? "정확+추정" : (group.building_name_status || "정확 지번")), "지번 " + (group.parcel_label || "-"), "거래 " + fmt.format(rows.length) + "건", "계약면적 " + (contractPyeongPrices.length ? "확인" : "미확인")].map((text) => '<span>' + escapeSvg(text) + '</span>').join("");
       document.getElementById("buildingMapLabel").textContent = title;
       renderCommercialReport(group, rows, analysisRows, points, pyeongPrices, contractPyeongPrices);
