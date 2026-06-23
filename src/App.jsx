@@ -3,7 +3,8 @@ const DASHBOARD_FILE = "20260608-magok-commercial-price-dashboard.html";
 function App() {
   const assetBase = import.meta.env.BASE_URL || "/";
   const dashboardUrl = `${assetBase}${DASHBOARD_FILE}`;
-  const heroImage = `url("${assetBase}magok-commercial-hero.png")`;
+  const heroImageUrl = new URL("magok-commercial-hero.png", window.location.href).href;
+  const heroImage = `url("${heroImageUrl}")`;
 
   return (
     <main className="app-shell">

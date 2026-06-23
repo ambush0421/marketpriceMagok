@@ -5,3 +5,5 @@ data/processed/building-hub-area-results.json
 magok-dashboard-current-redesign.png
 node_modules/
 dist/
+.playwright-mcp/
+loopin-dashboard-desktop.png
