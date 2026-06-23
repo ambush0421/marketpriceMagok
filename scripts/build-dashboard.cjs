@@ -2559,6 +2559,108 @@ const html = `<!doctype html>
       gap: 14px;
       min-width: 0;
     }
+    .expert-pack {
+      position: relative;
+      overflow: hidden;
+      border-color: #cadce8;
+      background:
+        linear-gradient(135deg, rgba(21, 111, 120, 0.07) 0%, rgba(255, 255, 255, 0) 44%),
+        linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+      box-shadow: 0 22px 48px rgba(28, 50, 76, 0.12);
+    }
+    .expert-pack::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 5px;
+      background: linear-gradient(90deg, #176f78, #66c3b8, #ffb24a);
+    }
+    .expert-pack > summary {
+      position: relative;
+      padding-top: 8px;
+      color: #0d2238;
+    }
+    .expert-pack > summary span:first-child {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 17px;
+    }
+    .expert-pack > summary span:first-child::before {
+      content: "PRO";
+      padding: 4px 7px;
+      border-radius: 999px;
+      background: #eef8f7;
+      color: #0f5f67;
+      font-size: 10px;
+      font-weight: 1000;
+    }
+    .expert-pack-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: start;
+      padding: 16px;
+      border: 1px solid #dce7f1;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #ffffff 0%, #f3faf8 100%);
+      box-shadow: 0 12px 26px rgba(33, 51, 84, 0.06);
+    }
+    .expert-pack-head .kicker {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 7px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: #0f3d43;
+      color: #e8fbf7;
+      font-size: 11px;
+      font-weight: 1000;
+    }
+    .expert-pack-head h3 {
+      margin: 0;
+      color: #0d2238;
+      font-size: clamp(20px, 2.1vw, 30px);
+      line-height: 1.08;
+    }
+    .expert-pack-head p {
+      margin-top: 8px;
+      max-width: 820px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .expert-pack-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(92px, 1fr));
+      gap: 8px;
+      min-width: min(420px, 100%);
+    }
+    .expert-pack-metric {
+      min-height: 76px;
+      padding: 10px 11px;
+      border: 1px solid #dce7f1;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.86);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+    }
+    .expert-pack-metric span {
+      display: block;
+      color: #587087;
+      font-size: 11px;
+      font-weight: 900;
+    }
+    .expert-pack-metric strong {
+      display: block;
+      margin-top: 6px;
+      color: #0d2238;
+      font-size: 18px;
+      line-height: 1.1;
+    }
+    .expert-pack .detail-title {
+      gap: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #edf2f6;
+    }
     .compact-disclosure .valuation-dashboard,
     .compact-disclosure .trend-board,
     .compact-disclosure .usage-split-board {
@@ -2566,6 +2668,51 @@ const html = `<!doctype html>
       min-width: 0;
       margin: 0;
       box-shadow: none;
+    }
+    .expert-pack .valuation-dashboard,
+    .expert-pack .trend-board,
+    .expert-pack .usage-split-board {
+      border-color: #dce7f1;
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 12px 26px rgba(33, 51, 84, 0.06);
+    }
+    .expert-pack .valuation-toolbar,
+    .expert-pack .usage-controls {
+      padding: 10px;
+      border: 1px solid #dce7f1;
+      border-radius: 8px;
+      background: #fbfdff;
+    }
+    .expert-pack .valuation-toolbar label,
+    .expert-pack .usage-controls label {
+      font-size: 11px;
+      color: #587087;
+    }
+    .expert-pack .valuation-toolbar select,
+    .expert-pack .usage-controls select {
+      min-height: 38px;
+      border-color: #d7e2f1;
+      font-weight: 800;
+    }
+    .expert-pack .valuation-chart,
+    .expert-pack .trend-chart,
+    .expert-pack .trend-heatmap,
+    .expert-pack .usage-panel table {
+      border-color: #cadce8;
+      background: #ffffff;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+    }
+    .expert-pack .valuation-stat,
+    .expert-pack .trend-card,
+    .expert-pack .usage-metric {
+      border-color: #dce7f1;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+      box-shadow: 0 8px 18px rgba(33, 51, 84, 0.04);
+    }
+    .expert-pack .usage-panel {
+      border-color: #dce7f1;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+      box-shadow: 0 12px 26px rgba(33, 51, 84, 0.05);
     }
     .pyeong-report-head {
       display: grid;
@@ -3385,8 +3532,9 @@ const html = `<!doctype html>
     }
     @media (max-width: 980px) {
       .toolbar, .grid, .pyeong-toolbar, .pyeong-summary, .valuation-toolbar, .core-story { grid-template-columns: 1fr 1fr; }
-      .market-report-head { grid-template-columns: 1fr; }
+      .market-report-head, .expert-pack-head { grid-template-columns: 1fr; }
       .market-report-head .badge { justify-content: flex-start; text-align: left; }
+      .expert-pack-metrics { min-width: 0; }
       .grid > section:first-child { grid-column: 1 / -1; }
       .detail-panel { grid-template-columns: 1fr; }
       .commercial-report { grid-template-columns: 1fr; }
@@ -3412,7 +3560,8 @@ const html = `<!doctype html>
       .consumer-hero { grid-template-columns: 1fr; min-height: 560px; align-items: end; padding: 22px; background-position: center; }
       .consumer-hero-mini { justify-self: stretch; }
       .consumer-hero-actions a { flex: 1 1 180px; }
-      .toolbar, .grid, .pyeong-toolbar, .pyeong-summary, .valuation-toolbar, .valuation-summary, .usage-controls, .usage-metrics, .core-story, .commercial-summary, .quality-funnel { grid-template-columns: 1fr; }
+      .toolbar, .grid, .pyeong-toolbar, .pyeong-summary, .valuation-toolbar, .valuation-summary, .usage-controls, .usage-metrics, .core-story, .commercial-summary, .quality-funnel, .expert-pack-metrics { grid-template-columns: 1fr; }
+      .expert-pack-head { padding: 13px; }
       .dashboard-intent { align-items: flex-start; flex-direction: column; }
       .dashboard-intent strong, .dashboard-intent span { white-space: normal; }
       .kpi-strip { align-items: flex-start; }
@@ -3535,9 +3684,21 @@ const html = `<!doctype html>
       <div class="table-scroll refinement-table-wrap"><table id="refinementTierTable"></table></div>
     </section>
 
-    <details class="pyeong-dashboard compact-disclosure" id="secondaryDashboardPack">
+    <details class="pyeong-dashboard compact-disclosure expert-pack" id="secondaryDashboardPack">
       <summary><span>전문가용 세부 분석 열기</span><span class="badge">용도·건물·층별 세부</span></summary>
       <div class="disclosure-body">
+      <div class="expert-pack-head">
+        <div>
+          <span class="kicker">EXPERT ANALYTICS</span>
+          <h3>건물·용도·층별 가격 판독실</h3>
+          <p>선택 건물의 10년 평당가, 월별 변동, 업무시설·근린생활 층별 기준값을 한 화면에서 비교합니다. 상담 전 근거 확인용으로 쓰는 전문가 영역입니다.</p>
+        </div>
+        <div class="expert-pack-metrics" aria-label="전문가 분석 구성">
+          <div class="expert-pack-metric"><span>핵심 축</span><strong>용도·층·기간</strong></div>
+          <div class="expert-pack-metric"><span>가격 기준</span><strong>전용·계약·공급</strong></div>
+          <div class="expert-pack-metric"><span>권장 사용</span><strong>근거 확인</strong></div>
+        </div>
+      </div>
 
     <section class="valuation-dashboard" id="valuationDashboardSection">
       <div class="detail-title">
