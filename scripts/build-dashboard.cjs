@@ -2269,6 +2269,59 @@ const html = `<!doctype html>
       margin: 0 0 6px;
       font-size: 16px;
     }
+    .bundle-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(180px, 1fr));
+      gap: 10px;
+      margin: 12px 0;
+    }
+    .bundle-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #d7e2f1;
+      border-radius: 8px;
+      background: linear-gradient(145deg, #ffffff 0%, #f7fbff 100%);
+      padding: 14px;
+      min-height: 138px;
+      box-shadow: 0 10px 24px rgba(33, 51, 84, 0.06);
+    }
+    .bundle-card::after {
+      content: "";
+      position: absolute;
+      right: -34px;
+      top: -34px;
+      width: 92px;
+      height: 92px;
+      border-radius: 999px;
+      background: rgba(97, 54, 255, 0.08);
+    }
+    .bundle-card header {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 0;
+      margin: 0 0 10px;
+      max-width: none;
+      background: transparent;
+    }
+    .bundle-date { color: #0d2238; font-size: 15px; font-weight: 1000; }
+    .bundle-floor { color: #6136ff; font-size: 12px; font-weight: 900; }
+    .bundle-main { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; position: relative; z-index: 1; }
+    .bundle-main div { border: 1px solid #edf2f7; border-radius: 8px; padding: 8px; background: rgba(255,255,255,0.8); }
+    .bundle-main span { display: block; color: var(--muted); font-size: 10px; font-weight: 900; }
+    .bundle-main strong { display: block; margin-top: 3px; color: #0d2238; font-size: 15px; }
+    .bundle-card footer { margin-top: 9px; color: var(--muted); font-size: 11px; font-weight: 800; position: relative; z-index: 1; }
+    .bundle-ledger-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid #edf2f7;
+    }
+    .bundle-ledger-title strong { color: #0d2238; font-size: 13px; }
+    .bundle-ledger-title span { color: var(--muted); font-size: 11px; font-weight: 800; }
     .commercial-report {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
@@ -3487,6 +3540,8 @@ const html = `<!doctype html>
       <div class="detail-subsection building-mini-card">
         <h3>선택 건물 동일일자·동일층 묶음 거래</h3>
         <p class="muted" id="detailBundleMeta" style="margin-bottom:10px">선택 건물에서 같은 계약일·같은 층에 2건 이상 거래된 업무시설 호실을 합산해 보여줍니다.</p>
+        <div class="bundle-summary-grid" id="detailBundleCards"></div>
+        <div class="bundle-ledger-title"><strong>묶음 거래 근거 원장</strong><span>총액과 합산면적으로 평당가를 계산합니다</span></div>
         <div class="table-scroll"><table id="detailSameDayBundleTable"></table></div>
       </div>
     </section>
@@ -4094,6 +4149,7 @@ const html = `<!doctype html>
         document.getElementById("buildingFloorBars").innerHTML = '<p class="muted">건물 선택 후 표시됩니다.</p>';
         document.getElementById("buildingAreaBars").innerHTML = '<p class="muted">건물 선택 후 표시됩니다.</p>';
         document.getElementById("detailBundleMeta").textContent = "건물을 선택하면 동일일자·동일층 묶음 거래가 표시됩니다.";
+        document.getElementById("detailBundleCards").innerHTML = '<p class="muted">건물 선택 후 묶음 거래 요약이 표시됩니다.</p>';
         document.getElementById("detailSameDayBundleTable").innerHTML = '<tbody><tr><td>건물을 선택하세요.</td></tr></tbody>';
         return;
       }
@@ -4134,33 +4190,43 @@ const html = `<!doctype html>
     function renderDetailSameDayBundleTable(group) {
       const rows = detailBundleRows(group);
       document.getElementById("detailBundleMeta").textContent = rows.length
-        ? buildingTitle(group) + "에서 확인된 업무시설 묶음 거래 " + fmt.format(rows.length) + "개입니다. 총액과 합산면적으로 묶음 평당가를 계산합니다."
+        ? buildingTitle(group) + "에서 확인된 업무시설 묶음 거래 " + fmt.format(rows.length) + "개입니다. 카드에서 총액·합산평·묶음 평당가를 먼저 확인하세요."
         : buildingTitle(group) + "에서 같은 계약일·같은 층 2건 이상 업무시설 묶음 거래가 없습니다.";
-      document.getElementById("detailSameDayBundleTable").innerHTML = \`
-        <thead><tr>
-          <th>계약일</th><th>층</th><th>묶음건수</th><th>묶음면적대</th><th>호실면적대</th><th>호실면적</th><th>합산 전용평</th><th>합산 공급㎡ 후보</th><th>합산 계약㎡</th><th>총거래금액</th><th>평균 개별금액</th><th>묶음 전용평당가</th><th>묶음 공급평당가</th><th>묶음 계약평당가</th>
-        </tr></thead>
-        <tbody>
-        \${rows.length ? rows.map((row) => \`
-          <tr>
-            <td>\${escapeSvg(row.contract_date)}</td>
-            <td>\${escapeSvg(row.floor || "-")}</td>
-            <td>\${fmt.format(row.transaction_count)}</td>
-            <td><span class="badge">\${escapeSvg(row.bundle_area_band || "-")}</span></td>
-            <td>\${(row.area_bands || []).map((value) => \`<span class="badge">\${escapeSvg(value)}</span>\`).join(" ") || "-"}</td>
-            <td>\${(row.unit_area_summary_pyeong || []).join(" + ") || "-"}</td>
-            <td>\${Number.isFinite(row.total_exclusive_pyeong) ? row.total_exclusive_pyeong.toFixed(1) + "평" : "-"}</td>
-            <td>\${Number.isFinite(row.total_supply_area_sqm) && row.total_supply_area_sqm > 0 ? row.total_supply_area_sqm.toFixed(2) : "미확인"}</td>
-            <td>\${Number.isFinite(row.total_contract_area_sqm) && row.total_contract_area_sqm > 0 ? row.total_contract_area_sqm.toFixed(2) : "미확인"}</td>
-            <td>\${money(row.total_price_manwon)}</td>
-            <td>\${money(row.avg_price_manwon)}</td>
-            <td>\${money(row.bundle_exclusive_ppyeong_manwon)}</td>
-            <td>\${Number.isFinite(row.bundle_supply_ppyeong_manwon) ? money(row.bundle_supply_ppyeong_manwon) : "공급면적 없음"}</td>
-            <td>\${Number.isFinite(row.bundle_contract_ppyeong_manwon) ? money(row.bundle_contract_ppyeong_manwon) : "계약면적 없음"}</td>
-          </tr>
-        \`).join("") : '<tr><td colspan="14">선택 건물의 동일일자·동일층 업무시설 묶음 거래가 없습니다.</td></tr>'}
-        </tbody>
-      \`;
+      document.getElementById("detailBundleCards").innerHTML = rows.length ? rows.slice(0, 3).map((row) => \
+        '<article class="bundle-card">' +
+          '<header><span class="bundle-date">' + escapeSvg(row.contract_date) + '</span><span class="bundle-floor">' + escapeSvg(row.floor || "-") + '층 · ' + fmt.format(row.transaction_count) + '건</span></header>' +
+          '<div class="bundle-main">' +
+            '<div><span>총거래금액</span><strong>' + money(row.total_price_manwon) + '</strong></div>' +
+            '<div><span>합산 전용</span><strong>' + (Number.isFinite(row.total_exclusive_pyeong) ? row.total_exclusive_pyeong.toFixed(1) + "평" : "-") + '</strong></div>' +
+            '<div><span>묶음 평당가</span><strong>' + money(row.bundle_exclusive_ppyeong_manwon) + '</strong></div>' +
+            '<div><span>계약 평당가</span><strong>' + (Number.isFinite(row.bundle_contract_ppyeong_manwon) ? money(row.bundle_contract_ppyeong_manwon) : "미확인") + '</strong></div>' +
+          '</div>' +
+          '<footer>호실면적 ' + escapeSvg((row.unit_area_summary_pyeong || []).join(" + ") || "-") + ' · ' + escapeSvg(row.bundle_area_band || "면적대 미확인") + '</footer>' +
+        '</article>'
+      ).join("") : '<p class="muted">표시할 묶음 거래가 없습니다.</p>';
+      document.getElementById("detailSameDayBundleTable").innerHTML = \
+        '<thead><tr>' +
+          '<th>계약일</th><th>층</th><th>묶음건수</th><th>묶음면적대</th><th>호실면적대</th><th>호실면적</th><th>합산 전용평</th><th>합산 공급㎡ 후보</th><th>합산 계약㎡</th><th>총거래금액</th><th>평균 개별금액</th><th>묶음 전용평당가</th><th>묶음 공급평당가</th><th>묶음 계약평당가</th>' +
+        '</tr></thead><tbody>' +
+        (rows.length ? rows.map((row) => \
+          '<tr>' +
+            '<td>' + escapeSvg(row.contract_date) + '</td>' +
+            '<td>' + escapeSvg(row.floor || "-") + '</td>' +
+            '<td>' + fmt.format(row.transaction_count) + '</td>' +
+            '<td><span class="badge">' + escapeSvg(row.bundle_area_band || "-") + '</span></td>' +
+            '<td>' + ((row.area_bands || []).map((value) => '<span class="badge">' + escapeSvg(value) + '</span>').join(" ") || "-") + '</td>' +
+            '<td>' + ((row.unit_area_summary_pyeong || []).join(" + ") || "-") + '</td>' +
+            '<td>' + (Number.isFinite(row.total_exclusive_pyeong) ? row.total_exclusive_pyeong.toFixed(1) + "평" : "-") + '</td>' +
+            '<td>' + (Number.isFinite(row.total_supply_area_sqm) && row.total_supply_area_sqm > 0 ? row.total_supply_area_sqm.toFixed(2) : "미확인") + '</td>' +
+            '<td>' + (Number.isFinite(row.total_contract_area_sqm) && row.total_contract_area_sqm > 0 ? row.total_contract_area_sqm.toFixed(2) : "미확인") + '</td>' +
+            '<td>' + money(row.total_price_manwon) + '</td>' +
+            '<td>' + money(row.avg_price_manwon) + '</td>' +
+            '<td>' + money(row.bundle_exclusive_ppyeong_manwon) + '</td>' +
+            '<td>' + (Number.isFinite(row.bundle_supply_ppyeong_manwon) ? money(row.bundle_supply_ppyeong_manwon) : "공급면적 없음") + '</td>' +
+            '<td>' + (Number.isFinite(row.bundle_contract_ppyeong_manwon) ? money(row.bundle_contract_ppyeong_manwon) : "계약면적 없음") + '</td>' +
+          '</tr>'
+        ).join("") : '<tr><td colspan="14">선택 건물의 동일일자·동일층 업무시설 묶음 거래가 없습니다.</td></tr>') +
+        '</tbody>';
     }
 
     function selectedCommercialContext() {
