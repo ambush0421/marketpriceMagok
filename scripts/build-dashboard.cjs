@@ -2714,6 +2714,114 @@ const html = `<!doctype html>
       background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
       box-shadow: 0 12px 26px rgba(33, 51, 84, 0.05);
     }
+    .expert-pack #valuationDashboardSection {
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+      border-color: #c8dbe6;
+      background: #ffffff;
+      box-shadow: 0 18px 42px rgba(28, 50, 76, 0.13);
+    }
+    .expert-pack #valuationDashboardSection::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, #0f3d43, #176f78, #ffb24a);
+    }
+    .expert-pack #valuationDashboardSection .detail-title {
+      margin: 0;
+      padding: 20px 18px 12px;
+      border: 0;
+      background:
+        radial-gradient(circle at 94% 0%, rgba(255, 178, 74, 0.18), transparent 30%),
+        linear-gradient(135deg, #f9fcff 0%, #eef8f7 100%);
+    }
+    .expert-pack #valuationDashboardSection .detail-title h2 {
+      color: #0d2238;
+      font-size: clamp(21px, 2.1vw, 30px);
+      letter-spacing: 0;
+    }
+    .expert-pack #valuationDashboardSection .detail-title .badge {
+      border-color: rgba(21, 111, 120, 0.24);
+      background: #ffffff;
+      color: #0f5f67;
+      box-shadow: 0 8px 18px rgba(33, 51, 84, 0.05);
+    }
+    .expert-pack #valuationDashboardSection > .muted {
+      margin: 0;
+      padding: 0 18px 14px;
+      background: linear-gradient(135deg, #f9fcff 0%, #eef8f7 100%);
+      color: #49637c;
+      line-height: 1.55;
+    }
+    .expert-pack #valuationDashboardSection .valuation-toolbar {
+      grid-template-columns: repeat(3, minmax(150px, 1fr));
+      margin: 0;
+      padding: 14px 18px;
+      border-width: 1px 0;
+      border-radius: 0;
+      background: #ffffff;
+      box-shadow: none;
+    }
+    .expert-pack #valuationDashboardSection .valuation-toolbar label {
+      font-size: 11px;
+      font-weight: 900;
+      color: #587087;
+    }
+    .expert-pack #valuationDashboardSection .valuation-toolbar select {
+      min-height: 42px;
+      border-color: #cfdde9;
+      background-color: #fbfdff;
+      color: #0d2238;
+      font-weight: 900;
+    }
+    .expert-pack #valuationDashboardSection .valuation-layout {
+      padding: 16px 18px 0;
+      grid-template-columns: minmax(270px, 0.58fr) minmax(0, 1.42fr);
+      gap: 12px;
+    }
+    .expert-pack #valuationDashboardSection .valuation-callout {
+      border: 0;
+      background: linear-gradient(135deg, #0f3d43 0%, #176f78 72%, #ffb24a 160%);
+      color: #ffffff;
+      box-shadow: 0 14px 28px rgba(15, 61, 67, 0.18);
+    }
+    .expert-pack #valuationDashboardSection .valuation-callout strong {
+      color: #ffffff;
+      font-size: 22px;
+    }
+    .expert-pack #valuationDashboardSection .valuation-callout span {
+      color: rgba(255,255,255,0.84);
+      line-height: 1.48;
+    }
+    .expert-pack #valuationDashboardSection .valuation-stat {
+      min-height: 66px;
+      border-color: #dce7f1;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .expert-pack #valuationDashboardSection .valuation-stat strong {
+      color: #0d2238;
+      font-size: 18px;
+    }
+    .expert-pack #valuationDashboardSection .valuation-chart {
+      min-height: 330px;
+      border-color: #c8dbe6;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.96), rgba(251,253,255,0.98)),
+        repeating-linear-gradient(90deg, rgba(15,61,67,0.04) 0 1px, transparent 1px 64px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.95), 0 10px 24px rgba(33, 51, 84, 0.05);
+    }
+    .expert-pack #valuationDashboardSection #valuationMeta {
+      margin: 12px 18px 16px !important;
+      padding: 10px 12px;
+      border: 1px solid #dce7f1;
+      border-radius: 8px;
+      background: #fbfdff;
+      color: #587087;
+      font-size: 12px;
+      font-weight: 700;
+    }
     .pyeong-report-head {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
@@ -3550,6 +3658,8 @@ const html = `<!doctype html>
       .compact-disclosure .valuation-dashboard,
       .compact-disclosure .trend-board,
       .compact-disclosure .usage-split-board { padding: 12px; }
+      .expert-pack #valuationDashboardSection { padding: 0; }
+      .expert-pack #valuationDashboardSection .valuation-layout { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
       header { padding: 12px 14px 0; }
@@ -3562,6 +3672,8 @@ const html = `<!doctype html>
       .consumer-hero-actions a { flex: 1 1 180px; }
       .toolbar, .grid, .pyeong-toolbar, .pyeong-summary, .valuation-toolbar, .valuation-summary, .usage-controls, .usage-metrics, .core-story, .commercial-summary, .quality-funnel, .expert-pack-metrics { grid-template-columns: 1fr; }
       .expert-pack-head { padding: 13px; }
+      .expert-pack #valuationDashboardSection .valuation-toolbar { grid-template-columns: 1fr; }
+      .expert-pack #valuationDashboardSection .detail-title { align-items: flex-start; flex-direction: column; }
       .dashboard-intent { align-items: flex-start; flex-direction: column; }
       .dashboard-intent strong, .dashboard-intent span { white-space: normal; }
       .kpi-strip { align-items: flex-start; }
