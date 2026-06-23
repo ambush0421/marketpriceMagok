@@ -1730,16 +1730,70 @@ const html = `<!doctype html>
       line-height: 1.5;
     }
     header {
-      padding: 18px clamp(18px, 4vw, 56px) 14px;
-      background: #ffffff;
-      border-bottom: 1px solid #dce8e6;
+      position: relative;
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 14px clamp(14px, 3vw, 42px) 0;
+      background: transparent;
     }
+    .top-shell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 74px;
+      padding: 14px 16px;
+      border: 1px solid rgba(184, 216, 211, 0.9);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 16px 38px rgba(28, 50, 76, 0.08);
+      backdrop-filter: blur(12px);
+    }
+    .brand-lockup { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: #fff;
+      background: linear-gradient(135deg, #123f45, #0a7280 58%, #ffb24a);
+      font-weight: 1000;
+      letter-spacing: 0;
+      box-shadow: 0 10px 22px rgba(10, 114, 128, 0.2);
+    }
+    .brand-copy { min-width: 0; }
     h1 {
-      margin: 0 0 8px;
-      font-size: clamp(28px, 3.4vw, 46px);
+      margin: 0;
+      color: #0d2238;
+      font-size: clamp(20px, 2.2vw, 30px);
       letter-spacing: 0;
       line-height: 1.08;
     }
+    .brand-copy p {
+      margin-top: 5px;
+      max-width: 740px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 13px;
+    }
+    .top-meta { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; flex: 0 0 auto; }
+    .top-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 31px;
+      padding: 6px 10px;
+      border: 1px solid #dce7f1;
+      border-radius: 999px;
+      background: #f8fbff;
+      color: #28435f;
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .top-chip.strong { border-color: rgba(21, 111, 120, 0.3); background: #eef8f7; color: #0f5f67; }
     h2 {
       margin: 0 0 14px;
       font-size: 18px;
@@ -3065,7 +3119,10 @@ const html = `<!doctype html>
       .compact-disclosure .usage-split-board { padding: 12px; }
     }
     @media (max-width: 640px) {
-      header { padding: 20px 14px 14px; }
+      header { padding: 12px 14px 0; }
+      .top-shell { align-items: flex-start; flex-direction: column; }
+      .top-meta { justify-content: flex-start; }
+      .brand-copy p { white-space: normal; }
       main { padding: 14px; }
       .consumer-hero { grid-template-columns: 1fr; min-height: 560px; align-items: end; padding: 22px; background-position: center; }
       .consumer-hero-mini { justify-self: stretch; }
@@ -3081,9 +3138,20 @@ const html = `<!doctype html>
 </head>
 <body>
   <header>
-    <h1>마곡동 상가·업무시설 실거래 찾기</h1>
-    <p class="muted">건물명이나 지번을 입력하면 최근 10년 실거래 흐름과 상담용 요약을 바로 확인할 수 있습니다.</p>
-    <div class="warn">최근 10년 ${escapeHtml(desiredYears[0])}-${escapeHtml(desiredYears.at(-1))}년 마곡동 상업업무용 매매 ${analysisRecords.length.toLocaleString("ko-KR")}건을 기준값에 반영했습니다. 해제·복수후보·지분·일괄거래 후보는 평균/추이에서 제외하고, 상세 근거는 아래 분석 기준에서 확인합니다.</div>
+    <div class="top-shell">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true">M</div>
+        <div class="brand-copy">
+          <h1>마곡동 실거래 가이드</h1>
+          <p class="muted">상가·업무시설 매매 흐름을 건물별로 빠르게 확인합니다.</p>
+        </div>
+      </div>
+      <div class="top-meta" aria-label="데이터 기준">
+        <span class="top-chip strong">${escapeHtml(desiredYears[0])}-${escapeHtml(desiredYears.at(-1))}</span>
+        <span class="top-chip">기준값 ${analysisRecords.length.toLocaleString("ko-KR")}건</span>
+        <span class="top-chip">해제·지분·일괄 제외</span>
+      </div>
+    </div>
   </header>
   <main>
     <section class="consumer-hero" id="consumerHero" aria-label="마곡동 상업용 부동산 실거래 안내">
