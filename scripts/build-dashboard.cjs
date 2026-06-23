@@ -1660,11 +1660,14 @@ const compactPayload = {
     main_use: record.main_use,
     floor: record.floor,
     area_sqm: record.area_sqm,
+    exclusive_pyeong: record.exclusive_pyeong,
     common_area_sqm: record.common_area_sqm,
     direct_common_area_sqm: record.direct_common_area_sqm,
     shared_common_area_sqm: record.shared_common_area_sqm,
     supply_area_sqm: record.supply_area_sqm,
+    supply_pyeong: record.supply_pyeong,
     contract_area_sqm: record.contract_area_sqm,
+    contract_pyeong: record.contract_pyeong,
     price_manwon: record.price_manwon,
     price_per_sqm_manwon: record.price_per_sqm_manwon,
     exclusive_ppyeong_manwon: record.exclusive_ppyeong_manwon,
@@ -3795,7 +3798,19 @@ const html = `<!doctype html>
       return row.month.replace("-", ".") + "." + String(row.contract_day || "").padStart(2, "0");
     }
 
+    function pyeongValue(row) {
+      if (Number.isFinite(row?.exclusive_pyeong)) return row.exclusive_pyeong;
+      if (Number.isFinite(row?.area_sqm)) return row.area_sqm / SQM_PER_PYEONG_CLIENT;
+      return null;
+    }
+
     function pyeongText(value) { return Number.isFinite(value) ? value.toFixed(2) + "평" : "-"; }
+    function rowPyeongText(row) { return pyeongText(pyeongValue(row)); }
+    function sqmPyeongText(row) {
+      const pyeong = pyeongValue(row);
+      if (!Number.isFinite(pyeong)) return "-";
+      return (Number.isFinite(row?.area_sqm) ? row.area_sqm.toFixed(2) + "㎡ / " : "") + pyeong.toFixed(2) + "평";
+    }
     function floorText(value) { return value ? String(value) + "층" : "-"; }
 
     function buildGroupedAverages(rows, groupFn, valueFn) {
@@ -3821,7 +3836,7 @@ const html = `<!doctype html>
     function renderBuildingInfo(group, rows, analysisRows) {
       const years = analysisRows.map((row) => row.build_year).filter(Number.isFinite);
       const floors = rows.map((row) => Number(row.floor)).filter(Number.isFinite).sort((a, b) => a - b);
-      const areas = rows.map((row) => row.exclusive_pyeong).filter(Number.isFinite).sort((a, b) => a - b);
+      const areas = rows.map((row) => pyeongValue(row)).filter(Number.isFinite).sort((a, b) => a - b);
       const uses = [...new Set(rows.map((row) => row.main_use).filter(Boolean))].slice(0, 3).join(", ") || group.main_use || "자료 없음";
       const infoRows = [["지번주소", group.parcel_label || "-"], ["도로명", group.road || "자료 없음"], ["용도", uses], ["사용승인", years.length ? Math.min(...years) + "년" : "자료 없음"], ["거래층", floors.length ? Math.min(...floors) + "층~" + Math.max(...floors) + "층" : "자료 없음"], ["전용면적", areas.length ? areas[0].toFixed(2) + "평~" + areas.at(-1).toFixed(2) + "평" : "자료 없음"]];
       document.getElementById("buildingInfoList").innerHTML = infoRows.map(([label, value]) => '<div class="building-info-row"><dt>' + escapeSvg(label) + '</dt><dd>' + escapeSvg(value) + '</dd></div>').join("");
@@ -3838,7 +3853,7 @@ const html = `<!doctype html>
       const previousMedian = medianClient(previousYearPrices);
       const change = currentMedian && previousMedian ? ((currentMedian - previousMedian) / previousMedian) * 100 : null;
       const summaryItems = [
-        ["최근 거래가" + (latestRow ? " (" + dealDateText(latestRow).slice(0, 7) + ")" : ""), eokText(latestRow?.price_manwon), "전용 " + pyeongText(latestRow?.exclusive_pyeong) + " | " + floorText(latestRow?.floor), "₩"],
+        ["최근 거래가" + (latestRow ? " (" + dealDateText(latestRow).slice(0, 7) + ")" : ""), eokText(latestRow?.price_manwon), "전용 " + rowPyeongText(latestRow) + " | " + floorText(latestRow?.floor), "₩"],
         ["전년 대비", Number.isFinite(change) ? (change >= 0 ? "▲ " : "▼ ") + Math.abs(change).toFixed(1) + "%" : "-", previousMedian ? (latestYear - 1) + "년 " + eokText(previousMedian) + " → " + latestYear + "년 " + eokText(currentMedian) : "비교 표본 부족", "↗"],
         ["거래 건수" + (latestYear ? " (" + latestYear + "년)" : ""), fmt.format(latestYear ? rows.filter((row) => row.year === latestYear).length : rows.length) + "건", "전체 " + fmt.format(rows.length) + "건 · 기준값 " + fmt.format(analysisRows.length) + "건", "▣"],
         ["평당가", money(medianClient(pyeongPrices)) + "만원", "전용면적 기준 · 계약 " + (contractPyeongPrices.length ? money(medianClient(contractPyeongPrices)) + "만원" : "미확인"), "₩"],
@@ -3895,7 +3910,7 @@ const html = `<!doctype html>
       document.getElementById("detailStats").innerHTML = [["기준값 반영", fmt.format(analysisRows.length) + "건"], ["최저-최고", prices.length ? eokText(Math.min(...prices)) + "~" + eokText(Math.max(...prices)) : "-"], ["중위 계약평당가", contractPyeongPrices.length ? money(medianClient(contractPyeongPrices)) + "만원" : "미확인"]].map(([label, value]) => '<div class="detail-stat"><span>' + escapeSvg(label) + '</span><strong>' + escapeSvg(value) + '</strong></div>').join("");
       drawDetailMonthlyChart(group, points);
       const recentRows = rows.slice(0, 8);
-      document.getElementById("detailTransactionTable").innerHTML = '<thead><tr><th>계약일</th><th>층</th><th>전용면적</th><th>거래금액</th></tr></thead><tbody>' + (recentRows.length ? recentRows.map((row) => '<tr><td>' + escapeSvg(dealDateText(row)) + '</td><td>' + escapeSvg(floorText(row.floor)) + '</td><td>' + escapeSvg(pyeongText(row.exclusive_pyeong)) + '</td><td><strong>' + escapeSvg(eokText(row.price_manwon)) + '</strong></td></tr>').join("") : '<tr><td colspan="4">표시할 거래가 없습니다.</td></tr>') + '</tbody>';
+      document.getElementById("detailTransactionTable").innerHTML = '<thead><tr><th>계약일</th><th>층</th><th>전용면적</th><th>거래금액</th></tr></thead><tbody>' + (recentRows.length ? recentRows.map((row) => '<tr><td>' + escapeSvg(dealDateText(row)) + '</td><td>' + escapeSvg(floorText(row.floor)) + '</td><td>' + escapeSvg(sqmPyeongText(row)) + '</td><td><strong>' + escapeSvg(eokText(row.price_manwon)) + '</strong></td></tr>').join("") : '<tr><td colspan="4">표시할 거래가 없습니다.</td></tr>') + '</tbody>';
       const latestPrice = analysisRows[0]?.price_manwon;
       const medianPrice = medianClient(prices);
       document.getElementById("buildingCompareMini").innerHTML = '<div class="mini-price-box"><span>최근 거래</span><strong>' + escapeSvg(eokText(latestPrice)) + '</strong><small>최근 실거래 기준</small></div><div class="mini-vs">VS</div><div class="mini-price-box"><span>중위 거래</span><strong>' + escapeSvg(eokText(medianPrice)) + '</strong><small>선택 용도 기준</small></div>';
