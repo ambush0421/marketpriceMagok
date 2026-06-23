@@ -2248,6 +2248,59 @@ const html = `<!doctype html>
       text-align: right;
       min-height: 16px;
     }
+    .building-result-shell { border: 0; background: #eef4fb; box-shadow: none; padding: 0; overflow: visible; }
+    .building-result-topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 48px; padding: 0 2px 12px; color: #516079; font-size: 13px; font-weight: 800; }
+    .building-result-topbar strong { color: #06172e; font-size: 16px; }
+    .building-profile-card { display: grid; grid-template-columns: 150px minmax(0, 1fr) auto; gap: 26px; align-items: center; padding: 24px 26px; border: 1px solid #d9e4f2; border-radius: 8px; background: linear-gradient(180deg, #f7faff 0%, #f1f6fd 100%); box-shadow: 0 16px 34px rgba(33, 51, 84, 0.08); }
+    .building-profile-card img { width: 150px; height: 92px; object-fit: cover; border-radius: 6px; box-shadow: 0 10px 24px rgba(18, 36, 68, 0.16); }
+    .building-profile-copy { display: grid; gap: 10px; min-width: 0; }
+    .building-profile-copy h2 { margin: 0; color: #06172e; font-size: clamp(25px, 2.2vw, 34px); line-height: 1.12; letter-spacing: 0; }
+    .building-profile-copy p { color: #516079; font-weight: 800; }
+    .building-profile-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .building-profile-chips span { display: inline-flex; align-items: center; min-height: 28px; padding: 0 10px; border-radius: 999px; background: #ffffff; border: 1px solid #d7e2f1; color: #33405c; font-size: 12px; font-weight: 900; }
+    .building-profile-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+    .building-profile-actions .button { min-height: 40px; }
+    .building-view-tabs { display: flex; flex-wrap: wrap; gap: 28px; align-items: center; padding: 16px 8px 10px; border-bottom: 1px solid #d3dfed; }
+    .building-view-tabs .detail-tab { border: 0; border-radius: 0; padding: 0 0 10px; background: transparent; color: #06172e; font-size: 14px; font-weight: 1000; }
+    .building-view-tabs .detail-tab.active { background: transparent; color: #6136ff; box-shadow: inset 0 -3px 0 #6136ff; }
+    .commercial-report { display: block; border: 0; background: transparent; padding: 14px 0 0; margin: 0; }
+    .commercial-summary { grid-template-columns: repeat(4, minmax(180px, 1fr)); gap: 14px; }
+    .commercial-summary div { min-height: 112px; display: grid; align-content: center; gap: 6px; border: 1px solid #d9e4f2; border-radius: 8px; background: #fff; padding: 18px 20px 18px 78px; position: relative; box-shadow: 0 12px 28px rgba(33, 51, 84, 0.08); }
+    .commercial-summary div::before { content: attr(data-icon); position: absolute; left: 20px; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; display: grid; place-items: center; border-radius: 8px; color: #fff; background: #6d40ff; font-size: 24px; font-weight: 1000; }
+    .commercial-summary div:nth-child(2)::before { background: #35b9a5; }
+    .commercial-summary div:nth-child(3)::before { background: #5b8ff0; }
+    .commercial-summary div:nth-child(4)::before { background: #ffad69; }
+    .commercial-summary span { color: #17213a; font-size: 13px; }
+    .commercial-summary strong { margin: 0; color: #07162d; font-size: 28px; line-height: 1; }
+    .commercial-summary small { color: #516079; font-size: 12px; font-weight: 800; }
+    .commercial-actions { justify-content: flex-end; min-width: 0; margin-top: 10px; }
+    .building-result-grid { display: grid; grid-template-columns: 300px minmax(0, 1fr) 360px; gap: 14px; margin-top: 14px; align-items: stretch; }
+    .building-side-card, .building-chart-card, .building-recent-card, .building-mini-card { border: 1px solid #d9e4f2; border-radius: 8px; background: #fff; box-shadow: 0 12px 28px rgba(33, 51, 84, 0.08); }
+    .building-side-card, .building-recent-card, .building-mini-card { padding: 18px; }
+    .building-side-card h3, .building-chart-card h3, .building-recent-card h3, .building-mini-card h3 { margin: 0 0 12px; color: #06172e; font-size: 18px; }
+    .building-map-preview { height: 196px; display: grid; place-items: center; border: 1px solid #d7e2f1; border-radius: 7px; background: linear-gradient(90deg, rgba(255,255,255,.35) 1px, transparent 1px) 0 0 / 42px 42px, linear-gradient(0deg, rgba(255,255,255,.4) 1px, transparent 1px) 0 0 / 42px 42px, linear-gradient(135deg, #e8f2e6, #eef4ff 55%, #fff3dd); color: #6136ff; font-weight: 1000; text-align: center; margin-bottom: 14px; }
+    .building-info-list { display: grid; gap: 10px; margin: 0; }
+    .building-info-row { display: grid; grid-template-columns: 92px 1fr; gap: 10px; color: #17213a; font-size: 13px; }
+    .building-info-row dt { color: #516079; font-weight: 900; }
+    .building-info-row dd { margin: 0; font-weight: 800; word-break: keep-all; }
+    .building-chart-card { padding: 18px 18px 14px; min-width: 0; }
+    .building-chart-card .detail-chart { border: 0; background: transparent; }
+    .building-chart-card svg { width: 100%; height: auto; }
+    .building-recent-card .table-scroll { max-height: 338px; }
+    .building-recent-card table th, .building-recent-card table td { padding: 9px 8px; font-size: 12px; white-space: nowrap; }
+    .detail-stats { grid-template-columns: repeat(3, minmax(120px, 1fr)); gap: 8px; margin: 12px 0 0; }
+    .detail-stat { background: #f8faff; border-color: #d7e2f1; }
+    .detail-stat strong { color: #06172e; }
+    .building-lower-grid { display: grid; grid-template-columns: 1fr 1fr 1.25fr; gap: 14px; margin-top: 14px; }
+    .mini-compare { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: center; }
+    .mini-price-box { border: 1px solid #d7e2f1; border-radius: 8px; padding: 14px; background: #fbfdff; }
+    .mini-price-box span { color: #6136ff; font-size: 12px; font-weight: 900; }
+    .mini-price-box strong { display: block; margin-top: 9px; font-size: 24px; color: #06172e; }
+    .mini-vs { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; background: #eee8ff; color: #31168a; font-weight: 1000; }
+    .bar-list { display: grid; gap: 10px; }
+    .bar-row { display: grid; grid-template-columns: 70px 1fr 72px; gap: 10px; align-items: center; font-size: 12px; font-weight: 900; color: #17213a; }
+    .bar-track { height: 12px; border-radius: 999px; background: #eef2fb; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #a98bff, #6136ff); }
     tr.clickable { cursor: pointer; }
     .warn {
       border-left: 4px solid var(--gold);
@@ -3172,30 +3225,56 @@ const html = `<!doctype html>
       </div>
     </details>
 
-    <section id="buildingDetailSection">
-      <div class="detail-title">
-        <h2 id="detailTitle">건물을 선택하면 요약이 나옵니다</h2>
-        <span class="badge" id="detailBadge">검색부터 시작</span>
+    <section id="buildingDetailSection" class="building-result-shell">
+      <div class="building-result-topbar">
+        <div><span>건물 검색</span> <span>›</span> <strong id="buildingSearchCrumb">건물을 선택하세요</strong></div>
+        <div>데이터 기준일: <strong id="buildingDataDate">2026-06-23</strong></div>
       </div>
-      <p class="muted" id="detailMeta" style="margin-bottom:10px">검색창에서 건물을 고르면 이곳에 상담등급, 평당가, 월별 거래 흐름이 정리됩니다.</p>
-      <div class="commercial-report">
-        <div class="commercial-summary" id="detailCommercialSummary"></div>
-        <div class="commercial-actions">
-          <button type="button" class="button" data-commercial-action="copy-summary">요약 복사</button>
+      <div class="building-profile-card">
+        <img id="buildingProfileImage" src="magok-commercial-hero.png" alt="선택 건물 대표 이미지">
+        <div class="building-profile-copy">
+          <div class="detail-title">
+            <h2 id="detailTitle">건물을 선택하면 요약이 나옵니다</h2>
+            <span class="badge" id="detailBadge">검색부터 시작</span>
+          </div>
+          <p id="detailMeta">검색창에서 건물을 고르면 이곳에 상담등급, 평당가, 월별 거래 흐름이 정리됩니다.</p>
+          <div class="building-profile-chips" id="buildingProfileChips"></div>
+        </div>
+        <div class="building-profile-actions">
+          <button type="button" class="button secondary" data-commercial-action="copy-summary">요약 복사</button>
           <button type="button" class="button secondary" data-commercial-action="download-csv">CSV 다운로드</button>
           <button type="button" class="button secondary" data-commercial-action="print">인쇄/PDF</button>
-          <span class="commercial-status" id="commercialActionStatus"></span>
         </div>
       </div>
-      <div class="detail-tabs" id="detailUseTabs"></div>
-      <div class="detail-panel">
-        <div>
-          <div class="detail-stats" id="detailStats"></div>
+      <div class="detail-tabs building-view-tabs" id="detailUseTabs"></div>
+      <div class="commercial-report">
+        <div class="commercial-summary" id="detailCommercialSummary"></div>
+        <div class="commercial-actions"><span class="commercial-status" id="commercialActionStatus"></span></div>
+      </div>
+      <div class="building-result-grid">
+        <aside class="building-side-card">
+          <h3>위치</h3>
+          <div class="building-map-preview" id="buildingMapPreview">마곡동<br><span id="buildingMapLabel">건물 선택 대기</span></div>
+          <h3>건물 정보</h3>
+          <dl class="building-info-list" id="buildingInfoList"></dl>
+        </aside>
+        <section class="building-chart-card">
+          <h3>월별 평균 실거래가 추이 <span class="muted" id="buildingChartBasis">전용면적 기준</span></h3>
           <div class="detail-chart"><svg id="detailMonthlyChart" viewBox="0 0 920 360" role="img" aria-label="선택 건물 월단위 거래가격"></svg></div>
-        </div>
-        <div class="table-scroll"><table id="detailTransactionTable"></table></div>
+          <div class="detail-stats" id="detailStats"></div>
+        </section>
+        <aside class="building-recent-card">
+          <div class="detail-title"><h3>최근 실거래 내역</h3><button type="button" class="button secondary" data-commercial-action="download-csv">전체 보기</button></div>
+          <div class="table-scroll"><table id="detailTransactionTable"></table></div>
+          <p class="muted" style="margin-top:10px">상세 CSV에는 호실 후보, 호실검증, 호실 후보검증, 전용면적 오차㎡, 면적근거, 계약면적 근거, 직접공용㎡, 각층/기타공용㎡가 포함됩니다.</p>
+        </aside>
       </div>
-      <div class="detail-subsection">
+      <div class="building-lower-grid">
+        <section class="building-mini-card"><h3>현재 매물 vs 실거래 비교</h3><div class="mini-compare" id="buildingCompareMini"></div></section>
+        <section class="building-mini-card"><h3>층별 평균 거래가</h3><div class="bar-list" id="buildingFloorBars"></div></section>
+        <section class="building-mini-card"><h3>면적별 평균 평당가</h3><div class="bar-list" id="buildingAreaBars"></div></section>
+      </div>
+      <div class="detail-subsection building-mini-card">
         <h3>선택 건물 동일일자·동일층 묶음 거래</h3>
         <p class="muted" id="detailBundleMeta" style="margin-bottom:10px">선택 건물에서 같은 계약일·같은 층에 2건 이상 거래된 업무시설 호실을 합산해 보여줍니다.</p>
         <div class="table-scroll"><table id="detailSameDayBundleTable"></table></div>
@@ -3705,116 +3784,123 @@ const html = `<!doctype html>
       return "D 확인";
     }
 
+    function eokText(value) {
+      if (!Number.isFinite(value)) return "-";
+      if (Math.abs(value) >= 10000) return (value / 10000).toFixed(2) + "억원";
+      return money(value) + "만원";
+    }
+
+    function dealDateText(row) {
+      if (!row || !row.month) return "-";
+      return row.month.replace("-", ".") + "." + String(row.contract_day || "").padStart(2, "0");
+    }
+
+    function pyeongText(value) { return Number.isFinite(value) ? value.toFixed(2) + "평" : "-"; }
+    function floorText(value) { return value ? String(value) + "층" : "-"; }
+
+    function buildGroupedAverages(rows, groupFn, valueFn) {
+      const map = new Map();
+      for (const row of rows) {
+        const key = groupFn(row);
+        const value = valueFn(row);
+        if (!key || !Number.isFinite(value)) continue;
+        if (!map.has(key)) map.set(key, []);
+        map.get(key).push(value);
+      }
+      return [...map.entries()].map(([label, values]) => ({ label, value: medianClient(values), count: values.length }));
+    }
+
+    function renderBarList(targetId, rows, unit) {
+      const max = Math.max(...rows.map((row) => row.value).filter(Number.isFinite), 1);
+      document.getElementById(targetId).innerHTML = rows.length ? rows.map((row) => {
+        const width = Math.max(8, Math.round((row.value / max) * 100));
+        return '<div class="bar-row"><span>' + escapeSvg(row.label) + '</span><div class="bar-track"><div class="bar-fill" style="width:' + width + '%"></div></div><strong>' + escapeSvg(unit(row.value)) + '</strong></div>';
+      }).join("") : '<p class="muted">표시할 표본이 없습니다.</p>';
+    }
+
+    function renderBuildingInfo(group, rows, analysisRows) {
+      const years = analysisRows.map((row) => row.build_year).filter(Number.isFinite);
+      const floors = rows.map((row) => Number(row.floor)).filter(Number.isFinite).sort((a, b) => a - b);
+      const areas = rows.map((row) => row.exclusive_pyeong).filter(Number.isFinite).sort((a, b) => a - b);
+      const uses = [...new Set(rows.map((row) => row.main_use).filter(Boolean))].slice(0, 3).join(", ") || group.main_use || "자료 없음";
+      const infoRows = [["지번주소", group.parcel_label || "-"], ["도로명", group.road || "자료 없음"], ["용도", uses], ["사용승인", years.length ? Math.min(...years) + "년" : "자료 없음"], ["거래층", floors.length ? Math.min(...floors) + "층~" + Math.max(...floors) + "층" : "자료 없음"], ["전용면적", areas.length ? areas[0].toFixed(2) + "평~" + areas.at(-1).toFixed(2) + "평" : "자료 없음"]];
+      document.getElementById("buildingInfoList").innerHTML = infoRows.map(([label, value]) => '<div class="building-info-row"><dt>' + escapeSvg(label) + '</dt><dd>' + escapeSvg(value) + '</dd></div>').join("");
+    }
+
     function renderCommercialReport(group, rows, analysisRows, points, pyeongPrices, contractPyeongPrices) {
       const bundleRows = detailBundleRows(group);
-      const latest = points.at(-1);
-      const grade = commercialGrade(group, analysisRows, bundleRows, contractPyeongPrices);
+      const latestPoint = points.at(-1);
+      const latestRow = analysisRows[0] || rows[0] || null;
+      const latestYear = latestRow?.year;
+      const currentYearPrices = analysisRows.filter((row) => row.year === latestYear).map((row) => row.price_manwon).filter(Number.isFinite);
+      const previousYearPrices = analysisRows.filter((row) => row.year === latestYear - 1).map((row) => row.price_manwon).filter(Number.isFinite);
+      const currentMedian = medianClient(currentYearPrices);
+      const previousMedian = medianClient(previousYearPrices);
+      const change = currentMedian && previousMedian ? ((currentMedian - previousMedian) / previousMedian) * 100 : null;
       const summaryItems = [
-        ["상담등급", grade],
-        ["기준 전용평당가", money(medianClient(pyeongPrices)) + "만원"],
-        ["계약평당가", contractPyeongPrices.length ? money(medianClient(contractPyeongPrices)) + "만원" : "미확인"],
-        ["묶음거래", bundleRows.length ? fmt.format(bundleRows.length) + "개" : "없음"],
+        ["최근 거래가" + (latestRow ? " (" + dealDateText(latestRow).slice(0, 7) + ")" : ""), eokText(latestRow?.price_manwon), "전용 " + pyeongText(latestRow?.exclusive_pyeong) + " | " + floorText(latestRow?.floor), "₩"],
+        ["전년 대비", Number.isFinite(change) ? (change >= 0 ? "▲ " : "▼ ") + Math.abs(change).toFixed(1) + "%" : "-", previousMedian ? (latestYear - 1) + "년 " + eokText(previousMedian) + " → " + latestYear + "년 " + eokText(currentMedian) : "비교 표본 부족", "↗"],
+        ["거래 건수" + (latestYear ? " (" + latestYear + "년)" : ""), fmt.format(latestYear ? rows.filter((row) => row.year === latestYear).length : rows.length) + "건", "전체 " + fmt.format(rows.length) + "건 · 기준값 " + fmt.format(analysisRows.length) + "건", "▣"],
+        ["평당가", money(medianClient(pyeongPrices)) + "만원", "전용면적 기준 · 계약 " + (contractPyeongPrices.length ? money(medianClient(contractPyeongPrices)) + "만원" : "미확인"), "₩"],
       ];
-      document.getElementById("detailCommercialSummary").innerHTML = summaryItems
-        .map(([label, value]) => "<div><span>" + escapeSvg(label) + "</span><strong>" + escapeSvg(value) + "</strong></div>")
-        .join("");
-      document.getElementById("commercialActionStatus").textContent = latest
-        ? "최근월 " + latest.month + " 기준, " + fmt.format(rows.length) + "건을 상담용 리포트로 정리할 수 있습니다."
-        : "선택 건물의 상담용 리포트 원장을 정리할 수 있습니다.";
+      document.getElementById("detailCommercialSummary").innerHTML = summaryItems.map(([label, value, note, icon]) => '<div data-icon="' + escapeSvg(icon) + '"><span>' + escapeSvg(label) + '</span><strong>' + escapeSvg(value) + '</strong><small>' + escapeSvg(note) + '</small></div>').join("");
+      document.getElementById("commercialActionStatus").textContent = latestPoint ? "최근월 " + latestPoint.month + " 기준, " + fmt.format(rows.length) + "건을 상담용 리포트로 정리할 수 있습니다." : "선택 건물의 상담용 리포트 원장을 정리할 수 있습니다.";
     }
 
     function renderBuildingDetail() {
       const group = selectedMonthlyGroup();
       if (!group) {
-        document.getElementById("detailTitle").textContent = "건물별 월단위 거래가격";
-        document.getElementById("detailBadge").textContent = "검색 또는 표에서 건물 선택";
-        document.getElementById("detailMeta").textContent = "첫 화면은 특정 건물을 대표값처럼 보이지 않도록 마곡동 전체 기준으로 시작합니다. 건물명, 지번, 도로명으로 검색하거나 표의 건물을 클릭하면 이 영역에 선택 건물 상세가 표시됩니다.";
+        document.getElementById("buildingSearchCrumb").textContent = "건물 선택 대기";
+        document.getElementById("detailTitle").textContent = "건물을 선택하면 요약이 나옵니다";
+        document.getElementById("detailBadge").textContent = "검색부터 시작";
+        document.getElementById("detailMeta").textContent = "건물명, 지번, 도로명을 검색하면 이 영역이 건물 상세 화면으로 바뀝니다.";
+        document.getElementById("buildingProfileChips").innerHTML = '<span>검색 대기</span><span>상담 요약 준비</span><span>월별 그래프 준비</span>';
+        document.getElementById("buildingMapLabel").textContent = "건물 선택 대기";
+        document.getElementById("buildingInfoList").innerHTML = ["지번주소", "도로명", "용도", "사용승인", "거래층", "전용면적"].map((label) => '<div class="building-info-row"><dt>' + label + '</dt><dd>건물 선택 후 표시</dd></div>').join("");
         document.getElementById("detailUseTabs").innerHTML = "";
         document.getElementById("detailStats").innerHTML = "";
-        document.getElementById("detailCommercialSummary").innerHTML = [
-          ["상담 상태", "건물 선택 필요"],
-          ["요약 복사", "대기"],
-          ["CSV 원장", "대기"],
-          ["보고서", "인쇄/PDF 가능"],
-        ].map(([label, value]) => "<div><span>" + escapeSvg(label) + "</span><strong>" + escapeSvg(value) + "</strong></div>").join("");
-        document.getElementById("commercialActionStatus").textContent = "건물을 선택하면 상용화 액션이 활성화됩니다.";
+        document.getElementById("detailCommercialSummary").innerHTML = [["상담 상태", "건물 선택 필요", "검색하면 즉시 요약 카드가 열립니다", "⌕"], ["최근 거래", "대기", "건물별 최신 거래를 표시합니다", "₩"], ["월별 그래프", "대기", "거래금액 변동을 보여줍니다", "↗"], ["원장 저장", "대기", "CSV·인쇄 기능 제공", "▣"]].map(([label, value, note, icon]) => '<div data-icon="' + icon + '"><span>' + label + '</span><strong>' + value + '</strong><small>' + note + '</small></div>').join("");
+        document.getElementById("commercialActionStatus").textContent = "검색창에서 건물을 선택하세요.";
         document.getElementById("detailMonthlyChart").innerHTML = '<text x="24" y="58" fill="#647083" font-size="15">건물을 선택하면 월단위 거래가격이 표시됩니다.</text>';
-        document.getElementById("detailTransactionTable").innerHTML = '<tbody><tr><td>건물을 선택하면 개별 거래내역이 표시됩니다.</td></tr></tbody>';
+        document.getElementById("detailTransactionTable").innerHTML = '<tbody><tr><td>건물을 선택하면 최근 실거래 내역이 표시됩니다.</td></tr></tbody>';
+        document.getElementById("buildingCompareMini").innerHTML = '<p class="muted">건물 선택 후 표시됩니다.</p>';
+        document.getElementById("buildingFloorBars").innerHTML = '<p class="muted">건물 선택 후 표시됩니다.</p>';
+        document.getElementById("buildingAreaBars").innerHTML = '<p class="muted">건물 선택 후 표시됩니다.</p>';
         document.getElementById("detailBundleMeta").textContent = "건물을 선택하면 동일일자·동일층 묶음 거래가 표시됩니다.";
         document.getElementById("detailSameDayBundleTable").innerHTML = '<tbody><tr><td>건물을 선택하세요.</td></tr></tbody>';
         return;
       }
-      const allRows = data.records
-        .filter((record) => record.parcel_key === group.parcel_key)
-        .sort((a, b) => (b.month || "").localeCompare(a.month || "") || (b.contract_day || 0) - (a.contract_day || 0));
+      const allRows = data.records.filter((record) => record.parcel_key === group.parcel_key).sort((a, b) => (b.month || "").localeCompare(a.month || "") || (b.contract_day || 0) - (a.contract_day || 0));
       renderDetailUseTabs(allRows);
-      const rows = state.selectedUseCategory === "all"
-        ? allRows
-        : allRows.filter((record) => useCategory(record) === state.selectedUseCategory);
+      const rows = state.selectedUseCategory === "all" ? allRows : allRows.filter((record) => useCategory(record) === state.selectedUseCategory);
       const analysisRows = rows.filter((row) => row.analysis_eligible !== false);
       const prices = analysisRows.map((row) => row.price_manwon).filter(Number.isFinite);
       const pyeongPrices = analysisRows.map((row) => row.exclusive_ppyeong_manwon).filter(Number.isFinite);
-      const supplyPyeongPrices = analysisRows.map((row) => row.supply_ppyeong_manwon).filter(Number.isFinite);
       const contractPyeongPrices = analysisRows.map((row) => row.contract_ppyeong_manwon).filter(Number.isFinite);
-      const matchedContractRows = analysisRows.filter((row) => Number.isFinite(row.contract_area_sqm)).length;
-      const roomCandidateRows = analysisRows.filter((row) => row.contract_area_confidence).length;
-      const bulkRows = rows.filter((row) => row.bulk_deal_candidate);
       const points = monthlyPointsFromRows(analysisRows);
       const latest = points.at(-1);
       const years = [...new Set(rows.map((row) => row.year).filter(Boolean))].sort((a, b) => a - b);
       const publicStart = data.source.requested_years?.[0] || data.source.available_years?.[0];
-      const coverageNote = years.length
-        ? (publicStart && years[0] > publicStart ? " · 정확 지번 공개 관측 " + years[0] + "-" + years.at(-1) + "년만 표시" : " · 관측 " + years[0] + "-" + years.at(-1) + "년")
-        : " · 관측 없음";
+      const coverageNote = years.length ? (publicStart && years[0] > publicStart ? " · 정확 지번 공개 관측 " + years[0] + "-" + years.at(-1) + "년만 표시" : " · 관측 " + years[0] + "-" + years.at(-1) + "년") : " · 관측 없음";
       const title = buildingTitle(group);
-      document.getElementById("detailTitle").textContent = title + " · " + useCategoryLabel(state.selectedUseCategory);
       const probableCount = rows.filter((row) => row.probable_parcel_key).length;
-      document.getElementById("detailBadge").textContent = group.is_masked_parcel ? "미확정 보조그룹" : (probableCount ? "정확+추정" : (group.building_name_status || "정확 지번"));
-      document.getElementById("detailMeta").textContent = group.parcel_label + " · " + useCategoryLabel(state.selectedUseCategory) + " 거래 " + fmt.format(rows.length) + "건 · 관측월 " + fmt.format(points.length) + "개월 · 최근월 " + (latest?.month || "-") + coverageNote;
+      document.getElementById("buildingSearchCrumb").textContent = title;
+      document.getElementById("detailTitle").textContent = title;
+      document.getElementById("detailBadge").textContent = useCategoryLabel(state.selectedUseCategory);
+      document.getElementById("detailMeta").textContent = (group.road || group.parcel_label || "마곡동") + " · " + useCategoryLabel(state.selectedUseCategory) + " 거래 " + fmt.format(rows.length) + "건 · 관측월 " + fmt.format(points.length) + "개월 · 최근월 " + (latest?.month || "-") + coverageNote;
+      document.getElementById("buildingProfileChips").innerHTML = [group.is_masked_parcel ? "미확정 보조그룹" : (probableCount ? "정확+추정" : (group.building_name_status || "정확 지번")), "지번 " + (group.parcel_label || "-"), "거래 " + fmt.format(rows.length) + "건", "계약면적 " + (contractPyeongPrices.length ? "확인" : "미확인")].map((text) => '<span>' + escapeSvg(text) + '</span>').join("");
+      document.getElementById("buildingMapLabel").textContent = title;
       renderCommercialReport(group, rows, analysisRows, points, pyeongPrices, contractPyeongPrices);
-      document.getElementById("detailStats").innerHTML = [
-        ["기준값 반영", fmt.format(analysisRows.length) + "건"],
-        ["최근 평균금액", latest ? money(latest.avg_price_manwon) + "만원" : "-"],
-        ["중위 거래금액", money(medianClient(prices)) + "만원"],
-        ["최저-최고", prices.length ? money(Math.min(...prices)) + "-" + money(Math.max(...prices)) : "-"],
-        ["중위 전용평당가", money(medianClient(pyeongPrices)) + "만원"],
-        ["중위 공급평당가", supplyPyeongPrices.length ? money(medianClient(supplyPyeongPrices)) + "만원" : "미확인"],
-        ["중위 계약평당가", contractPyeongPrices.length ? money(medianClient(contractPyeongPrices)) + "만원" : "미확인"],
-        ["계약면적 매칭", fmt.format(matchedContractRows) + "건"],
-        ["호실 후보검증", roomCandidateRows ? fmt.format(roomCandidateRows) + "건" : "미검증"],
-        ["일괄/통건물 후보", bulkRows.length ? fmt.format(bulkRows.length) + "건 제외" : "-"],
-        ["마스킹 추정", probableCount ? fmt.format(probableCount) + "건" : "-"],
-        ["월단위 변동", pct(monthlyAmountChange({ points }))],
-      ].map(([label, value]) => \`<div class="detail-stat"><span>\${label}</span><strong>\${value}</strong></div>\`).join("");
+      renderBuildingInfo(group, rows, analysisRows);
+      document.getElementById("detailStats").innerHTML = [["기준값 반영", fmt.format(analysisRows.length) + "건"], ["최저-최고", prices.length ? eokText(Math.min(...prices)) + "~" + eokText(Math.max(...prices)) : "-"], ["중위 계약평당가", contractPyeongPrices.length ? money(medianClient(contractPyeongPrices)) + "만원" : "미확인"]].map(([label, value]) => '<div class="detail-stat"><span>' + escapeSvg(label) + '</span><strong>' + escapeSvg(value) + '</strong></div>').join("");
       drawDetailMonthlyChart(group, points);
-      document.getElementById("detailTransactionTable").innerHTML = \`
-        <thead><tr><th>계약월</th><th>일</th><th>층</th><th>용도</th><th>호실 후보</th><th>호실검증</th><th>전용면적 오차㎡</th><th>전용㎡</th><th>공급㎡ 후보</th><th>계약㎡</th><th>직접공용㎡</th><th>각층/기타공용㎡</th><th>면적근거</th><th>거래금액</th><th>전용평당가</th><th>공급평당가</th><th>계약평당가</th><th>기준값 반영</th><th>거래유형</th></tr></thead>
-        <tbody>
-        \${rows.map((row) => \`
-          <tr>
-            <td>\${escapeSvg(row.month || "-")}</td>
-            <td>\${row.contract_day || "-"}</td>
-            <td>\${escapeSvg(row.floor || "-")}</td>
-            <td>\${escapeSvg(row.main_use || "-")}</td>
-            <td>\${escapeSvg(roomCandidateText(row))}</td>
-            <td><span class="badge \${row.contract_area_confidence === "rough_floor_area_nearest" || !row.contract_area_confidence ? "pill-warning" : ""}">\${escapeSvg(roomValidationLabel(row))}</span></td>
-            <td>\${Number.isFinite(row.contract_area_exclusive_delta_sqm) ? row.contract_area_exclusive_delta_sqm.toFixed(2) : "-"}</td>
-            <td>\${Number.isFinite(row.area_sqm) ? row.area_sqm.toFixed(2) : "-"}</td>
-            <td>\${Number.isFinite(row.supply_area_sqm) ? row.supply_area_sqm.toFixed(2) : "미확인"}</td>
-            <td>\${Number.isFinite(row.contract_area_sqm) ? row.contract_area_sqm.toFixed(2) : "미확인"}</td>
-            <td>\${Number.isFinite(row.direct_common_area_sqm) ? row.direct_common_area_sqm.toFixed(2) : "-"}</td>
-            <td>\${Number.isFinite(row.shared_common_area_sqm) ? row.shared_common_area_sqm.toFixed(2) : "-"}</td>
-            <td>\${escapeSvg(row.probable_parcel_key ? "추정" : row.contract_area_confidence === "rough_floor_area_nearest" ? "추정" : row.contract_area_confidence ? "안전" : "-")}</td>
-            <td>\${money(row.price_manwon)}</td>
-            <td>\${money(row.exclusive_ppyeong_manwon)}</td>
-            <td>\${money(row.supply_ppyeong_manwon)}</td>
-            <td>\${money(row.contract_ppyeong_manwon)}</td>
-            <td>\${row.analysis_eligible === false ? '<span class="badge pill-warning">제외 · ' + escapeSvg((row.analysis_exclusion_reasons || []).join(", ")) + '</span>' : '<span class="badge">반영</span>'}</td>
-            <td>\${escapeSvg(row.probable_parcel_key ? (row.transaction_type || "-") + " · 지번마스킹추정" : row.transaction_type || "-")}</td>
-          </tr>
-        \`).join("")}
-        </tbody>
-      \`;
+      const recentRows = rows.slice(0, 8);
+      document.getElementById("detailTransactionTable").innerHTML = '<thead><tr><th>계약일</th><th>층</th><th>전용면적</th><th>거래금액</th></tr></thead><tbody>' + (recentRows.length ? recentRows.map((row) => '<tr><td>' + escapeSvg(dealDateText(row)) + '</td><td>' + escapeSvg(floorText(row.floor)) + '</td><td>' + escapeSvg(pyeongText(row.exclusive_pyeong)) + '</td><td><strong>' + escapeSvg(eokText(row.price_manwon)) + '</strong></td></tr>').join("") : '<tr><td colspan="4">표시할 거래가 없습니다.</td></tr>') + '</tbody>';
+      const latestPrice = analysisRows[0]?.price_manwon;
+      const medianPrice = medianClient(prices);
+      document.getElementById("buildingCompareMini").innerHTML = '<div class="mini-price-box"><span>최근 거래</span><strong>' + escapeSvg(eokText(latestPrice)) + '</strong><small>최근 실거래 기준</small></div><div class="mini-vs">VS</div><div class="mini-price-box"><span>중위 거래</span><strong>' + escapeSvg(eokText(medianPrice)) + '</strong><small>선택 용도 기준</small></div>';
+      renderBarList("buildingFloorBars", buildGroupedAverages(analysisRows, (row) => row.floor ? floorText(row.floor) : null, (row) => row.price_manwon).slice(0, 5), (value) => eokText(value));
+      renderBarList("buildingAreaBars", buildGroupedAverages(analysisRows, (row) => areaBandClient(row.area_sqm).label, (row) => row.exclusive_ppyeong_manwon).slice(0, 5), (value) => money(value));
       renderDetailSameDayBundleTable(group);
     }
 
