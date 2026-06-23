@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-06-08T14:18:41Z",
+  "git_sha": "",
+  "goals": [
+    {
+      "goal_id": "unresolved-masked-zero",
+      "result": "fail",
+      "duration_s": 7.4143789,
+      "output": "/bin/bash: line 1: node: command not found",
+      "weight": 10
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "passing": 0,
+    "failing": 1,
+    "skipped": 0,
+    "score": 0,
+    "code_driven_total": 1,
+    "code_driven_passing": 0,
+    "code_driven_failing": 1,
+    "code_driven_skipped": 0,
+    "code_driven_score": 0,
+    "runtime_artifact_total": 0,
+    "runtime_artifact_passing": 0,
+    "runtime_artifact_failing": 0
+  }
+}

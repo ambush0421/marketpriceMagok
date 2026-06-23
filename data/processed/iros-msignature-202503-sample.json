@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "status": 200,
+  "contentType": "application/xml;charset=UTF-8",
+  "url": "https://data.iros.go.kr/openapi/cr/rs/selectCrRsRgsCsOpenApi.rest?id=0000000305&reqtype=xml&key=[redacted]&search_type_api=02&search_start_date_api=202503&search_end_date_api=202503&search_amt_sect=04&search_area_sect=003&search_regn1_name_api=900&search_regn2_name_api=904&search_buld_name=%EC%97%A0%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98",
+  "length": 683,
+  "starts": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><head><returnCode>APIINFO-0001</returnCode><returnMessage>정상 처리되었습니다.</returnMessage><totCount>2</totCount></head><items><item><regnAddr>서울특별시 강서구 마곡동</regnAddr><lotNo>798-14</lotNo><buldName>마곡엠시그니처</buldName><buldNoFloor>6</buldNoFloor><rgsCausDate>2025-03-25</rgsCausDate><recevDate>2025-03-31</recevDate><area>49.45</area><dealAmt>437,770,000</dealAmt></item><item><regnAddr>서울특별시 강서구 마곡동</regnAddr><lotNo>798-14</lotNo><buldName>마곡엠시그니처</buldName><buldNoFloor>6</buldNoFloor><rgsCausDate>2025-03-25</rgsCausDate><recevDate>2025-03-31</recevDate><area>46</area><dealAmt>407,230,000</dealAmt></item></items></result>\n"
+}

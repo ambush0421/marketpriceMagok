@@ -1,0 +1,7 @@
+.env.local
+data/processed/api-commercial-monthly-raw.json
+data/processed/building-hub-area-results.json
+.codex-tmp/
+magok-dashboard-current-redesign.png
+node_modules/
+dist/

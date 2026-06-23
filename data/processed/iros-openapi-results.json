@@ -1,0 +1,423 @@
+{
+  "generated_at": "2026-06-08T12:49:13.797Z",
+  "mode": "plan-only",
+  "api_limit_note": "등기정보광장 해당 API는 화면 명세 기준 일 최대 10회, 요청 최대 1,000건 제한이다.",
+  "strategy": "최근 3년 전체 기간을 한 번에 조회하고, 1,000건 초과 위험이 있을 때만 기간을 분할한다.",
+  "call_count": 10,
+  "requests": [
+    {
+      "type": "02",
+      "start": "202312",
+      "end": "202402",
+      "amount": "03",
+      "amount_label": "2억 초과 4억 이하",
+      "area": "002",
+      "area_label": "21㎡ ~ 40㎡",
+      "region1": "900",
+      "region1_label": "서울특별시",
+      "region2": "904",
+      "region2_label": "강서구",
+      "building": "",
+      "filter_dong": "마곡동",
+      "expected_public_data_count": 47
+    },
+    {
+      "type": "02",
+      "start": "202403",
+      "end": "202405",
+      "amount": "03",
+      "amount_label": "2억 초과 4억 이하",
+      "area": "002",
+      "area_label": "21㎡ ~ 40㎡",
+      "region1": "900",
+      "region1_label": "서울특별시",
+      "region2": "904",
+      "region2_label": "강서구",
+      "building": "",
+      "filter_dong": "마곡동",
+      "expected_public_data_count": 15
+    },
+    {
+      "type": "02",
+      "start": "202406",
+      "end": "202408",
+      "amount": "03",
+      "amount_label": "2억 초과 4억 이하",
+      "area": "002",
+      "area_label": "21㎡ ~ 40㎡",
+      "region1": "900",
+      "region1_label": "서울특별시",
+      "region2": "904",
+      "region2_label": "강서구",
+      "building": "",
+      "filter_dong": "마곡동",
+      "expected_public_data_count": 38
+    },
+    {
+      "type": "02",
+      "start": "202409",
+      "end": "202411",
+      "amount": "03",
+      "amount_label": "2억 초과 4억 이하",
+      "area": "002",
+      "area_label": "21㎡ ~ 40㎡",
+      "region1": "900",
+      "region1_label": "서울특별시",
+      "region2": "904",
+      "region2_label": "강서구",
+      "building": "",
+      "filter_dong": "마곡동",
+      "expected_public_data_count": 18
+    },
+    {
+      "type": "02",
+      "start": "202412",
+      "end": "202502",
+      "amount": "03",
+      "amount_label": "2억 초과 4억 이하",
+      "area": "002",
+      "area_label": "21㎡ ~ 40㎡",
+      "region1": "900",
+      "region1_label": "서울특별시",
+      "region2": "904",
+      "region2_label": "강서구",
+      "building": "",
+      "filter_dong": "마곡동",
+      "expected_public_data_count": 13
+    },
+    {
+      "type": "02",
+      "start": "202503",
+      "end": "202505",
+      "amount": "03",
+      "amount_label": "2억 초과 4억 이하",
+      "area": "002",
+      "area_label": "21㎡ ~ 40㎡",
+      "region1": "900",
+      "region1_label": "서울특별시",
+      "region2": "904",
+      "region2_label": "강서구",
+      "building": "",
+      "filter_dong": "마곡동",
+      "expected_public_data_count": 30
+    },
+    {
+      "type": "02",
+      "start": "202506",
+      "end": "202508",
+      "amount": "03",
+      "amount_label": "2억 초과 4억 이하",
+      "area": "002",
+      "area_label": "21㎡ ~ 40㎡",
+      "region1": "900",
+      "region1_label": "서울특별시",
+      "region2": "904",
+      "region2_label": "강서구",
+      "building": "",
+      "filter_dong": "마곡동",
+      "expected_public_data_count": 14
+    },
+    {
+      "type": "02",
+      "start": "202509",
+      "end": "202511",
+      "amount": "02",
+      "amount_label": "1억 초과 2억 이하",
+      "area": "002",
+      "area_label": "21㎡ ~ 40㎡",
+      "region1": "900",
+      "region1_label": "서울특별시",
+      "region2": "904",
+      "region2_label": "강서구",
+      "building": "",
+      "filter_dong": "마곡동",
+      "expected_public_data_count": 12
+    },
+    {
+      "type": "02",
+      "start": "202512",
+      "end": "202602",
+      "amount": "02",
+      "amount_label": "1억 초과 2억 이하",
+      "area": "002",
+      "area_label": "21㎡ ~ 40㎡",
+      "region1": "900",
+      "region1_label": "서울특별시",
+      "region2": "904",
+      "region2_label": "강서구",
+      "building": "",
+      "filter_dong": "마곡동",
+      "expected_public_data_count": 11
+    },
+    {
+      "type": "02",
+      "start": "202603",
+      "end": "202605",
+      "amount": "03",
+      "amount_label": "2억 초과 4억 이하",
+      "area": "002",
+      "area_label": "21㎡ ~ 40㎡",
+      "region1": "900",
+      "region1_label": "서울특별시",
+      "region2": "904",
+      "region2_label": "강서구",
+      "building": "",
+      "filter_dong": "마곡동",
+      "expected_public_data_count": 17
+    }
+  ],
+  "responses": [
+    {
+      "request": {
+        "type": "02",
+        "start": "202312",
+        "end": "202402",
+        "amount": "03",
+        "amount_label": "2억 초과 4억 이하",
+        "area": "002",
+        "area_label": "21㎡ ~ 40㎡",
+        "region1": "900",
+        "region1_label": "서울특별시",
+        "region2": "904",
+        "region2_label": "강서구",
+        "building": "",
+        "filter_dong": "마곡동",
+        "expected_public_data_count": 47
+      },
+      "request_url": "sample:data/processed/iros-msignature-202503-sample.json",
+      "response": {
+        "code": "PLANNED",
+        "message": "실제 호출 전 계획만 생성됨",
+        "totalCount": 0
+      },
+      "row_count": 0
+    },
+    {
+      "request": {
+        "type": "02",
+        "start": "202403",
+        "end": "202405",
+        "amount": "03",
+        "amount_label": "2억 초과 4억 이하",
+        "area": "002",
+        "area_label": "21㎡ ~ 40㎡",
+        "region1": "900",
+        "region1_label": "서울특별시",
+        "region2": "904",
+        "region2_label": "강서구",
+        "building": "",
+        "filter_dong": "마곡동",
+        "expected_public_data_count": 15
+      },
+      "request_url": "sample:data/processed/iros-msignature-202503-sample.json",
+      "response": {
+        "code": "PLANNED",
+        "message": "실제 호출 전 계획만 생성됨",
+        "totalCount": 0
+      },
+      "row_count": 0
+    },
+    {
+      "request": {
+        "type": "02",
+        "start": "202406",
+        "end": "202408",
+        "amount": "03",
+        "amount_label": "2억 초과 4억 이하",
+        "area": "002",
+        "area_label": "21㎡ ~ 40㎡",
+        "region1": "900",
+        "region1_label": "서울특별시",
+        "region2": "904",
+        "region2_label": "강서구",
+        "building": "",
+        "filter_dong": "마곡동",
+        "expected_public_data_count": 38
+      },
+      "request_url": "sample:data/processed/iros-msignature-202503-sample.json",
+      "response": {
+        "code": "PLANNED",
+        "message": "실제 호출 전 계획만 생성됨",
+        "totalCount": 0
+      },
+      "row_count": 0
+    },
+    {
+      "request": {
+        "type": "02",
+        "start": "202409",
+        "end": "202411",
+        "amount": "03",
+        "amount_label": "2억 초과 4억 이하",
+        "area": "002",
+        "area_label": "21㎡ ~ 40㎡",
+        "region1": "900",
+        "region1_label": "서울특별시",
+        "region2": "904",
+        "region2_label": "강서구",
+        "building": "",
+        "filter_dong": "마곡동",
+        "expected_public_data_count": 18
+      },
+      "request_url": "sample:data/processed/iros-msignature-202503-sample.json",
+      "response": {
+        "code": "PLANNED",
+        "message": "실제 호출 전 계획만 생성됨",
+        "totalCount": 0
+      },
+      "row_count": 0
+    },
+    {
+      "request": {
+        "type": "02",
+        "start": "202412",
+        "end": "202502",
+        "amount": "03",
+        "amount_label": "2억 초과 4억 이하",
+        "area": "002",
+        "area_label": "21㎡ ~ 40㎡",
+        "region1": "900",
+        "region1_label": "서울특별시",
+        "region2": "904",
+        "region2_label": "강서구",
+        "building": "",
+        "filter_dong": "마곡동",
+        "expected_public_data_count": 13
+      },
+      "request_url": "sample:data/processed/iros-msignature-202503-sample.json",
+      "response": {
+        "code": "PLANNED",
+        "message": "실제 호출 전 계획만 생성됨",
+        "totalCount": 0
+      },
+      "row_count": 0
+    },
+    {
+      "request": {
+        "type": "02",
+        "start": "202503",
+        "end": "202505",
+        "amount": "03",
+        "amount_label": "2억 초과 4억 이하",
+        "area": "002",
+        "area_label": "21㎡ ~ 40㎡",
+        "region1": "900",
+        "region1_label": "서울특별시",
+        "region2": "904",
+        "region2_label": "강서구",
+        "building": "",
+        "filter_dong": "마곡동",
+        "expected_public_data_count": 30
+      },
+      "request_url": "sample:data/processed/iros-msignature-202503-sample.json",
+      "response": {
+        "code": "PLANNED",
+        "message": "실제 호출 전 계획만 생성됨",
+        "totalCount": 0
+      },
+      "row_count": 0
+    },
+    {
+      "request": {
+        "type": "02",
+        "start": "202506",
+        "end": "202508",
+        "amount": "03",
+        "amount_label": "2억 초과 4억 이하",
+        "area": "002",
+        "area_label": "21㎡ ~ 40㎡",
+        "region1": "900",
+        "region1_label": "서울특별시",
+        "region2": "904",
+        "region2_label": "강서구",
+        "building": "",
+        "filter_dong": "마곡동",
+        "expected_public_data_count": 14
+      },
+      "request_url": "sample:data/processed/iros-msignature-202503-sample.json",
+      "response": {
+        "code": "PLANNED",
+        "message": "실제 호출 전 계획만 생성됨",
+        "totalCount": 0
+      },
+      "row_count": 0
+    },
+    {
+      "request": {
+        "type": "02",
+        "start": "202509",
+        "end": "202511",
+        "amount": "02",
+        "amount_label": "1억 초과 2억 이하",
+        "area": "002",
+        "area_label": "21㎡ ~ 40㎡",
+        "region1": "900",
+        "region1_label": "서울특별시",
+        "region2": "904",
+        "region2_label": "강서구",
+        "building": "",
+        "filter_dong": "마곡동",
+        "expected_public_data_count": 12
+      },
+      "request_url": "sample:data/processed/iros-msignature-202503-sample.json",
+      "response": {
+        "code": "PLANNED",
+        "message": "실제 호출 전 계획만 생성됨",
+        "totalCount": 0
+      },
+      "row_count": 0
+    },
+    {
+      "request": {
+        "type": "02",
+        "start": "202512",
+        "end": "202602",
+        "amount": "02",
+        "amount_label": "1억 초과 2억 이하",
+        "area": "002",
+        "area_label": "21㎡ ~ 40㎡",
+        "region1": "900",
+        "region1_label": "서울특별시",
+        "region2": "904",
+        "region2_label": "강서구",
+        "building": "",
+        "filter_dong": "마곡동",
+        "expected_public_data_count": 11
+      },
+      "request_url": "sample:data/processed/iros-msignature-202503-sample.json",
+      "response": {
+        "code": "PLANNED",
+        "message": "실제 호출 전 계획만 생성됨",
+        "totalCount": 0
+      },
+      "row_count": 0
+    },
+    {
+      "request": {
+        "type": "02",
+        "start": "202603",
+        "end": "202605",
+        "amount": "03",
+        "amount_label": "2억 초과 4억 이하",
+        "area": "002",
+        "area_label": "21㎡ ~ 40㎡",
+        "region1": "900",
+        "region1_label": "서울특별시",
+        "region2": "904",
+        "region2_label": "강서구",
+        "building": "",
+        "filter_dong": "마곡동",
+        "expected_public_data_count": 17
+      },
+      "request_url": "sample:data/processed/iros-msignature-202503-sample.json",
+      "response": {
+        "code": "PLANNED",
+        "message": "실제 호출 전 계획만 생성됨",
+        "totalCount": 0
+      },
+      "row_count": 0
+    }
+  ],
+  "row_count": 0,
+  "items": []
+}

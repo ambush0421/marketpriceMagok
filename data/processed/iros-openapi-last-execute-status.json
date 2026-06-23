@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-06-08T12:48:20.884Z",
+  "mode": "api-execute",
+  "api_limit_note": "등기정보광장 해당 API는 화면 명세 기준 일 최대 10회, 요청 최대 1,000건 제한이다.",
+  "strategy": "최근 3년 전체 기간을 한 번에 조회하고, 1,000건 초과 위험이 있을 때만 기간을 분할한다.",
+  "call_count": 1,
+  "requests": [
+    {
+      "type": "02",
+      "start": "202603",
+      "end": "202605",
+      "amount": "03",
+      "amount_label": "2억 초과 4억 이하",
+      "area": "002",
+      "area_label": "21㎡ ~ 40㎡",
+      "region1": "900",
+      "region1_label": "서울특별시",
+      "region2": "904",
+      "region2_label": "강서구",
+      "building": "",
+      "filter_dong": "마곡동",
+      "expected_public_data_count": 17
+    }
+  ],
+  "responses": [
+    {
+      "request": {
+        "type": "02",
+        "start": "202603",
+        "end": "202605",
+        "amount": "03",
+        "amount_label": "2억 초과 4억 이하",
+        "area": "002",
+        "area_label": "21㎡ ~ 40㎡",
+        "region1": "900",
+        "region1_label": "서울특별시",
+        "region2": "904",
+        "region2_label": "강서구",
+        "building": "",
+        "filter_dong": "마곡동",
+        "expected_public_data_count": 17
+      },
+      "request_url": "https://data.iros.go.kr/openapi/cr/rs/selectCrRsRgsCsOpenApi.rest?id=0000000305&reqtype=xml&key=[redacted]&search_type_api=02&search_start_date_api=202603&search_end_date_api=202605&search_amt_sect=03&search_area_sect=002&search_regn1_name_api=900&search_regn2_name_api=904",
+      "response": {
+        "code": "APIERROR-0003",
+        "message": "일별 트래픽 제한을 넘은 호출입니다. 오늘은 더이상 호출할 수 없습니다.",
+        "totalCount": 0
+      },
+      "row_count": 0
+    }
+  ],
+  "row_count": 0,
+  "items": []
+}

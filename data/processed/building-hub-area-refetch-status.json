@@ -1,0 +1,112 @@
+{
+  "ok": true,
+  "endpoint": "https://apis.data.go.kr/1613000/BldRgstHubService/getBrExposPubuseAreaInfo",
+  "refetched": [
+    {
+      "parcel": "743-4",
+      "totalCount": 7337,
+      "effectivePageSize": 100,
+      "fetchedCount": 7337,
+      "uniqueCount": 7337
+    },
+    {
+      "parcel": "744",
+      "totalCount": 17375,
+      "effectivePageSize": 100,
+      "fetchedCount": 17375,
+      "uniqueCount": 17375
+    },
+    {
+      "parcel": "746-1",
+      "totalCount": 3483,
+      "effectivePageSize": 100,
+      "fetchedCount": 3483,
+      "uniqueCount": 3483
+    },
+    {
+      "parcel": "747",
+      "totalCount": 3559,
+      "effectivePageSize": 100,
+      "fetchedCount": 3559,
+      "uniqueCount": 3559
+    },
+    {
+      "parcel": "757",
+      "totalCount": 3975,
+      "effectivePageSize": 100,
+      "fetchedCount": 3975,
+      "uniqueCount": 3975
+    },
+    {
+      "parcel": "758-2",
+      "totalCount": 3760,
+      "effectivePageSize": 100,
+      "fetchedCount": 3760,
+      "uniqueCount": 3760
+    },
+    {
+      "parcel": "759-1",
+      "totalCount": 2204,
+      "effectivePageSize": 100,
+      "fetchedCount": 2204,
+      "uniqueCount": 2204
+    },
+    {
+      "parcel": "760",
+      "totalCount": 7421,
+      "effectivePageSize": 100,
+      "fetchedCount": 7421,
+      "uniqueCount": 7421
+    },
+    {
+      "parcel": "767-4",
+      "totalCount": 6828,
+      "effectivePageSize": 100,
+      "fetchedCount": 6828,
+      "uniqueCount": 6828
+    },
+    {
+      "parcel": "773",
+      "totalCount": 2889,
+      "effectivePageSize": 100,
+      "fetchedCount": 2889,
+      "uniqueCount": 2889
+    },
+    {
+      "parcel": "773-1",
+      "totalCount": 2204,
+      "effectivePageSize": 100,
+      "fetchedCount": 2204,
+      "uniqueCount": 2204
+    },
+    {
+      "parcel": "773-3",
+      "totalCount": 3864,
+      "effectivePageSize": 100,
+      "fetchedCount": 3864,
+      "uniqueCount": 3864
+    },
+    {
+      "parcel": "776",
+      "totalCount": 5318,
+      "effectivePageSize": 100,
+      "fetchedCount": 5318,
+      "uniqueCount": 5318
+    },
+    {
+      "parcel": "797-1",
+      "totalCount": 2300,
+      "effectivePageSize": 100,
+      "fetchedCount": 2300,
+      "uniqueCount": 2300
+    },
+    {
+      "parcel": "797-14",
+      "totalCount": 2215,
+      "effectivePageSize": 100,
+      "fetchedCount": 2215,
+      "uniqueCount": 2215
+    }
+  ],
+  "errors": []
+}

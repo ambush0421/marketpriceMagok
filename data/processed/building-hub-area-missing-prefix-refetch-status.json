@@ -1,0 +1,2604 @@
+{
+  "ok": true,
+  "prefixes": [
+    "7",
+    "1",
+    "8"
+  ],
+  "target_count": 432,
+  "refetched": [
+    {
+      "parcel": "7-5",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "7-7",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "7-8",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "7-12",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "7-14",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "7-15",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "7-17",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "8-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "10-4",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "12-1",
+      "totalCount": 16,
+      "fetchedCount": 16,
+      "uniqueCount": 16
+    },
+    {
+      "parcel": "12-2",
+      "totalCount": 280,
+      "fetchedCount": 280,
+      "uniqueCount": 280
+    },
+    {
+      "parcel": "14-5",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "14-6",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "14-12",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "14-20",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "15-6",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "74",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "718",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "719",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "720",
+      "totalCount": 28,
+      "fetchedCount": 28,
+      "uniqueCount": 28
+    },
+    {
+      "parcel": "722",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "722-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "722-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "722-3",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "722-4",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "723",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "723-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "730-90",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "731-253",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "733-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "733-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "733-3",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "734-3",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "734-4",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "734-5",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "736-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "737",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "737-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "737-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "737-5",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "737-6",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "737-7",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "737-8",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "737-9",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "737-10",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "737-11",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "737-12",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "737-13",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "737-14",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "737-15",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "737-19",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "737-20",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "738-3",
+      "totalCount": 179,
+      "fetchedCount": 179,
+      "uniqueCount": 179
+    },
+    {
+      "parcel": "738-4",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "739",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "739-2",
+      "totalCount": 1556,
+      "fetchedCount": 1556,
+      "uniqueCount": 1556
+    },
+    {
+      "parcel": "742-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "742-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "743-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "743-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "743-5",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "745",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "745-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "745-4",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "748",
+      "totalCount": 8409,
+      "fetchedCount": 8409,
+      "uniqueCount": 8409
+    },
+    {
+      "parcel": "749",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "749-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "749-3",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "749-4",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "749-8",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "752",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "754",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "755-5",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "755-7",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "755-8",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "755-10",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "756",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "756-5",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "758",
+      "totalCount": 909,
+      "fetchedCount": 909,
+      "uniqueCount": 909
+    },
+    {
+      "parcel": "758-1",
+      "totalCount": 852,
+      "fetchedCount": 852,
+      "uniqueCount": 852
+    },
+    {
+      "parcel": "758-3",
+      "totalCount": 966,
+      "fetchedCount": 966,
+      "uniqueCount": 966
+    },
+    {
+      "parcel": "758-4",
+      "totalCount": 1988,
+      "fetchedCount": 1988,
+      "uniqueCount": 1988
+    },
+    {
+      "parcel": "759-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "759-5",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "760-1",
+      "totalCount": 2996,
+      "fetchedCount": 2996,
+      "uniqueCount": 2996
+    },
+    {
+      "parcel": "760-2",
+      "totalCount": 4800,
+      "fetchedCount": 4800,
+      "uniqueCount": 4800
+    },
+    {
+      "parcel": "761-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "762",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "762-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "762-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "762-3",
+      "totalCount": 90,
+      "fetchedCount": 90,
+      "uniqueCount": 90
+    },
+    {
+      "parcel": "762-4",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "762-5",
+      "totalCount": 58,
+      "fetchedCount": 58,
+      "uniqueCount": 58
+    },
+    {
+      "parcel": "762-6",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "762-7",
+      "totalCount": 70,
+      "fetchedCount": 70,
+      "uniqueCount": 70
+    },
+    {
+      "parcel": "763-4",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "763-5",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "763-6",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "763-7",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "763-8",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "763-9",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "763-10",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "763-11",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "763-16",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "763-17",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "763-18",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "763-19",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "763-20",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "763-21",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "763-22",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "765",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "766",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "767-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "768",
+      "totalCount": 5823,
+      "fetchedCount": 5823,
+      "uniqueCount": 5823
+    },
+    {
+      "parcel": "768-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "769",
+      "totalCount": 73,
+      "fetchedCount": 73,
+      "uniqueCount": 73
+    },
+    {
+      "parcel": "770",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "770-1",
+      "totalCount": 770,
+      "fetchedCount": 770,
+      "uniqueCount": 770
+    },
+    {
+      "parcel": "771",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "771-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "771-2",
+      "totalCount": 88,
+      "fetchedCount": 88,
+      "uniqueCount": 88
+    },
+    {
+      "parcel": "772",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "772-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "772-8",
+      "totalCount": 200,
+      "fetchedCount": 200,
+      "uniqueCount": 200
+    },
+    {
+      "parcel": "774-6",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "774-7",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "774-11",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "774-12",
+      "totalCount": 82,
+      "fetchedCount": 82,
+      "uniqueCount": 82
+    },
+    {
+      "parcel": "775",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "776-2",
+      "totalCount": 5612,
+      "fetchedCount": 5612,
+      "uniqueCount": 5612
+    },
+    {
+      "parcel": "776-4",
+      "totalCount": 1827,
+      "fetchedCount": 1827,
+      "uniqueCount": 1827
+    },
+    {
+      "parcel": "776-6",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "778",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "779",
+      "totalCount": 872,
+      "fetchedCount": 872,
+      "uniqueCount": 872
+    },
+    {
+      "parcel": "780",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "780-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "781",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "781-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "781-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "781-3",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "781-4",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "781-5",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "781-6",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "781-7",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "781-8",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "781-9",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "781-10",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "781-11",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "781-12",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "781-13",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "782-4",
+      "totalCount": 96,
+      "fetchedCount": 96,
+      "uniqueCount": 96
+    },
+    {
+      "parcel": "782-6",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "783",
+      "totalCount": 1994,
+      "fetchedCount": 1994,
+      "uniqueCount": 1994
+    },
+    {
+      "parcel": "784",
+      "totalCount": 1264,
+      "fetchedCount": 1264,
+      "uniqueCount": 1264
+    },
+    {
+      "parcel": "784-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "784-6",
+      "totalCount": 772,
+      "fetchedCount": 772,
+      "uniqueCount": 772
+    },
+    {
+      "parcel": "784-8",
+      "totalCount": 764,
+      "fetchedCount": 764,
+      "uniqueCount": 764
+    },
+    {
+      "parcel": "784-9",
+      "totalCount": 1605,
+      "fetchedCount": 1605,
+      "uniqueCount": 1605
+    },
+    {
+      "parcel": "784-11",
+      "totalCount": 1430,
+      "fetchedCount": 1430,
+      "uniqueCount": 1430
+    },
+    {
+      "parcel": "784-13",
+      "totalCount": 816,
+      "fetchedCount": 816,
+      "uniqueCount": 816
+    },
+    {
+      "parcel": "785",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "785-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "785-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "785-4",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "785-5",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "785-6",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "785-7",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "787-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "787-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "787-3",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "787-4",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "787-5",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "787-6",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "787-7",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "787-8",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "788",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "788-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "789",
+      "totalCount": 192,
+      "fetchedCount": 192,
+      "uniqueCount": 192
+    },
+    {
+      "parcel": "789-4",
+      "totalCount": 217,
+      "fetchedCount": 217,
+      "uniqueCount": 217
+    },
+    {
+      "parcel": "790",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "790-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "790-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "790-3",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "790-4",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "790-5",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "790-7",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "790-8",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "790-9",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "790-10",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "790-11",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "792",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "792-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "792-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "792-3",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "792-5",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "792-6",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "792-7",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "792-8",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "792-10",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "792-11",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "793",
+      "totalCount": 1764,
+      "fetchedCount": 1764,
+      "uniqueCount": 1764
+    },
+    {
+      "parcel": "793-2",
+      "totalCount": 604,
+      "fetchedCount": 604,
+      "uniqueCount": 604
+    },
+    {
+      "parcel": "793-4",
+      "totalCount": 1003,
+      "fetchedCount": 1003,
+      "uniqueCount": 1003
+    },
+    {
+      "parcel": "793-6",
+      "totalCount": 684,
+      "fetchedCount": 684,
+      "uniqueCount": 684
+    },
+    {
+      "parcel": "793-7",
+      "totalCount": 472,
+      "fetchedCount": 472,
+      "uniqueCount": 472
+    },
+    {
+      "parcel": "793-8",
+      "totalCount": 496,
+      "fetchedCount": 496,
+      "uniqueCount": 496
+    },
+    {
+      "parcel": "795",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "795-1",
+      "totalCount": 762,
+      "fetchedCount": 762,
+      "uniqueCount": 762
+    },
+    {
+      "parcel": "795-2",
+      "totalCount": 2096,
+      "fetchedCount": 2096,
+      "uniqueCount": 2096
+    },
+    {
+      "parcel": "795-4",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "795-5",
+      "totalCount": 980,
+      "fetchedCount": 980,
+      "uniqueCount": 980
+    },
+    {
+      "parcel": "795-7",
+      "totalCount": 368,
+      "fetchedCount": 368,
+      "uniqueCount": 368
+    },
+    {
+      "parcel": "796",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "796-6",
+      "totalCount": 164,
+      "fetchedCount": 164,
+      "uniqueCount": 164
+    },
+    {
+      "parcel": "796-7",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "797-4",
+      "totalCount": 153,
+      "fetchedCount": 153,
+      "uniqueCount": 153
+    },
+    {
+      "parcel": "797-6",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "797-10",
+      "totalCount": 279,
+      "fetchedCount": 279,
+      "uniqueCount": 279
+    },
+    {
+      "parcel": "798",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "798-10",
+      "totalCount": 455,
+      "fetchedCount": 455,
+      "uniqueCount": 455
+    },
+    {
+      "parcel": "798-16",
+      "totalCount": 420,
+      "fetchedCount": 420,
+      "uniqueCount": 420
+    },
+    {
+      "parcel": "799-15",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "800-10",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "800-11",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "800-12",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "800-13",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "800-14",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "800-16",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "800-17",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "800-18",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "800-19",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "800-20",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "801",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "801-2",
+      "totalCount": 448,
+      "fetchedCount": 448,
+      "uniqueCount": 448
+    },
+    {
+      "parcel": "801-3",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "801-4",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "801-5",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "801-6",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "801-7",
+      "totalCount": 165,
+      "fetchedCount": 165,
+      "uniqueCount": 165
+    },
+    {
+      "parcel": "801-8",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "801-9",
+      "totalCount": 33,
+      "fetchedCount": 33,
+      "uniqueCount": 33
+    },
+    {
+      "parcel": "801-10",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "801-11",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "801-12",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "804",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "805",
+      "totalCount": 28,
+      "fetchedCount": 28,
+      "uniqueCount": 28
+    },
+    {
+      "parcel": "805-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "808",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "808-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "809",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "811",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "811-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "811-2",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "811-5",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "812",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "812-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "813-1",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "813-3",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "815",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1096",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1109",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1164",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1168",
+      "totalCount": 144,
+      "fetchedCount": 144,
+      "uniqueCount": 144
+    },
+    {
+      "parcel": "1169",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1170",
+      "totalCount": 129,
+      "fetchedCount": 129,
+      "uniqueCount": 129
+    },
+    {
+      "parcel": "1184",
+      "totalCount": 14,
+      "fetchedCount": 14,
+      "uniqueCount": 14
+    },
+    {
+      "parcel": "1185",
+      "totalCount": 14,
+      "fetchedCount": 14,
+      "uniqueCount": 14
+    },
+    {
+      "parcel": "1187",
+      "totalCount": 16,
+      "fetchedCount": 16,
+      "uniqueCount": 16
+    },
+    {
+      "parcel": "1188",
+      "totalCount": 30,
+      "fetchedCount": 30,
+      "uniqueCount": 30
+    },
+    {
+      "parcel": "1192",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1193",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1194",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1195",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1196",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1197",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1198",
+      "totalCount": 24,
+      "fetchedCount": 24,
+      "uniqueCount": 24
+    },
+    {
+      "parcel": "1200",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1226",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1227",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1228",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1229",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1230",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1231",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1233",
+      "totalCount": 42,
+      "fetchedCount": 42,
+      "uniqueCount": 42
+    },
+    {
+      "parcel": "1235",
+      "totalCount": 28,
+      "fetchedCount": 28,
+      "uniqueCount": 28
+    },
+    {
+      "parcel": "1237",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1238",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1239",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1243",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1245",
+      "totalCount": 140,
+      "fetchedCount": 140,
+      "uniqueCount": 140
+    },
+    {
+      "parcel": "1247",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1248",
+      "totalCount": 78,
+      "fetchedCount": 78,
+      "uniqueCount": 78
+    },
+    {
+      "parcel": "1250",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1252",
+      "totalCount": 820,
+      "fetchedCount": 820,
+      "uniqueCount": 820
+    },
+    {
+      "parcel": "1253",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1254",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1257",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1258",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1260",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1261",
+      "totalCount": 28,
+      "fetchedCount": 28,
+      "uniqueCount": 28
+    },
+    {
+      "parcel": "1262",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1263",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1265",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1266",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1267",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1268",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1272",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1273",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1274",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1275",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1279",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1280",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1282",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1292",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1293",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1297",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1298",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1299",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1301",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1302",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1303",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1306",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1313",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1319",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1323",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1324",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1325",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1326",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1327",
+      "totalCount": 27,
+      "fetchedCount": 27,
+      "uniqueCount": 27
+    },
+    {
+      "parcel": "1328",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1329",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1335",
+      "totalCount": 44,
+      "fetchedCount": 44,
+      "uniqueCount": 44
+    },
+    {
+      "parcel": "1337",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1338",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1339",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1340",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1342",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1343",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1345",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1346",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1348",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1349",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1354",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1355",
+      "totalCount": 20,
+      "fetchedCount": 20,
+      "uniqueCount": 20
+    },
+    {
+      "parcel": "1356",
+      "totalCount": 20,
+      "fetchedCount": 20,
+      "uniqueCount": 20
+    },
+    {
+      "parcel": "1357",
+      "totalCount": 16,
+      "fetchedCount": 16,
+      "uniqueCount": 16
+    },
+    {
+      "parcel": "1358",
+      "totalCount": 16,
+      "fetchedCount": 16,
+      "uniqueCount": 16
+    },
+    {
+      "parcel": "1361",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1363",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1364",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1367",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1371",
+      "totalCount": 36,
+      "fetchedCount": 36,
+      "uniqueCount": 36
+    },
+    {
+      "parcel": "1372",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1373",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1374",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1375",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1376",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1377",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1378",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1379",
+      "totalCount": 27,
+      "fetchedCount": 27,
+      "uniqueCount": 27
+    },
+    {
+      "parcel": "1380",
+      "totalCount": 26,
+      "fetchedCount": 26,
+      "uniqueCount": 26
+    },
+    {
+      "parcel": "1381",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1382",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1383",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1384",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1385",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1386",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1387",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1388",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1389",
+      "totalCount": 3,
+      "fetchedCount": 3,
+      "uniqueCount": 3
+    },
+    {
+      "parcel": "1390",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1393",
+      "totalCount": 46,
+      "fetchedCount": 46,
+      "uniqueCount": 46
+    },
+    {
+      "parcel": "1396",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1397",
+      "totalCount": 245,
+      "fetchedCount": 245,
+      "uniqueCount": 245
+    },
+    {
+      "parcel": "1398",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1400",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1401",
+      "totalCount": 21,
+      "fetchedCount": 21,
+      "uniqueCount": 21
+    },
+    {
+      "parcel": "1402",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1405",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1415",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1421",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1428",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1429",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1430",
+      "totalCount": 26,
+      "fetchedCount": 26,
+      "uniqueCount": 26
+    },
+    {
+      "parcel": "1431",
+      "totalCount": 24,
+      "fetchedCount": 24,
+      "uniqueCount": 24
+    },
+    {
+      "parcel": "1432",
+      "totalCount": 28,
+      "fetchedCount": 28,
+      "uniqueCount": 28
+    },
+    {
+      "parcel": "1436",
+      "totalCount": 16,
+      "fetchedCount": 16,
+      "uniqueCount": 16
+    },
+    {
+      "parcel": "1437",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1439",
+      "totalCount": 16,
+      "fetchedCount": 16,
+      "uniqueCount": 16
+    },
+    {
+      "parcel": "1440",
+      "totalCount": 16,
+      "fetchedCount": 16,
+      "uniqueCount": 16
+    },
+    {
+      "parcel": "1441",
+      "totalCount": 16,
+      "fetchedCount": 16,
+      "uniqueCount": 16
+    },
+    {
+      "parcel": "1442",
+      "totalCount": 16,
+      "fetchedCount": 16,
+      "uniqueCount": 16
+    },
+    {
+      "parcel": "1443",
+      "totalCount": 6,
+      "fetchedCount": 6,
+      "uniqueCount": 6
+    },
+    {
+      "parcel": "1446",
+      "totalCount": 27,
+      "fetchedCount": 27,
+      "uniqueCount": 27
+    },
+    {
+      "parcel": "1447",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1448",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1449",
+      "totalCount": 10,
+      "fetchedCount": 10,
+      "uniqueCount": 10
+    },
+    {
+      "parcel": "1456",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1458",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1460",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1463",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1464",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1468",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1511",
+      "totalCount": 93,
+      "fetchedCount": 93,
+      "uniqueCount": 93
+    },
+    {
+      "parcel": "1513",
+      "totalCount": 630,
+      "fetchedCount": 630,
+      "uniqueCount": 630
+    },
+    {
+      "parcel": "1514",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1519",
+      "totalCount": 24,
+      "fetchedCount": 24,
+      "uniqueCount": 24
+    },
+    {
+      "parcel": "1522",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1523",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1524",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1525",
+      "totalCount": 3069,
+      "fetchedCount": 3069,
+      "uniqueCount": 3069
+    },
+    {
+      "parcel": "1527",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1532",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1533",
+      "totalCount": 10,
+      "fetchedCount": 10,
+      "uniqueCount": 10
+    },
+    {
+      "parcel": "1534",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1536",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1538",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1539",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1540",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1543",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1544",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1547",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1548",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1550",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1552",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1553",
+      "totalCount": 63,
+      "fetchedCount": 63,
+      "uniqueCount": 63
+    },
+    {
+      "parcel": "1554",
+      "totalCount": 120,
+      "fetchedCount": 120,
+      "uniqueCount": 120
+    },
+    {
+      "parcel": "1555",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1556",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1557",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1561",
+      "totalCount": 0,
+      "fetchedCount": 0,
+      "uniqueCount": 0
+    },
+    {
+      "parcel": "1589",
+      "totalCount": 4269,
+      "fetchedCount": 4269,
+      "uniqueCount": 4269
+    }
+  ],
+  "errors": []
+}

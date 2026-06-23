@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-06-08T14:19:26Z",
+  "git_sha": "",
+  "goals": [
+    {
+      "goal_id": "unresolved-masked-zero",
+      "result": "pass",
+      "duration_s": 2.1303965,
+      "output": "{\n  \"ok\": true,\n  \"target\": {\n    \"unresolved_groups\": 0,\n    \"unresolved_records\": 0\n  },\n  \"actual\": {\n    \"unresolved_groups\": 0,\n    \"unresolved_records\": 0,\n    \"official_masked_matched_records\": 1887,\n    \"unresolved_high_confidence_masked_records\": 0,\n    \"recovery_two_candidate_rows\": 353,\n    \"recovery_no_candidate_rows\": 0\n  }\n}",
+      "weight": 10
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "passing": 1,
+    "failing": 0,
+    "skipped": 0,
+    "score": 100,
+    "code_driven_total": 1,
+    "code_driven_passing": 1,
+    "code_driven_failing": 0,
+    "code_driven_skipped": 0,
+    "code_driven_score": 100,
+    "runtime_artifact_total": 0,
+    "runtime_artifact_passing": 0,
+    "runtime_artifact_failing": 0
+  }
+}

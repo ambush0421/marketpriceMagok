@@ -1,0 +1,753 @@
+{
+  "summary": {
+    "generated_at": "2026-06-08T14:17:09.307Z",
+    "unresolved_records": 0,
+    "unresolved_groups": 0,
+    "low_confidence_unique_records": 329,
+    "unresolved_analysis_rows": 496,
+    "no_candidate_rows": 0,
+    "multi_candidate_rows": 496,
+    "two_candidate_rows": 353,
+    "price_continuity_group_candidates": 0,
+    "price_continuity_record_candidates": 0,
+    "generated_price_continuity_candidates": 234,
+    "generated_price_continuity_records": 344,
+    "applied_price_continuity_records": 238,
+    "applied_official_candidate_set_records": 258,
+    "unresolved_by_year": {},
+    "unresolved_groups_by_use": {}
+  },
+  "low_confidence_policy_candidate": [
+    {
+      "source_month": "201701",
+      "deal_date": "2017-01-17",
+      "masked_jibun": "7**",
+      "use": "제1종근린생활",
+      "usage_category": "상가",
+      "floor": "",
+      "area_sqm": 16.1,
+      "build_year": "2016",
+      "deal_amount_manwon": 31000,
+      "stage": "usage_area_only",
+      "candidate_room_count": 1,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "773-1"
+      ],
+      "unique_parcel": "773-1",
+      "sample_candidates": [
+        {
+          "parcel": "773-1",
+          "building_name": "마곡역센트럴푸르지오시티",
+          "road": "서울특별시 강서구 마곡중앙6로 10 (마곡동)",
+          "unit": "120-1"
+        }
+      ]
+    },
+    {
+      "source_month": "201701",
+      "deal_date": "2017-01-19",
+      "masked_jibun": "7**",
+      "use": "제1종근린생활",
+      "usage_category": "상가",
+      "floor": "",
+      "area_sqm": 55.69,
+      "build_year": "2016",
+      "deal_amount_manwon": 41032,
+      "stage": "usage_area_only",
+      "candidate_room_count": 2,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "797-14"
+      ],
+      "unique_parcel": "797-14",
+      "sample_candidates": [
+        {
+          "parcel": "797-14",
+          "building_name": "힐스테이트에코마곡",
+          "road": "서울특별시 강서구 공항대로 269-15 (마곡동)",
+          "unit": "219-1"
+        },
+        {
+          "parcel": "797-14",
+          "building_name": "힐스테이트에코마곡",
+          "road": "서울특별시 강서구 공항대로 269-15 (마곡동)",
+          "unit": "319-1"
+        }
+      ]
+    },
+    {
+      "source_month": "201701",
+      "deal_date": "2017-01-19",
+      "masked_jibun": "7**",
+      "use": "제1종근린생활",
+      "usage_category": "상가",
+      "floor": "",
+      "area_sqm": 55.13,
+      "build_year": "2016",
+      "deal_amount_manwon": 37168,
+      "stage": "usage_area_only",
+      "candidate_room_count": 2,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "797-14"
+      ],
+      "unique_parcel": "797-14",
+      "sample_candidates": [
+        {
+          "parcel": "797-14",
+          "building_name": "힐스테이트에코마곡",
+          "road": "서울특별시 강서구 공항대로 269-15 (마곡동)",
+          "unit": "319-2"
+        },
+        {
+          "parcel": "797-14",
+          "building_name": "힐스테이트에코마곡",
+          "road": "서울특별시 강서구 공항대로 269-15 (마곡동)",
+          "unit": "219-2"
+        }
+      ]
+    },
+    {
+      "source_month": "201702",
+      "deal_date": "2017-02-24",
+      "masked_jibun": "7**",
+      "use": "제1종근린생활",
+      "usage_category": "상가",
+      "floor": "",
+      "area_sqm": 47.46,
+      "build_year": "2015",
+      "deal_amount_manwon": 84500,
+      "stage": "usage_area_only",
+      "candidate_room_count": 2,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "776-4"
+      ],
+      "unique_parcel": "776-4",
+      "sample_candidates": [
+        {
+          "parcel": "776-4",
+          "building_name": "엠코지니어스타",
+          "road": "서울특별시 강서구 강서로 471 (마곡동)",
+          "unit": "B-110호"
+        },
+        {
+          "parcel": "776-4",
+          "building_name": "엠코지니어스타",
+          "road": "서울특별시 강서구 강서로 471 (마곡동)",
+          "unit": "A-110호"
+        }
+      ]
+    },
+    {
+      "source_month": "201702",
+      "deal_date": "2017-02-06",
+      "masked_jibun": "7**",
+      "use": "제1종근린생활",
+      "usage_category": "상가",
+      "floor": "",
+      "area_sqm": 47.58,
+      "build_year": "2016",
+      "deal_amount_manwon": 20000,
+      "stage": "usage_area_only",
+      "candidate_room_count": 7,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "739-1"
+      ],
+      "unique_parcel": "739-1",
+      "sample_candidates": [
+        {
+          "parcel": "739-1",
+          "building_name": "마곡더블유타워",
+          "road": "서울특별시 강서구 방화대로 294 (마곡동)",
+          "unit": "811-1"
+        },
+        {
+          "parcel": "739-1",
+          "building_name": "마곡더블유타워",
+          "road": "서울특별시 강서구 방화대로 294 (마곡동)",
+          "unit": "120"
+        },
+        {
+          "parcel": "739-1",
+          "building_name": "마곡더블유타워",
+          "road": "서울특별시 강서구 방화대로 294 (마곡동)",
+          "unit": "104"
+        },
+        {
+          "parcel": "739-1",
+          "building_name": "마곡더블유타워",
+          "road": "서울특별시 강서구 방화대로 294 (마곡동)",
+          "unit": "121"
+        },
+        {
+          "parcel": "739-1",
+          "building_name": "마곡더블유타워",
+          "road": "서울특별시 강서구 방화대로 294 (마곡동)",
+          "unit": "103"
+        }
+      ]
+    },
+    {
+      "source_month": "201703",
+      "deal_date": "2017-03-03",
+      "masked_jibun": "7**",
+      "use": "제1종근린생활",
+      "usage_category": "상가",
+      "floor": "",
+      "area_sqm": 38.22,
+      "build_year": "2015",
+      "deal_amount_manwon": 89600,
+      "stage": "usage_area_only",
+      "candidate_room_count": 8,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "739-2"
+      ],
+      "unique_parcel": "739-2",
+      "sample_candidates": [
+        {
+          "parcel": "739-2",
+          "building_name": "우성르보아투",
+          "road": "서울특별시 강서구 마곡중앙5로 87 (마곡동)",
+          "unit": "103"
+        },
+        {
+          "parcel": "739-2",
+          "building_name": "우성르보아투",
+          "road": "서울특별시 강서구 마곡중앙5로 87 (마곡동)",
+          "unit": "110"
+        },
+        {
+          "parcel": "739-2",
+          "building_name": "우성르보아투",
+          "road": "서울특별시 강서구 마곡중앙5로 87 (마곡동)",
+          "unit": "105"
+        },
+        {
+          "parcel": "739-2",
+          "building_name": "우성르보아투",
+          "road": "서울특별시 강서구 마곡중앙5로 87 (마곡동)",
+          "unit": "104"
+        },
+        {
+          "parcel": "739-2",
+          "building_name": "우성르보아투",
+          "road": "서울특별시 강서구 마곡중앙5로 87 (마곡동)",
+          "unit": "112"
+        }
+      ]
+    },
+    {
+      "source_month": "201703",
+      "deal_date": "2017-03-30",
+      "masked_jibun": "1***",
+      "use": "제2종근린생활",
+      "usage_category": "상가",
+      "floor": "",
+      "area_sqm": 33.34,
+      "build_year": "2005",
+      "deal_amount_manwon": 12500,
+      "stage": "usage_area_only",
+      "candidate_room_count": 1,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "1170"
+      ],
+      "unique_parcel": "1170",
+      "sample_candidates": [
+        {
+          "parcel": "1170",
+          "building_name": "한림리첸빌",
+          "road": "서울특별시 강서구 양천로 132 (마곡동)",
+          "unit": "B04"
+        }
+      ]
+    },
+    {
+      "source_month": "201703",
+      "deal_date": "2017-03-21",
+      "masked_jibun": "7**",
+      "use": "제2종근린생활",
+      "usage_category": "상가",
+      "floor": "2",
+      "area_sqm": 139.81,
+      "build_year": "2016",
+      "deal_amount_manwon": 133022,
+      "stage": "usage_area_only",
+      "candidate_room_count": 1,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "795-7"
+      ],
+      "unique_parcel": "795-7",
+      "sample_candidates": [
+        {
+          "parcel": "795-7",
+          "building_name": "열린프라자",
+          "road": "서울특별시 강서구 마곡중앙6로 93 (마곡동)",
+          "unit": "307"
+        }
+      ]
+    },
+    {
+      "source_month": "201704",
+      "deal_date": "2017-04-09",
+      "masked_jibun": "7**",
+      "use": "제1종근린생활",
+      "usage_category": "상가",
+      "floor": "",
+      "area_sqm": 33.27,
+      "build_year": "2017",
+      "deal_amount_manwon": 31300,
+      "stage": "usage_area_only",
+      "candidate_room_count": 1,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "760"
+      ],
+      "unique_parcel": "760",
+      "sample_candidates": [
+        {
+          "parcel": "760",
+          "building_name": "마곡나루역보타닉푸르지오시티",
+          "road": "서울특별시 강서구 마곡중앙5로 6 (마곡동)",
+          "unit": "B-133"
+        }
+      ]
+    },
+    {
+      "source_month": "201707",
+      "deal_date": "2017-07-28",
+      "masked_jibun": "7**",
+      "use": "제2종근린생활",
+      "usage_category": "상가",
+      "floor": "",
+      "area_sqm": 112.94,
+      "build_year": "2017",
+      "deal_amount_manwon": 85334,
+      "stage": "usage_area_only",
+      "candidate_room_count": 1,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "760-1"
+      ],
+      "unique_parcel": "760-1",
+      "sample_candidates": [
+        {
+          "parcel": "760-1",
+          "building_name": "힐스테이트에코 마곡나루역 라마다앙코르 서울마곡",
+          "road": "서울특별시 강서구 마곡중앙로 161-11 (마곡동)",
+          "unit": "A-218호"
+        }
+      ]
+    },
+    {
+      "source_month": "201709",
+      "deal_date": "2017-09-08",
+      "masked_jibun": "7**",
+      "use": "제2종근린생활",
+      "usage_category": "상가",
+      "floor": "",
+      "area_sqm": 38.76,
+      "build_year": "2017",
+      "deal_amount_manwon": 82000,
+      "stage": "usage_area_only",
+      "candidate_room_count": 1,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "760-1"
+      ],
+      "unique_parcel": "760-1",
+      "sample_candidates": [
+        {
+          "parcel": "760-1",
+          "building_name": "힐스테이트에코 마곡나루역 라마다앙코르 서울마곡",
+          "road": "서울특별시 강서구 마곡중앙로 161-11 (마곡동)",
+          "unit": "A-134호"
+        }
+      ]
+    },
+    {
+      "source_month": "201711",
+      "deal_date": "2017-11-02",
+      "masked_jibun": "7**",
+      "use": "업무",
+      "usage_category": "업무",
+      "floor": "",
+      "area_sqm": 35.65,
+      "build_year": "2017",
+      "deal_amount_manwon": 19313,
+      "stage": "usage_area_only",
+      "candidate_room_count": 152,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "759-1"
+      ],
+      "unique_parcel": "759-1",
+      "sample_candidates": [
+        {
+          "parcel": "759-1",
+          "building_name": "두산더랜드타워",
+          "road": "서울특별시 강서구 마곡서로 152 (마곡동)",
+          "unit": "OB-703"
+        },
+        {
+          "parcel": "759-1",
+          "building_name": "두산더랜드타워",
+          "road": "서울특별시 강서구 마곡서로 152 (마곡동)",
+          "unit": "OB-1209"
+        },
+        {
+          "parcel": "759-1",
+          "building_name": "두산더랜드타워",
+          "road": "서울특별시 강서구 마곡서로 152 (마곡동)",
+          "unit": "OA-1104"
+        },
+        {
+          "parcel": "759-1",
+          "building_name": "두산더랜드타워",
+          "road": "서울특별시 강서구 마곡서로 152 (마곡동)",
+          "unit": "OB-1006"
+        },
+        {
+          "parcel": "759-1",
+          "building_name": "두산더랜드타워",
+          "road": "서울특별시 강서구 마곡서로 152 (마곡동)",
+          "unit": "OB-409"
+        }
+      ]
+    },
+    {
+      "source_month": "201711",
+      "deal_date": "2017-11-09",
+      "masked_jibun": "7**",
+      "use": "제2종근린생활",
+      "usage_category": "상가",
+      "floor": "",
+      "area_sqm": 22.51,
+      "build_year": "2017",
+      "deal_amount_manwon": 56000,
+      "stage": "usage_area_only",
+      "candidate_room_count": 1,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "760-1"
+      ],
+      "unique_parcel": "760-1",
+      "sample_candidates": [
+        {
+          "parcel": "760-1",
+          "building_name": "힐스테이트에코 마곡나루역 라마다앙코르 서울마곡",
+          "road": "서울특별시 강서구 마곡중앙로 161-11 (마곡동)",
+          "unit": "A-109호"
+        }
+      ]
+    },
+    {
+      "source_month": "201712",
+      "deal_date": "2017-12-13",
+      "masked_jibun": "7**",
+      "use": "업무",
+      "usage_category": "업무",
+      "floor": "",
+      "area_sqm": 28.86,
+      "build_year": "2017",
+      "deal_amount_manwon": 16926,
+      "stage": "usage_area_only",
+      "candidate_room_count": 130,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "757"
+      ],
+      "unique_parcel": "757",
+      "sample_candidates": [
+        {
+          "parcel": "757",
+          "building_name": "두산더랜드파크",
+          "road": "서울특별시 강서구 마곡중앙로 161-8 (마곡동)",
+          "unit": "OA-1020"
+        },
+        {
+          "parcel": "757",
+          "building_name": "두산더랜드파크",
+          "road": "서울특별시 강서구 마곡중앙로 161-8 (마곡동)",
+          "unit": "OB-1011"
+        },
+        {
+          "parcel": "757",
+          "building_name": "두산더랜드파크",
+          "road": "서울특별시 강서구 마곡중앙로 161-8 (마곡동)",
+          "unit": "OA-618"
+        },
+        {
+          "parcel": "757",
+          "building_name": "두산더랜드파크",
+          "road": "서울특별시 강서구 마곡중앙로 161-8 (마곡동)",
+          "unit": "OB-613"
+        },
+        {
+          "parcel": "757",
+          "building_name": "두산더랜드파크",
+          "road": "서울특별시 강서구 마곡중앙로 161-8 (마곡동)",
+          "unit": "OB-1216"
+        }
+      ]
+    },
+    {
+      "source_month": "201712",
+      "deal_date": "2017-12-02",
+      "masked_jibun": "7**",
+      "use": "업무",
+      "usage_category": "업무",
+      "floor": "",
+      "area_sqm": 28.86,
+      "build_year": "2017",
+      "deal_amount_manwon": 16626,
+      "stage": "usage_area_only",
+      "candidate_room_count": 130,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "757"
+      ],
+      "unique_parcel": "757",
+      "sample_candidates": [
+        {
+          "parcel": "757",
+          "building_name": "두산더랜드파크",
+          "road": "서울특별시 강서구 마곡중앙로 161-8 (마곡동)",
+          "unit": "OA-1020"
+        },
+        {
+          "parcel": "757",
+          "building_name": "두산더랜드파크",
+          "road": "서울특별시 강서구 마곡중앙로 161-8 (마곡동)",
+          "unit": "OB-1011"
+        },
+        {
+          "parcel": "757",
+          "building_name": "두산더랜드파크",
+          "road": "서울특별시 강서구 마곡중앙로 161-8 (마곡동)",
+          "unit": "OA-618"
+        },
+        {
+          "parcel": "757",
+          "building_name": "두산더랜드파크",
+          "road": "서울특별시 강서구 마곡중앙로 161-8 (마곡동)",
+          "unit": "OB-613"
+        },
+        {
+          "parcel": "757",
+          "building_name": "두산더랜드파크",
+          "road": "서울특별시 강서구 마곡중앙로 161-8 (마곡동)",
+          "unit": "OB-1216"
+        }
+      ]
+    },
+    {
+      "source_month": "201801",
+      "deal_date": "2018-01-29",
+      "masked_jibun": "7**",
+      "use": "제2종근린생활",
+      "usage_category": "상가",
+      "floor": "",
+      "area_sqm": 37.84,
+      "build_year": "2017",
+      "deal_amount_manwon": 21500,
+      "stage": "usage_area_only",
+      "candidate_room_count": 1,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "768-2"
+      ],
+      "unique_parcel": "768-2",
+      "sample_candidates": [
+        {
+          "parcel": "768-2",
+          "building_name": "동익드미라벨복합빌딩",
+          "road": "서울특별시 강서구 마곡서로 101 (마곡동)",
+          "unit": "857"
+        }
+      ]
+    },
+    {
+      "source_month": "201802",
+      "deal_date": "2018-02-09",
+      "masked_jibun": "7**",
+      "use": "업무",
+      "usage_category": "업무",
+      "floor": "",
+      "area_sqm": 32.14,
+      "build_year": "2017",
+      "deal_amount_manwon": 21000,
+      "stage": "usage_area_only",
+      "candidate_room_count": 92,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "759-1"
+      ],
+      "unique_parcel": "759-1",
+      "sample_candidates": [
+        {
+          "parcel": "759-1",
+          "building_name": "두산더랜드타워",
+          "road": "서울특별시 강서구 마곡서로 152 (마곡동)",
+          "unit": "OB-1220"
+        },
+        {
+          "parcel": "759-1",
+          "building_name": "두산더랜드타워",
+          "road": "서울특별시 강서구 마곡서로 152 (마곡동)",
+          "unit": "OA-1116"
+        },
+        {
+          "parcel": "759-1",
+          "building_name": "두산더랜드타워",
+          "road": "서울특별시 강서구 마곡서로 152 (마곡동)",
+          "unit": "OB-1020"
+        },
+        {
+          "parcel": "759-1",
+          "building_name": "두산더랜드타워",
+          "road": "서울특별시 강서구 마곡서로 152 (마곡동)",
+          "unit": "OB-1221"
+        },
+        {
+          "parcel": "759-1",
+          "building_name": "두산더랜드타워",
+          "road": "서울특별시 강서구 마곡서로 152 (마곡동)",
+          "unit": "OA-1016"
+        }
+      ]
+    },
+    {
+      "source_month": "201802",
+      "deal_date": "2018-02-09",
+      "masked_jibun": "7**",
+      "use": "업무",
+      "usage_category": "업무",
+      "floor": "",
+      "area_sqm": 30.9,
+      "build_year": "2017",
+      "deal_amount_manwon": 21000,
+      "stage": "usage_area_only",
+      "candidate_room_count": 16,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "759-1"
+      ],
+      "unique_parcel": "759-1",
+      "sample_candidates": [
+        {
+          "parcel": "759-1",
+          "building_name": "두산더랜드타워",
+          "road": "서울특별시 강서구 마곡서로 152 (마곡동)",
+          "unit": "OA-1117"
+        },
+        {
+          "parcel": "759-1",
+          "building_name": "두산더랜드타워",
+          "road": "서울특별시 강서구 마곡서로 152 (마곡동)",
+          "unit": "OA-1017"
+        },
+        {
+          "parcel": "759-1",
+          "building_name": "두산더랜드타워",
+          "road": "서울특별시 강서구 마곡서로 152 (마곡동)",
+          "unit": "OB-817"
+        },
+        {
+          "parcel": "759-1",
+          "building_name": "두산더랜드타워",
+          "road": "서울특별시 강서구 마곡서로 152 (마곡동)",
+          "unit": "OA-717"
+        },
+        {
+          "parcel": "759-1",
+          "building_name": "두산더랜드타워",
+          "road": "서울특별시 강서구 마곡서로 152 (마곡동)",
+          "unit": "OB-1217"
+        }
+      ]
+    },
+    {
+      "source_month": "201802",
+      "deal_date": "2018-02-23",
+      "masked_jibun": "7**",
+      "use": "제2종근린생활",
+      "usage_category": "상가",
+      "floor": "3",
+      "area_sqm": 102.25,
+      "build_year": "2015",
+      "deal_amount_manwon": 53000,
+      "stage": "usage_area_only",
+      "candidate_room_count": 1,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "739-2"
+      ],
+      "unique_parcel": "739-2",
+      "sample_candidates": [
+        {
+          "parcel": "739-2",
+          "building_name": "우성르보아투",
+          "road": "서울특별시 강서구 마곡중앙5로 87 (마곡동)",
+          "unit": "209"
+        }
+      ]
+    },
+    {
+      "source_month": "201803",
+      "deal_date": "2018-03-28",
+      "masked_jibun": "7**",
+      "use": "업무",
+      "usage_category": "업무",
+      "floor": "",
+      "area_sqm": 28.86,
+      "build_year": "2017",
+      "deal_amount_manwon": 16100,
+      "stage": "usage_area_only",
+      "candidate_room_count": 130,
+      "candidate_parcel_count": 1,
+      "candidate_parcels": [
+        "757"
+      ],
+      "unique_parcel": "757",
+      "sample_candidates": [
+        {
+          "parcel": "757",
+          "building_name": "두산더랜드파크",
+          "road": "서울특별시 강서구 마곡중앙로 161-8 (마곡동)",
+          "unit": "OA-1020"
+        },
+        {
+          "parcel": "757",
+          "building_name": "두산더랜드파크",
+          "road": "서울특별시 강서구 마곡중앙로 161-8 (마곡동)",
+          "unit": "OB-1011"
+        },
+        {
+          "parcel": "757",
+          "building_name": "두산더랜드파크",
+          "road": "서울특별시 강서구 마곡중앙로 161-8 (마곡동)",
+          "unit": "OA-618"
+        },
+        {
+          "parcel": "757",
+          "building_name": "두산더랜드파크",
+          "road": "서울특별시 강서구 마곡중앙로 161-8 (마곡동)",
+          "unit": "OB-613"
+        },
+        {
+          "parcel": "757",
+          "building_name": "두산더랜드파크",
+          "road": "서울특별시 강서구 마곡중앙로 161-8 (마곡동)",
+          "unit": "OB-1216"
+        }
+      ]
+    }
+  ],
+  "price_continuity_candidates": []
+}

@@ -1,0 +1,9 @@
+{
+  "revenue_goal": "내부 분석 시간 절감과 투자/영업 후보 선별 정확도 개선",
+  "expected_traffic": "월 4-12회 내부 검토",
+  "conversion_rate": "후보 검토 리드 전환 10-20%",
+  "average_order_value_or_arpu": "외부 매출형이 아니라 1회 분석 2시간 이상 절감",
+  "expected_revenue": "월 8-24시간 절감, 시간당 5만원 기준 월 40-120만원 가치",
+  "CAC_assumption": "추가 비용 0원, 승인된 공공데이터 API 사용",
+  "payback_assumption": "첫 분석 1회 사용으로 회수"
+}

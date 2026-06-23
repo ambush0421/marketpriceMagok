@@ -1,0 +1,113 @@
+{
+  "captured_at": "2026-06-08T13:40:00+09:00",
+  "source": "공공데이터포털 활용신청 현황 Chrome 화면",
+  "total_count": 15,
+  "credential_policy": "API 인증키는 이 파일에 저장하지 않는다. 실행 시 PUBLIC_DATA_SERVICE_KEY 환경변수 또는 별도 .env.local에서만 읽는다.",
+  "apis": [
+    {
+      "name": "전국공인중개사사무소표준데이터",
+      "agency": "한국지능정보사회진흥원",
+      "status": "승인",
+      "use_for_dashboard": "중개사소재지/중개업소 보조 정보 후보",
+      "priority": "support"
+    },
+    {
+      "name": "국토교통부_공장 및 창고 등 부동산 매매 실거래가 자료",
+      "agency": "국토교통부",
+      "status": "승인",
+      "use_for_dashboard": "상업업무용과 인접한 비주거 거래 비교 후보",
+      "priority": "support"
+    },
+    {
+      "name": "국토교통부_아파트 분양권전매 실거래가 자료",
+      "agency": "국토교통부",
+      "status": "승인",
+      "use_for_dashboard": "마곡동 주거 시장 보조 참고",
+      "priority": "context"
+    },
+    {
+      "name": "국토교통부_단독/다가구 전월세 실거래가 자료",
+      "agency": "국토교통부",
+      "status": "승인",
+      "use_for_dashboard": "마곡동 임대 시장 보조 참고",
+      "priority": "context"
+    },
+    {
+      "name": "국토교통부_아파트 매매 실거래가 자료",
+      "agency": "국토교통부",
+      "status": "승인",
+      "use_for_dashboard": "마곡동 주거 매매 시장 보조 참고",
+      "priority": "context"
+    },
+    {
+      "name": "국토교통부_아파트 매매 실거래가 상세 자료",
+      "agency": "국토교통부",
+      "status": "승인",
+      "use_for_dashboard": "마곡동 주거 매매 상세 비교 후보",
+      "priority": "context"
+    },
+    {
+      "name": "국토교통부_아파트 전월세 실거래가 자료",
+      "agency": "국토교통부",
+      "status": "승인",
+      "use_for_dashboard": "마곡동 임대 시장 보조 참고",
+      "priority": "context"
+    },
+    {
+      "name": "국토교통부_연립다세대 매매 실거래가 자료",
+      "agency": "국토교통부",
+      "status": "승인",
+      "use_for_dashboard": "마곡동 소형 주거 매매 보조 참고",
+      "priority": "context"
+    },
+    {
+      "name": "국토교통부_오피스텔 매매 실거래가 자료",
+      "agency": "국토교통부",
+      "status": "승인",
+      "use_for_dashboard": "상업업무용과 유사한 업무/수익형 상품 비교",
+      "priority": "support"
+    },
+    {
+      "name": "국토교통부_연립다세대 전월세 실거래가 자료",
+      "agency": "국토교통부",
+      "status": "승인",
+      "use_for_dashboard": "마곡동 임대 시장 보조 참고",
+      "priority": "context"
+    },
+    {
+      "name": "국토교통부_오피스텔 전월세 실거래가 자료",
+      "agency": "국토교통부",
+      "status": "승인",
+      "use_for_dashboard": "오피스텔 임대수익률 참고",
+      "priority": "support"
+    },
+    {
+      "name": "국토교통부_단독/다가구 매매 실거래가 자료",
+      "agency": "국토교통부",
+      "status": "승인",
+      "use_for_dashboard": "토지/건물 단독 거래 보조 참고",
+      "priority": "context"
+    },
+    {
+      "name": "국토교통부_토지 매매 실거래가 자료",
+      "agency": "국토교통부",
+      "status": "승인",
+      "use_for_dashboard": "마곡동 토지 가격 보조 참고",
+      "priority": "support"
+    },
+    {
+      "name": "국토교통부_상업업무용 부동산 매매 실거래가 자료",
+      "agency": "국토교통부",
+      "status": "승인",
+      "use_for_dashboard": "핵심 원천. 마곡동 상업용 거래 월단위 재수집 대상",
+      "priority": "primary"
+    },
+    {
+      "name": "국토교통부_건축HUB_건축물대장정보 서비스",
+      "agency": "국토교통부",
+      "status": "승인",
+      "use_for_dashboard": "건물명, 주소, 층수, 주용도, 연면적 등 부족 정보 보강",
+      "priority": "primary"
+    }
+  ]
+}

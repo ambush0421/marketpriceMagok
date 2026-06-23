@@ -1,0 +1,22 @@
+{
+  "type": "static-html-embedded-json",
+  "data_script_id": "dashboardData",
+  "filters": [
+    "search",
+    "maskFilter",
+    "minCount",
+    "sortBy",
+    "officeBandSelect"
+  ],
+  "interactions": [
+    "click building row or graph card to render monthly price drilldown",
+    "copy selected-building consultation summary",
+    "download selected-building CSV ledger",
+    "select office area band to compare yearly, monthly, and building-level unit prices"
+  ],
+  "contract_area_basis": "official exclusive plus common area only when parcel, floor, and exclusive area match uniquely",
+  "output_files": [
+    "data/processed/magok-commercial-transactions-dashboard.json",
+    "docs/ai-output/20260608-magok-commercial-price-dashboard.html"
+  ]
+}

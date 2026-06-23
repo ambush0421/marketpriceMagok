@@ -1,0 +1,625 @@
+{
+  "PARCEL|759-1": {
+    "building_name": "두산더랜드타워",
+    "status": "확인됨",
+    "source": "https://tenant.zaritalk.com/real-residence-review/residence/building/529137",
+    "note": "마곡동 759-1, 마곡서로 152"
+  },
+  "PARCEL|757": {
+    "building_name": "두산더랜드파크",
+    "status": "확인됨",
+    "source": "https://grt.purpleo.kr/article/150055",
+    "note": "마곡동 757, 마곡중앙로 161-8"
+  },
+  "PARCEL|797-1": {
+    "building_name": "퀸즈파크나인",
+    "status": "확인됨",
+    "source": "https://juso.app/b/579p4n3bn0lpzozl",
+    "note": "마곡동 797-1, 공항대로 247"
+  },
+  "PARCEL|798-17": {
+    "building_name": "마곡역한일노벨리아타워",
+    "status": "확인됨",
+    "source": "https://m.wonsns.com/a/dv.php?idx=1419207",
+    "note": "마곡동 798-17, 마곡중앙1로 10"
+  },
+  "PARCEL|774-3": {
+    "building_name": "센테니아",
+    "status": "확인됨",
+    "source": "https://stores.auction.co.kr/holicfactory",
+    "note": "마곡동 774-3"
+  },
+  "PARCEL|799-11": {
+    "building_name": "파인스퀘어",
+    "status": "확인됨",
+    "source": "https://stores.auction.co.kr/sungwonmedi",
+    "note": "마곡동 799-11"
+  },
+  "PARCEL|774-2": {
+    "building_name": "보타닉파크타워2",
+    "status": "확인됨",
+    "source": "https://findby.co.kr/details/07802-115002005007-st-652b1c168c641f9e3892d67f",
+    "note": "마곡동 774-2, 공항대로 213"
+  },
+  "PARCEL|779-1": {
+    "building_name": "마곡 뉴브클라우드힐스",
+    "status": "확인됨",
+    "source": "https://magok.409.co.kr/index.php?id=16&page=business_info",
+    "note": "마곡동 779-1"
+  },
+  "PARCEL|800-4": {
+    "building_name": "발산W타워",
+    "status": "확인됨",
+    "source": "https://stores.auction.co.kr/odisomall",
+    "note": "마곡동 800-4"
+  },
+  "PARCEL|797-12": {
+    "building_name": "루체브릿지",
+    "status": "확인됨",
+    "source": "https://dorojuso.kr/1150010500107970012000001/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C-%EA%B0%95%EC%84%9C%EA%B5%AC-%EB%A7%88%EA%B3%A1%EB%8F%99%EB%A1%9C4%EA%B8%B8-23-%EB%A7%88%EA%B3%A1%EB%8F%99",
+    "note": "마곡동 797-12, 마곡동로4길 23"
+  },
+  "PARCEL|757-2": {
+    "building_name": "마곡나루역프라이빗타워Ⅱ",
+    "status": "확인됨",
+    "source": "https://juso.app/b/579p4n3bhwugwxa9",
+    "note": "마곡동 757-2, 마곡중앙로 171"
+  },
+  "PARCEL|757-3": {
+    "building_name": "마곡나루역보타닉비즈타워",
+    "status": "확인됨",
+    "source": "https://www.incruit.com/company/1677036497/",
+    "note": "마곡동 757-3"
+  },
+  "PARCEL|757-5": {
+    "building_name": "마곡나루역 프라이빗타워1차",
+    "status": "확인됨",
+    "source": "https://tenant.zaritalk.com/real-residence-review/residence/building/1079042",
+    "note": "마곡동 757-5, 마곡중앙로 165"
+  },
+  "PARCEL|799-6": {
+    "building_name": "메트로비즈타워",
+    "status": "확인됨",
+    "source": "https://tenant.zaritalk.com/real-residence-review/residence/building/1311793",
+    "note": "마곡동 799-6, 마곡중앙2로 5"
+  },
+  "PARCEL|4-2": {
+    "building_name": "청솔씨티빌",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 양천로47길 106-1 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|717": {
+    "building_name": "마곡금호어울림아파트",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 양천로47길 94 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|723-2": {
+    "building_name": "이천이프라자",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 271 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|739-1": {
+    "building_name": "마곡더블유타워",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 방화대로 294 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|739-3": {
+    "building_name": "에스비타운",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙5로 81 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|739-4": {
+    "building_name": "마곡 헤리움1차",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡서1로 115-1 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|743-4": {
+    "building_name": "마곡엠밸리7단지",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡서로 133 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|744": {
+    "building_name": "마곡 엠밸리 9단지",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 103 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|746-1": {
+    "building_name": "마곡엠밸리12단지",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 140 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|747": {
+    "building_name": "마곡엠밸리10단지",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙1로 72 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|758-2": {
+    "building_name": "마곡일성트루엘플래닛",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙로 161-22 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|759": {
+    "building_name": "마곡센트럴타워2",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡서로 158 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|759-3": {
+    "building_name": "보타닉파크타워1",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙로 161-17 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|760": {
+    "building_name": "마곡나루역보타닉푸르지오시티",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙5로 6 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|767": {
+    "building_name": "르웨스트 시티",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙로 143 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|767-4": {
+    "building_name": "롯데캐슬 르웨스트",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙로 111 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|768-2": {
+    "building_name": "동익드미라벨복합빌딩",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡서로 101 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|771-3": {
+    "building_name": "보타닉파크타워3",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙6로 11 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|771-4": {
+    "building_name": "이너매스마곡Ⅰ",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙6로 21 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|772-5": {
+    "building_name": "리더스퀘어마곡",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙6로 45 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|773": {
+    "building_name": "힐스테이트 에코 마곡역",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙로 76 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|773-1": {
+    "building_name": "마곡역센트럴푸르지오시티",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙6로 10 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|773-2": {
+    "building_name": "마곡지엠지타워",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙6로 16 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|773-3": {
+    "building_name": "힐스테이트에코동익",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 195 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|774": {
+    "building_name": "에스에이치빌딩",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 205 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|774-1": {
+    "building_name": "지엠지엘스타",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 209 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|774-4": {
+    "building_name": "마곡센트럴타워1",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 227 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|774-5": {
+    "building_name": "랑데르2",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡동로3길 26 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|774-8": {
+    "building_name": "장흥빌딩",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙6로 40 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|774-9": {
+    "building_name": "사이언스타",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙6로 42 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|776": {
+    "building_name": "마곡 파크뷰 대방디엠시티 오피스텔",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡동로10길 23 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|777-5": {
+    "building_name": "마곡보타닉파크프라자",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡동로10길 46 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|782": {
+    "building_name": "마곡디엠프라자1차",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙8로5길 63 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|782-3": {
+    "building_name": "나인원타워",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙8로5길 57 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|784-3": {
+    "building_name": "스카이오피스텔",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 강서로 451 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|784-4": {
+    "building_name": "미르웰플러스오피스텔",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 강서로 447 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|791-5": {
+    "building_name": "마곡파인스퀘어Ⅲ",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙8로5길 11 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|791-7": {
+    "building_name": "리더스애비뉴마곡",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙8로5길 5 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|791-9": {
+    "building_name": "마곡파인스퀘어Ⅱ",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙8로 85 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|792-9": {
+    "building_name": "디앤씨 캠퍼스",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙8로7길 11 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|793-3": {
+    "building_name": "마곡에비앙",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 강서로 411 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|793-9": {
+    "building_name": "플레이스에이치",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 강서로 395 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|794": {
+    "building_name": "문영비즈웍스",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 강서로 391 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|794-1": {
+    "building_name": "우성에스비타워",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 강서로 385 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|795-6": {
+    "building_name": "뉴골든타워",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙6로 89 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|796-3": {
+    "building_name": "마곡사이언스타워",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡동로 62 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|796-5": {
+    "building_name": "마곡테크노타워",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙6로 63 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|797": {
+    "building_name": "에이스타워 마곡",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 237 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|797-7": {
+    "building_name": "퀸즈파크 텐",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙6로 66 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|797-9": {
+    "building_name": "매그넘797",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙6로 70 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|797-11": {
+    "building_name": "인터시티365",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙6로 76-3 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|797-14": {
+    "building_name": "힐스테이트에코마곡",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 269-15 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|798-2": {
+    "building_name": "류마타워",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 164 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|798-3": {
+    "building_name": "747",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 168 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|798-4": {
+    "building_name": "마곡에스비타워Ⅲ",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡서로 56 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|798-5": {
+    "building_name": "에이스타워Ⅱ",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙로 59-21 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|798-6": {
+    "building_name": "류마타워Ⅱ",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙로 59-17 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|798-8": {
+    "building_name": "엠비즈타워",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙로 59-11 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|798-9": {
+    "building_name": "메가타워",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙로 59-9 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|798-11": {
+    "building_name": "문영 퀸즈파크13",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙로 55 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|798-12": {
+    "building_name": "엠리체",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙1로 26 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|798-14": {
+    "building_name": "마곡 M시그니처",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙1로 20 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|799-1": {
+    "building_name": "로뎀타워",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 186 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|799-2": {
+    "building_name": "푸리마타워",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 190 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|799-3": {
+    "building_name": "문영 퀸즈파크12차",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 194 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|799-4": {
+    "building_name": "마곡지웰타워",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 200 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|799-5": {
+    "building_name": "마곡사이언스타워2",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙로 56 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|799-7": {
+    "building_name": "마곡그랑트윈타워",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙4로 10 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|799-9": {
+    "building_name": "마곡그랑트윈타워",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙4로 18 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|799-16": {
+    "building_name": "M밸리 W TOWER III",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙2로 11 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|799-17": {
+    "building_name": "마곡테크노타워Ⅱ",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙2로 15 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|800": {
+    "building_name": "나인스퀘어",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 206 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|800-1": {
+    "building_name": "문영 퀸즈파크11차",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 212 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|800-3": {
+    "building_name": "우성 에스비타워Ⅱ",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 220 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|800-5": {
+    "building_name": "리더스타워마곡",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 228 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|800-15": {
+    "building_name": "이너매스마곡Ⅱ",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 마곡중앙2로 35 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  },
+  "PARCEL|801-1": {
+    "building_name": "열린M타워Ⅱ",
+    "status": "확인됨",
+    "source": "국토교통부 건축HUB 표제부",
+    "road": "서울특별시 강서구 공항대로 242 (마곡동)",
+    "verified_at": "2026-06-08T05:55:10.827Z"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-06-08T11:48:21.921Z",
+  "mode": "fetch-ready",
+  "credential_present": true,
+  "credential_policy": "PUBLIC_DATA_SERVICE_KEY is read from environment only and never written to output.",
+  "target": {
+    "lawdCd": "11500",
+    "targetDong": "마곡동",
+    "startMonth": "201701",
+    "endMonth": "202606",
+    "monthCount": 114
+  },
+  "endpoints": {
+    "commercialEndpoint": "https://apis.data.go.kr/1613000/RTMSDataSvcNrgTrade/getRTMSDataSvcNrgTrade",
+    "buildingTitleEndpoint": "https://apis.data.go.kr/1613000/BldRgstHubService/getBrTitleInfo",
+    "note": "건축HUB 상세 기능명은 Swagger/가이드 기준으로 검증 후 BUILDING_HUB_*_API_URL 환경변수로 교체 가능."
+  },
+  "direct_apis": [
+    "국토교통부_상업업무용 부동산 매매 실거래가 자료",
+    "국토교통부_건축HUB_건축물대장정보 서비스"
+  ],
+  "support_apis": [
+    "국토교통부_오피스텔 매매 실거래가 자료",
+    "국토교통부_오피스텔 전월세 실거래가 자료",
+    "국토교통부_토지 매매 실거래가 자료",
+    "국토교통부_공장 및 창고 등 부동산 매매 실거래가 자료",
+    "전국공인중개사사무소표준데이터"
+  ],
+  "fetch_result": {
+    "output": "C:\\projects\\마곡동 실거래\\data\\processed\\api-commercial-monthly-raw.json",
+    "row_count": 2985,
+    "error_count": 0
+  }
+}
