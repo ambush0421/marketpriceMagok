@@ -2567,13 +2567,52 @@ const html = `<!doctype html>
       margin: 0;
       box-shadow: none;
     }
+    .pyeong-report-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border: 1px solid #dce7f1;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #ffffff 0%, #f6fbff 100%);
+      box-shadow: 0 12px 28px rgba(33, 51, 84, 0.06);
+    }
+    .pyeong-report-head .kicker {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 6px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: #eef8f7;
+      color: #0f5f67;
+      font-size: 11px;
+      font-weight: 1000;
+    }
+    .pyeong-report-head h3 {
+      margin: 0;
+      color: #0d2238;
+      font-size: clamp(19px, 2vw, 27px);
+      line-height: 1.1;
+    }
+    .pyeong-report-head p {
+      margin-top: 7px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
     .pyeong-toolbar {
       display: grid;
       grid-template-columns: repeat(6, minmax(120px, 1fr));
-      gap: 10px;
+      gap: 8px;
       margin: 12px 0;
       align-items: end;
+      padding: 10px;
+      border: 1px solid #dce7f1;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.82);
     }
+    .pyeong-toolbar label { font-size: 11px; color: #587087; }
+    .pyeong-toolbar select, .pyeong-toolbar input { min-height: 38px; border-color: #d7e2f1; font-weight: 800; }
     .pyeong-summary {
       display: grid;
       grid-template-columns: repeat(4, minmax(120px, 1fr));
@@ -2581,10 +2620,11 @@ const html = `<!doctype html>
       margin: 10px 0 12px;
     }
     .pyeong-stat {
-      border: 1px solid var(--line);
+      border: 1px solid #dce7f1;
       border-radius: 8px;
-      background: #fbfcfd;
-      padding: 9px 10px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+      padding: 11px 12px;
+      box-shadow: 0 8px 18px rgba(33, 51, 84, 0.05);
     }
     .valuation-dashboard {
       margin: 18px 0 14px;
@@ -3258,19 +3298,25 @@ const html = `<!doctype html>
     .pyeong-heatmap {
       max-height: 560px;
       overflow: auto;
-      border: 1px solid var(--line);
+      border: 1px solid #cadce8;
       border-radius: 8px;
       background: #fff;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 12px 24px rgba(33, 51, 84, 0.05);
     }
     .pyeong-heatmap table {
       min-width: 960px;
       border: 0;
+      border-collapse: separate;
+      border-spacing: 0;
     }
     .pyeong-heatmap th {
       position: sticky;
       top: 0;
       z-index: 3;
       background: #f4f7f9;
+      color: #587087;
+      font-size: 12px;
+      font-weight: 1000;
     }
     .pyeong-heatmap th:first-child,
     .pyeong-heatmap td:first-child {
@@ -3290,6 +3336,8 @@ const html = `<!doctype html>
       min-width: 76px;
       text-align: right;
       font-variant-numeric: tabular-nums;
+      font-weight: 900;
+      color: #1d344f;
     }
     .pyeong-cell small {
       display: block;
@@ -3315,9 +3363,13 @@ const html = `<!doctype html>
     .pyeong-side {
       max-height: 560px;
       overflow: auto;
-      border: 1px solid var(--line);
+      border: 1px solid #cadce8;
       border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 12px 24px rgba(33, 51, 84, 0.05);
     }
+    .pyeong-side table { border: 0; }
+    .pyeong-side th { background: #f4f7f9; color: #587087; font-size: 12px; }
     .floor-chart-cell {
       min-width: 280px;
       width: 34vw;
@@ -3558,7 +3610,14 @@ const html = `<!doctype html>
     <details class="pyeong-dashboard compact-disclosure" id="pyeongDashboardSection">
       <summary><span>마곡동 전체 평당가 매트릭스</span><span class="badge" id="pyeongModeBadge">년도별 · 건물별</span></summary>
       <div class="disclosure-body">
-      <p class="muted">년도별·월별·건물별로 중위 평당가를 비교합니다. 전용/공급/계약 기준을 바꾸면 같은 거래라도 다른 면적 기준으로 즉시 재집계됩니다.</p>
+      <div class="pyeong-report-head">
+        <div>
+          <span class="kicker">PRICE MATRIX</span>
+          <h3>건물별 평당가 비교 보드</h3>
+          <p>년도별·월별·건물별 중위 평당가를 한 번에 비교합니다. 전용·공급·계약 기준을 바꾸면 같은 거래도 다른 면적 기준으로 즉시 재집계됩니다.</p>
+        </div>
+        <span class="badge">건물별 기준값 비교</span>
+      </div>
       <div class="pyeong-toolbar">
         <label>기간 단위<select id="pyeongGranularity"><option value="year">년도별</option><option value="month">월별</option></select></label>
         <label>평당가 기준<select id="pyeongBasis"><option value="exclusive">전용평당가</option><option value="supply">공급평당가</option><option value="contract">계약평당가</option></select></label>
