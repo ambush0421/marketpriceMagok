@@ -2740,6 +2740,30 @@ const html = `<!doctype html>
       overflow: hidden;
       background: #fff;
     }
+    .valuation-chart.chart-scroll-x {
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: thin;
+      scroll-behavior: smooth;
+    }
+    .valuation-chart.chart-scroll-x svg {
+      width: max(100%, var(--chart-width, 980px));
+      max-width: none;
+      min-width: var(--chart-width, 980px);
+    }
+    .chart-scroll-hint {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 7px 10px;
+      border-bottom: 1px solid #edf2f6;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      background: linear-gradient(90deg, #fbfdff, #f3faf8);
+    }
+    .chart-scroll-hint span:last-child { color: var(--brand); }
     .valuation-summary {
       display: grid;
       grid-template-columns: repeat(2, minmax(120px, 1fr));
@@ -3298,7 +3322,7 @@ const html = `<!doctype html>
       <div class="core-story" id="aggregateStoryCards"></div>
       <div class="valuation-layout">
         <div class="valuation-summary" id="aggregateTrendSummary"></div>
-        <div class="valuation-chart"><svg id="aggregateTrendChart" viewBox="0 0 980 420" role="img" aria-label="집합건물 연도별 월별 거래가격과 평당가"></svg></div>
+        <div class="valuation-chart chart-scroll-x" id="aggregateTrendScroll"><div class="chart-scroll-hint"><span>좌우로 밀어 월별 흐름을 확인하세요</span><span>최근 월은 오른쪽</span></div><svg id="aggregateTrendChart" viewBox="0 0 980 420" role="img" aria-label="집합건물 연도별 월별 거래가격과 평당가"></svg></div>
       </div>
       <div class="table-scroll" style="margin-top:12px"><table id="aggregateTrendTable"></table></div>
     </section>
@@ -4948,34 +4972,42 @@ const html = `<!doctype html>
       const values = trend.map((row) => row.median_unit_manwon).filter(Number.isFinite);
       const w = 980, h = 420, padL = 66, padR = 34, padT = 36, padB = 54;
       if (!values.length) {
+        svg.setAttribute("viewBox", "0 0 " + w + " " + h);
+        svg.style.setProperty("--chart-width", w + "px");
         svg.innerHTML = '<text x="24" y="62" fill="#647083" font-size="15">집합건물 거래가격/평당가 추이 데이터가 없습니다.</text>';
         return;
       }
       const minValue = Math.min(...values) * 0.92;
       const maxValue = Math.max(...values) * 1.08;
-      const x = (index) => padL + (index / Math.max(trend.length - 1, 1)) * (w - padL - padR);
+      const pointGap = trend.length > 36 ? 32 : 54;
+      const dynamicW = Math.max(w, padL + padR + Math.max(trend.length - 1, 1) * pointGap);
+      svg.setAttribute("viewBox", "0 0 " + dynamicW + " " + h);
+      svg.style.setProperty("--chart-width", dynamicW + "px");
+      const scrollBox = document.getElementById("aggregateTrendScroll");
+      if (scrollBox) scrollBox.style.setProperty("--chart-width", dynamicW + "px");
+      const x = (index) => padL + index * pointGap;
       const y = (value) => h - padB - ((value - minValue) / Math.max(maxValue - minValue, 1)) * (h - padT - padB);
       const unitPath = trend.map((row, index) => Number.isFinite(row.median_unit_manwon) ? x(index) + "," + y(row.median_unit_manwon) : "").filter(Boolean).join(" ");
       const maxCount = Math.max(...trend.map((row) => row.count || 0), 1);
-      const barWidth = Math.max(4, Math.min(28, ((w - padL - padR) / Math.max(trend.length, 1)) * 0.56));
-      const labelStep = trend.length > 48 ? 12 : trend.length > 24 ? 6 : 1;
-      svg.innerHTML = \`
-        <line x1="\${padL}" y1="\${h-padB}" x2="\${w-padR}" y2="\${h-padB}" stroke="#dbe1ea"/>
-        <line x1="\${padL}" y1="\${padT}" x2="\${padL}" y2="\${h-padB}" stroke="#dbe1ea"/>
-        \${[0, 0.25, 0.5, 0.75, 1].map((ratio) => {
+      const barWidth = Math.max(4, Math.min(22, pointGap * 0.42));
+      const labelStep = trend.length > 72 ? 12 : trend.length > 36 ? 6 : trend.length > 18 ? 3 : 1;
+      svg.innerHTML = \
+        '<line x1="' + padL + '" y1="' + (h-padB) + '" x2="' + (dynamicW-padR) + '" y2="' + (h-padB) + '" stroke="#dbe1ea"/>' +
+        '<line x1="' + padL + '" y1="' + padT + '" x2="' + padL + '" y2="' + (h-padB) + '" stroke="#dbe1ea"/>' +
+        [0, 0.25, 0.5, 0.75, 1].map((ratio) => {
           const value = minValue + (maxValue - minValue) * ratio;
           const yy = y(value);
-          return \`<line x1="\${padL}" y1="\${yy}" x2="\${w-padR}" y2="\${yy}" stroke="#eef2f5"/><text x="12" y="\${yy + 4}" font-size="11" fill="#647083">\${money(value)}</text>\`;
-        }).join("")}
-        \${trend.map((row, index) => {
+          return '<line x1="' + padL + '" y1="' + yy + '" x2="' + (dynamicW-padR) + '" y2="' + yy + '" stroke="#eef2f5"/><text x="12" y="' + (yy + 4) + '" font-size="11" fill="#647083">' + money(value) + '</text>';
+        }).join("") +
+        trend.map((row, index) => {
           const barHeight = Math.max(0, ((row.count || 0) / maxCount) * 92);
-          return row.count ? \`<rect x="\${x(index) - barWidth / 2}" y="\${h - padB - barHeight}" width="\${barWidth}" height="\${barHeight}" rx="3" fill="#d9ece9"><title>\${row.period} 거래 \${row.count}건</title></rect>\` : "";
-        }).join("")}
-        \${unitPath ? \`<polyline fill="none" stroke="#156f78" stroke-width="4" points="\${unitPath}"/>\` : ""}
-        \${trend.map((row, index) => Number.isFinite(row.median_unit_manwon) ? \`<circle cx="\${x(index)}" cy="\${y(row.median_unit_manwon)}" r="3.3" fill="#156f78"><title>\${row.period} \${basisLabel} \${money(row.median_unit_manwon)}만원/평, \${row.count}건</title></circle>\` : "").join("")}
-        \${trend.map((row, index) => index % labelStep === 0 || index === trend.length - 1 ? \`<text x="\${x(index)}" y="\${h - 17}" text-anchor="middle" font-size="10" fill="#647083">\${escapeSvg(aggregatePeriodLabel(row.period))}</text>\` : "").join("")}
-        <text x="\${padL}" y="21" font-size="12" fill="#647083">청록 선=\${escapeSvg(basisLabel)} 중위 · 연한 막대=거래건수</text>
-      \`;
+          return row.count ? '<rect x="' + (x(index) - barWidth / 2) + '" y="' + (h - padB - barHeight) + '" width="' + barWidth + '" height="' + barHeight + '" rx="3" fill="#d9ece9"><title>' + escapeSvg(row.period) + ' 거래 ' + fmt.format(row.count) + '건</title></rect>' : "";
+        }).join("") +
+        (unitPath ? '<polyline fill="none" stroke="#156f78" stroke-width="4" points="' + unitPath + '"/>' : "") +
+        trend.map((row, index) => Number.isFinite(row.median_unit_manwon) ? '<circle cx="' + x(index) + '" cy="' + y(row.median_unit_manwon) + '" r="3.3" fill="#156f78"><title>' + escapeSvg(row.period) + ' ' + escapeSvg(basisLabel) + ' ' + money(row.median_unit_manwon) + '만원/평, ' + fmt.format(row.count) + '건</title></circle>' : "").join("") +
+        trend.map((row, index) => index % labelStep === 0 || index === trend.length - 1 ? '<text x="' + x(index) + '" y="' + (h - 17) + '" text-anchor="middle" font-size="10" fill="#647083">' + escapeSvg(aggregatePeriodLabel(row.period)) + '</text>' : "").join("") +
+        '<text x="' + padL + '" y="21" font-size="12" fill="#647083">청록 선=' + escapeSvg(basisLabel) + ' 중위 · 연한 막대=거래건수</text>';
+      if (scrollBox && dynamicW > scrollBox.clientWidth) scrollBox.scrollLeft = scrollBox.scrollWidth;
     }
 
     function renderAggregateTrendBoard() {
