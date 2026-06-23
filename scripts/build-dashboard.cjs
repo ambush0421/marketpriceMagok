@@ -2355,8 +2355,16 @@ const html = `<!doctype html>
     .building-chart-card { padding: 18px 18px 14px; min-width: 0; }
     .building-chart-card .detail-chart { border: 0; background: transparent; }
     .building-chart-card svg { width: 100%; height: auto; }
-    .building-recent-card .table-scroll { max-height: 338px; }
-    .building-recent-card table th, .building-recent-card table td { padding: 9px 8px; font-size: 12px; white-space: nowrap; }
+    .building-recent-card .table-scroll { max-height: 338px; overflow-x: hidden; }
+    .building-recent-card table { width: 100%; table-layout: fixed; }
+    .building-recent-card table th, .building-recent-card table td { padding: 9px 6px; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .building-recent-card table th:nth-child(1), .building-recent-card table td:nth-child(1) { width: 31%; }
+    .building-recent-card table th:nth-child(2), .building-recent-card table td:nth-child(2) { width: 17%; text-align: center; }
+    .building-recent-card table th:nth-child(3), .building-recent-card table td:nth-child(3) { width: 28%; text-align: right; }
+    .building-recent-card table th:nth-child(4), .building-recent-card table td:nth-child(4) { width: 24%; text-align: right; }
+    .area-cell { display: grid; gap: 1px; justify-items: end; line-height: 1.15; }
+    .area-cell strong { font-size: 11px; color: #0d2238; }
+    .area-cell small { color: var(--muted); font-size: 10px; }
     .detail-stats { grid-template-columns: repeat(3, minmax(120px, 1fr)); gap: 8px; margin: 12px 0 0; }
     .detail-stat { background: #f8faff; border-color: #d7e2f1; }
     .detail-stat strong { color: #06172e; }
@@ -3915,6 +3923,12 @@ const html = `<!doctype html>
       if (!Number.isFinite(pyeong)) return "-";
       return (Number.isFinite(row?.area_sqm) ? row.area_sqm.toFixed(2) + "㎡ / " : "") + pyeong.toFixed(2) + "평";
     }
+    function compactAreaHtml(row) {
+      const pyeong = pyeongValue(row);
+      if (!Number.isFinite(pyeong)) return "-";
+      const sqm = Number.isFinite(row?.area_sqm) ? '<small>' + escapeSvg(row.area_sqm.toFixed(2) + "㎡") + '</small>' : "";
+      return '<span class="area-cell"><strong>' + escapeSvg(pyeong.toFixed(2) + "평") + '</strong>' + sqm + '</span>';
+    }
     function floorText(value) { return value ? String(value) + "층" : "-"; }
 
     function buildGroupedAverages(rows, groupFn, valueFn) {
@@ -4014,7 +4028,7 @@ const html = `<!doctype html>
       document.getElementById("detailStats").innerHTML = [["기준값 반영", fmt.format(analysisRows.length) + "건"], ["최저-최고", prices.length ? eokText(Math.min(...prices)) + "~" + eokText(Math.max(...prices)) : "-"], ["중위 계약평당가", contractPyeongPrices.length ? money(medianClient(contractPyeongPrices)) + "만원" : "미확인"]].map(([label, value]) => '<div class="detail-stat"><span>' + escapeSvg(label) + '</span><strong>' + escapeSvg(value) + '</strong></div>').join("");
       drawDetailMonthlyChart(group, points);
       const recentRows = rows.slice(0, 8);
-      document.getElementById("detailTransactionTable").innerHTML = '<thead><tr><th>계약일</th><th>층</th><th>전용면적</th><th>거래금액</th></tr></thead><tbody>' + (recentRows.length ? recentRows.map((row) => '<tr><td>' + escapeSvg(dealDateText(row)) + '</td><td>' + escapeSvg(floorText(row.floor)) + '</td><td>' + escapeSvg(sqmPyeongText(row)) + '</td><td><strong>' + escapeSvg(eokText(row.price_manwon)) + '</strong></td></tr>').join("") : '<tr><td colspan="4">표시할 거래가 없습니다.</td></tr>') + '</tbody>';
+      document.getElementById("detailTransactionTable").innerHTML = '<thead><tr><th>계약일</th><th>층</th><th>전용면적</th><th>거래금액</th></tr></thead><tbody>' + (recentRows.length ? recentRows.map((row) => '<tr><td>' + escapeSvg(dealDateText(row)) + '</td><td>' + escapeSvg(floorText(row.floor)) + '</td><td>' + compactAreaHtml(row) + '</td><td><strong>' + escapeSvg(eokText(row.price_manwon)) + '</strong></td></tr>').join("") : '<tr><td colspan="4">표시할 거래가 없습니다.</td></tr>') + '</tbody>';
       const latestPrice = analysisRows[0]?.price_manwon;
       const medianPrice = medianClient(prices);
       document.getElementById("buildingCompareMini").innerHTML = '<div class="mini-price-box"><span>최근 거래</span><strong>' + escapeSvg(eokText(latestPrice)) + '</strong><small>최근 실거래 기준</small></div><div class="mini-vs">VS</div><div class="mini-price-box"><span>중위 거래</span><strong>' + escapeSvg(eokText(medianPrice)) + '</strong><small>선택 용도 기준</small></div>';
