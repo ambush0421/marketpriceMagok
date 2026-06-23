@@ -2595,9 +2595,58 @@ const html = `<!doctype html>
       padding: 14px;
     }
     .core-dashboard {
-      border-width: 2px;
-      border-color: #b9d9d6;
-      background: linear-gradient(180deg, #ffffff 0%, #f7fbfa 100%);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #cadce8;
+      background:
+        linear-gradient(135deg, rgba(21, 111, 120, 0.08) 0%, rgba(255, 255, 255, 0) 38%),
+        linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+      box-shadow: 0 20px 48px rgba(28, 50, 76, 0.12);
+      padding: 18px;
+    }
+    .core-dashboard::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 5px;
+      background: linear-gradient(90deg, #176f78, #66c3b8, #ffb24a);
+    }
+    .market-report-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 14px;
+    }
+    .market-kicker {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 8px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      color: #0f5f67;
+      background: #eef8f7;
+      font-size: 11px;
+      font-weight: 1000;
+    }
+    .market-report-head h2 {
+      margin: 0;
+      color: #0d2238;
+      font-size: clamp(22px, 2.3vw, 34px);
+      line-height: 1.08;
+    }
+    .market-report-head p {
+      margin-top: 8px;
+      color: var(--muted);
+      max-width: 760px;
+      line-height: 1.55;
+    }
+    .market-report-head .badge {
+      align-self: start;
+      max-width: 520px;
+      justify-content: flex-end;
+      text-align: right;
+      white-space: normal;
     }
     .core-dashboard .valuation-layout {
       grid-template-columns: 1fr;
@@ -2608,6 +2657,12 @@ const html = `<!doctype html>
     .core-dashboard .valuation-summary {
       order: 2;
       grid-template-columns: repeat(6, minmax(110px, 1fr));
+      margin-top: 2px;
+    }
+    .core-dashboard .valuation-stat {
+      background: #ffffff;
+      border-color: #dce7f1;
+      box-shadow: 0 8px 16px rgba(33, 51, 84, 0.04);
     }
     .core-story {
       display: grid;
@@ -2615,16 +2670,19 @@ const html = `<!doctype html>
       gap: 10px;
       margin: 12px 0;
     }
+    .core-dashboard .core-story { margin: 0 0 12px; }
     .core-card {
       min-height: 106px;
-      border: 1px solid var(--line);
+      border: 1px solid #dce7f1;
       border-radius: 8px;
-      background: #ffffff;
-      padding: 12px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+      padding: 13px;
       display: grid;
       gap: 6px;
       align-content: start;
+      box-shadow: 0 10px 22px rgba(33, 51, 84, 0.06);
     }
+    .core-dashboard .core-card:first-child { border-color: rgba(21,111,120,0.28); background: linear-gradient(180deg, #eef8f7 0%, #ffffff 100%); }
     .core-card span {
       color: var(--muted);
       font-size: 12px;
@@ -2781,6 +2839,25 @@ const html = `<!doctype html>
       margin: 12px 0;
       align-items: end;
     }
+    .core-dashboard .valuation-toolbar {
+      grid-template-columns: repeat(6, minmax(118px, 1fr));
+      gap: 8px;
+      margin: 0 0 14px;
+      padding: 10px;
+      border: 1px solid #dce7f1;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.72), 0 10px 24px rgba(33, 51, 84, 0.05);
+    }
+    .core-dashboard .valuation-toolbar label {
+      font-size: 11px;
+      color: #587087;
+    }
+    .core-dashboard .valuation-toolbar select {
+      min-height: 38px;
+      border-color: #d7e2f1;
+      font-weight: 800;
+    }
     .valuation-layout {
       display: grid;
       grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1.18fr);
@@ -2792,6 +2869,11 @@ const html = `<!doctype html>
       border-radius: 8px;
       overflow: hidden;
       background: #fff;
+    }
+    .core-dashboard .valuation-chart {
+      border-color: #cadce8;
+      background: #fbfdff;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
     }
     .valuation-chart.chart-scroll-x {
       overflow-x: auto;
@@ -3251,6 +3333,8 @@ const html = `<!doctype html>
     }
     @media (max-width: 980px) {
       .toolbar, .grid, .pyeong-toolbar, .pyeong-summary, .valuation-toolbar, .core-story { grid-template-columns: 1fr 1fr; }
+      .market-report-head { grid-template-columns: 1fr; }
+      .market-report-head .badge { justify-content: flex-start; text-align: left; }
       .grid > section:first-child { grid-column: 1 / -1; }
       .detail-panel { grid-template-columns: 1fr; }
       .commercial-report { grid-template-columns: 1fr; }
@@ -3359,11 +3443,14 @@ const html = `<!doctype html>
     </section>
 
     <section class="valuation-dashboard core-dashboard" id="aggregateTrendSection">
-      <div class="detail-title">
-        <h2>1. 마곡동 가격 흐름은 어느 방향인가?</h2>
+      <div class="market-report-head">
+        <div>
+          <span class="market-kicker">MARKET PULSE</span>
+          <h2>마곡동 가격 흐름 리포트</h2>
+          <p>연도, 월, 용도, 평형을 고르면 평당가 흐름과 거래량이 즉시 바뀝니다. 선택 건물 판단 전에 시장의 방향과 표본 밀도를 먼저 확인합니다.</p>
+        </div>
         <span class="badge" id="aggregateTrendBadge">전체 DB 기준</span>
       </div>
-      <p class="muted">연도, 월, 용도, 평형을 고르면 평당가 흐름과 거래량이 먼저 보입니다. 이 차트는 가격 판단이 아니라 시장 흐름 확인용입니다.</p>
       <div class="valuation-toolbar">
         <label>기간 단위<select id="aggregatePeriod"><option value="year">연도별</option><option value="month">월별</option></select></label>
         <label>연도 선택<select id="aggregateYear"></select></label>
