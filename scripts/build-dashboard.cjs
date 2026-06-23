@@ -2894,24 +2894,24 @@ const html = `<!doctype html>
       font-size: 15px;
     }
     .usage-panel table {
-      display: block;
       width: 100%;
       max-width: 100%;
-      overflow-x: auto;
-      scrollbar-width: thin;
-    }
-    .usage-panel table thead,
-    .usage-panel table tbody,
-    .usage-panel table tr {
-      min-width: 100%;
-    }
-    .usage-mini-table {
-      width: 100%;
+      table-layout: fixed;
       border-collapse: collapse;
       background: #fff;
       border: 1px solid var(--line);
       border-radius: 8px;
       overflow: hidden;
+    }
+    .usage-panel th,
+    .usage-panel td {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .usage-mini-table {
+      margin-top: 10px;
     }
     .usage-mini-table th,
     .usage-mini-table td {
@@ -2922,21 +2922,26 @@ const html = `<!doctype html>
     .usage-mini-table th {
       background: #f4f7f9;
     }
+    .usage-mini-table td:first-child,
+    .usage-mini-table th:first-child {
+      width: 34%;
+      white-space: normal;
+    }
     .usage-trend-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      overflow: hidden;
       margin-top: 12px;
     }
     .usage-trend-table th,
     .usage-trend-table td {
-      padding: 8px 7px;
-      font-size: 12px;
+      padding: 8px 6px;
+      font-size: 11px;
       vertical-align: top;
       border-bottom: 1px solid var(--line);
+      text-align: right;
+    }
+    .usage-trend-table th:first-child,
+    .usage-trend-table td:first-child {
+      width: 52px;
+      text-align: left;
     }
     .usage-trend-table th {
       background: #f4f7f9;
