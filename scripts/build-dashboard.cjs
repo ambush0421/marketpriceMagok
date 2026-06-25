@@ -1923,8 +1923,11 @@ const html = `<!doctype html>
       justify-content: center;
       border-radius: 8px;
       padding: 0 18px;
+      border: 0;
+      font: inherit;
       font-weight: 900;
       text-decoration: none;
+      cursor: pointer;
     }
     .hero-button {
       background: #ffb24a;
@@ -3835,7 +3838,7 @@ const html = `<!doctype html>
       main { padding: 14px; }
       .consumer-hero { grid-template-columns: 1fr; min-height: 560px; align-items: end; padding: 22px; background-position: center; }
       .consumer-hero-mini { justify-self: stretch; }
-      .consumer-hero-actions a { flex: 1 1 180px; }
+      .consumer-hero-actions a, .consumer-hero-actions button { flex: 1 1 180px; }
       .toolbar, .grid, .pyeong-toolbar, .pyeong-summary, .valuation-toolbar, .valuation-summary, .usage-controls, .usage-metrics, .core-story, .commercial-summary, .expert-pack-metrics { grid-template-columns: 1fr; }
       .pyeong-filter-feedback { grid-template-columns: 1fr; }
       .expert-pack-head { padding: 13px; }
@@ -3883,7 +3886,7 @@ const html = `<!doctype html>
       .reference-notice { width: 100%; padding: 9px 10px; font-size: 11px; }
       .reference-notice span { flex: 1 1 180px; }
       .consumer-hero-actions { display: grid; grid-template-columns: 1fr; gap: 8px; }
-      .consumer-hero-actions a { width: 100%; min-height: 46px; }
+      .consumer-hero-actions a, .consumer-hero-actions button { width: 100%; min-height: 46px; }
       .consumer-hero-mini { width: 100%; padding: 13px; }
       .consumer-hero-mini strong { font-size: 27px; }
 
@@ -4089,8 +4092,8 @@ const html = `<!doctype html>
         <p>마곡동 상가·업무시설 매매 실거래를 일반 사용자도 읽기 쉽게 정리했습니다. 먼저 건물을 검색하고, 상담등급·평당가·월별 변동만 확인하세요.</p>
         <div class="reference-notice"><strong>참고자료</strong><span>국토부 공개 실거래 기반의 상담·검토용 자료입니다. 법적 효력이나 투자 판단을 보장하지 않으며, 계약 전 원자료와 전문가 확인이 필요합니다.</span></div>
         <div class="consumer-hero-actions">
-          <a class="hero-button" href="#search">건물 검색하기</a>
-          <a class="hero-link" href="#buildingDetailSection">선택 결과 보기</a>
+          <button type="button" class="hero-button" data-scroll-target="search">건물 검색하기</button>
+          <button type="button" class="hero-link" data-scroll-target="buildingDetailSection">선택 결과 보기</button>
         </div>
       </div>
       <div class="consumer-hero-mini" aria-label="분석 데이터 요약">
@@ -6861,6 +6864,18 @@ const html = `<!doctype html>
     });
     document.getElementById("valuationPeriod").addEventListener("change", (event) => { state.valuationPeriod = event.target.value; renderDecisionBoards(); });
     document.addEventListener("click", (event) => {
+      const scrollAction = event.target.closest("[data-scroll-target]");
+      if (scrollAction) {
+        const target = document.getElementById(scrollAction.dataset.scrollTarget);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          if (target.matches("input, select, textarea, button")) {
+            window.setTimeout(() => target.focus({ preventScroll: true }), 260);
+          }
+        }
+        event.preventDefault();
+        return;
+      }
       const commercialAction = event.target.closest("[data-commercial-action]");
       if (commercialAction) {
         const action = commercialAction.dataset.commercialAction;
