@@ -18,8 +18,12 @@ function App() {
           <h1>마곡동 상가·업무시설 실거래를 건물별로 확인하세요</h1>
           <p>
             최근 10년 매매 실거래, 건물명 매칭, 전용·계약 평당가, 월별 변동 그래프를
-            한 화면에서 볼 수 있게 정리했습니다.
+            한 화면에서 볼 수 있게 정리한 상담·검토용 참고자료입니다.
           </p>
+          <div className="reference-note">
+            <strong>참고자료</strong>
+            <span>법적 효력이나 투자 판단을 보장하지 않으며, 계약 전 원자료와 전문가 확인이 필요합니다.</span>
+          </div>
         </div>
         <div className="hero-actions">
           <a className="primary-action" href={dashboardUrl} target="_blank" rel="noreferrer">

@@ -1898,6 +1898,35 @@ const html = `<!doctype html>
       font-size: clamp(16px, 1.4vw, 20px);
       line-height: 1.7;
     }
+    .reference-notice {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      max-width: min(720px, 100%);
+      padding: 9px 11px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.13);
+      color: rgba(255,255,255,0.88);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.45;
+      backdrop-filter: blur(12px);
+    }
+    .reference-notice strong {
+      display: inline-flex;
+      align-items: center;
+      min-height: 23px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 1000;
+      white-space: nowrap;
+    }
     .consumer-hero-actions {
       display: flex;
       flex-wrap: wrap;
@@ -3955,6 +3984,7 @@ const html = `<!doctype html>
         <span class="eyebrow">MAGOK COMMERCIAL PRICE GUIDE</span>
         <h2>건물명만 입력하면<br>실거래 흐름이 바로 보입니다</h2>
         <p>마곡동 상가·업무시설 매매 실거래를 일반 사용자도 읽기 쉽게 정리했습니다. 먼저 건물을 검색하고, 상담등급·평당가·월별 변동만 확인하세요.</p>
+        <div class="reference-notice"><strong>참고자료</strong><span>국토부 공개 실거래 기반의 상담·검토용 자료입니다. 법적 효력이나 투자 판단을 보장하지 않으며, 계약 전 원자료와 전문가 확인이 필요합니다.</span></div>
         <div class="consumer-hero-actions">
           <a class="hero-button" href="#search">건물 검색하기</a>
           <a class="hero-link" href="#buildingDetailSection">선택 결과 보기</a>
@@ -3977,7 +4007,7 @@ const html = `<!doctype html>
       </div>
     </div>
 
-    <p class="data-note"><strong>데이터 안내.</strong> 상업업무용 매매 활성 거래 ${records.length.toLocaleString("ko-KR")}건 중 기준값 산식에 ${analysisRecords.length.toLocaleString("ko-KR")}건을 반영했습니다. 해제 거래, 복수 후보필지, 지분거래, 일괄거래 후보는 평균과 추이에서 제외했습니다.</p>
+    <p class="data-note"><strong>참고자료 안내.</strong> 본 화면은 국토부 공개 실거래 자료를 바탕으로 만든 상담·검토용 참고자료입니다. 법적 효력이나 매수·매도 판단을 보장하지 않으며, 상업업무용 매매 활성 거래 ${records.length.toLocaleString("ko-KR")}건 중 기준값 산식에 ${analysisRecords.length.toLocaleString("ko-KR")}건을 반영했습니다. 해제 거래, 복수 후보필지, 지분거래, 일괄거래 후보는 평균과 추이에서 제외했습니다.</p>
 
     <div class="dashboard-intent">
       <strong>건물 검색부터 시작</strong>
