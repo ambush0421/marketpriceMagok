@@ -10,18 +10,35 @@
       const isDist = window.location.pathname.includes("/dist/") || window.location.pathname.includes("\\dist\\");
       const isLocalDev = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
 
-      if (window.location.protocol === "file:") {
-        window.location.replace(isDist ? `./${dashboardFile}` : `./docs/ai-output/${dashboardFile}`);
-      } else if (!isLocalDev) {
-        window.addEventListener("DOMContentLoaded", async () => {
-          const docsDashboard = `./docs/ai-output/${dashboardFile}`;
+      async function renderStaticDashboard() {
+        const candidates = isDist
+          ? [{ url: "./" + dashboardFile, base: "./" }]
+          : [
+              { url: "./docs/ai-output/" + dashboardFile, base: "./docs/ai-output/" },
+              { url: "./" + dashboardFile, base: "./" },
+            ];
+
+        for (const candidate of candidates) {
           try {
-            const response = await fetch(docsDashboard, { method: "HEAD", cache: "no-store" });
-            window.location.replace(response.ok ? docsDashboard : `./${dashboardFile}`);
+            const response = await fetch(candidate.url, { cache: "no-store" });
+            if (!response.ok) continue;
+            const html = await response.text();
+            const baseHref = new URL(candidate.base, window.location.href).href;
+            const rendered = html.replace(/<head>/i, '<head><base href="' + baseHref + '">');
+            document.open();
+            document.write(rendered);
+            document.close();
+            return;
           } catch (_) {
-            window.location.replace(docsDashboard);
+            // Try the next known static dashboard location.
           }
-        });
+        }
+      }
+
+      if (window.location.protocol === "file:") {
+        window.location.replace(isDist ? "./" + dashboardFile : "./docs/ai-output/" + dashboardFile);
+      } else if (!isLocalDev) {
+        window.addEventListener("DOMContentLoaded", renderStaticDashboard);
       }
     </script>
   </head>
