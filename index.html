@@ -13,29 +13,20 @@
       if (window.location.protocol === "file:") {
         window.location.replace(isDist ? `./${dashboardFile}` : `./docs/ai-output/${dashboardFile}`);
       } else if (!isLocalDev) {
-        window.addEventListener("DOMContentLoaded", () => {
-          window.setTimeout(async () => {
-            const rootText = document.getElementById("root")?.innerText || "";
-            if (!rootText.includes("대시보드를 여는 중입니다")) return;
-            const docsDashboard = `./docs/ai-output/${dashboardFile}`;
-            try {
-              const response = await fetch(docsDashboard, { method: "HEAD", cache: "no-store" });
-              window.location.replace(response.ok ? docsDashboard : `./${dashboardFile}`);
-            } catch (_) {
-              window.location.replace(docsDashboard);
-            }
-          }, 1400);
+        window.addEventListener("DOMContentLoaded", async () => {
+          const docsDashboard = `./docs/ai-output/${dashboardFile}`;
+          try {
+            const response = await fetch(docsDashboard, { method: "HEAD", cache: "no-store" });
+            window.location.replace(response.ok ? docsDashboard : `./${dashboardFile}`);
+          } catch (_) {
+            window.location.replace(docsDashboard);
+          }
         });
       }
     </script>
   </head>
   <body>
-    <div id="root">
-      <div style="padding:24px;font-family:Segoe UI,Arial,sans-serif;color:#172126">
-        <strong>대시보드를 여는 중입니다.</strong>
-        <p>화면이 멈춰 있으면 `npm run dev`로 실행한 뒤 브라우저에서 로컬 주소를 열어주세요.</p>
-      </div>
-    </div>
+    <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
