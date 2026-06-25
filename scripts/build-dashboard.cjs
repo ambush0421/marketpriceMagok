@@ -3977,6 +3977,91 @@ const html = `<!doctype html>
       .table-scroll table { min-width: 560px; }
     }
 
+
+    /* Prevent chart and table clipping across desktop and mobile. */
+    .table-scroll,
+    .pyeong-heatmap,
+    .pyeong-side,
+    .graph-grid,
+    .building-recent-card .table-scroll {
+      max-height: none;
+      overflow: auto;
+      overscroll-behavior: contain;
+    }
+    .detail-table-pack,
+    .detail-table-pack .disclosure-body,
+    .detail-table-pack .analysis-band > section,
+    .detail-table-pack > .disclosure-body > section,
+    .detail-table-pack .grid > section {
+      overflow: visible;
+    }
+    .valuation-chart,
+    .trend-chart,
+    .detail-chart,
+    .chart-wrap,
+    .building-chart-card .detail-chart,
+    .core-dashboard .valuation-chart,
+    .expert-pack #valuationDashboardSection .valuation-chart {
+      overflow: auto;
+      padding-bottom: 2px;
+    }
+    .valuation-chart svg,
+    .trend-chart svg,
+    .detail-chart svg,
+    .chart-wrap svg,
+    .building-chart-card svg {
+      display: block;
+      width: max(100%, 720px);
+      max-width: none;
+      height: auto;
+    }
+    .valuation-chart.chart-scroll-x {
+      overflow: auto;
+    }
+    .valuation-chart.chart-scroll-x svg {
+      width: max(100%, var(--chart-width, 980px));
+    }
+    .building-recent-card table th,
+    .building-recent-card table td {
+      overflow: visible;
+      text-overflow: clip;
+    }
+    @media (max-width: 720px) {
+      .table-scroll,
+      .pyeong-heatmap,
+      .pyeong-side,
+      .graph-grid,
+      .building-recent-card .table-scroll {
+        max-height: none;
+      }
+      .valuation-chart svg,
+      .trend-chart svg,
+      .detail-chart svg,
+      .chart-wrap svg,
+      .building-chart-card svg {
+        min-width: 680px;
+      }
+      .pyeong-heatmap table,
+      .detail-table-pack .table-scroll table,
+      .table-scroll table {
+        min-width: 680px;
+      }
+    }
+    @media (max-width: 420px) {
+      .valuation-chart svg,
+      .trend-chart svg,
+      .detail-chart svg,
+      .chart-wrap svg,
+      .building-chart-card svg {
+        min-width: 620px;
+      }
+      .pyeong-heatmap table,
+      .detail-table-pack .table-scroll table,
+      .table-scroll table {
+        min-width: 620px;
+      }
+    }
+
   </style>
 </head>
 <body>
