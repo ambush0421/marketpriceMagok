@@ -3871,6 +3871,129 @@ const html = `<!doctype html>
       .detail-table-pack .table-scroll th:first-child,
       .detail-table-pack .table-scroll td:first-child { min-width: 118px; max-width: 160px; }
     }
+
+    @media (max-width: 720px) {
+      html, body { max-width: 100%; overflow-x: hidden; }
+      body { background: #f3f7f6; }
+      header { padding: 10px 10px 0; }
+      main { gap: 10px; padding: 10px 10px 28px; }
+      .top-shell { padding: 10px; border-radius: 8px; }
+      .brand-mark { width: 38px; height: 38px; font-size: 18px; }
+      .brand-copy h1 { font-size: 19px; line-height: 1.15; }
+      .brand-copy p { font-size: 12px; line-height: 1.4; }
+      .top-meta { width: 100%; overflow-x: auto; padding-bottom: 2px; flex-wrap: nowrap; }
+      .top-chip { flex: 0 0 auto; }
+
+      .consumer-hero {
+        min-height: auto;
+        margin: 0 0 10px;
+        padding: 20px 16px;
+        border-radius: 8px;
+        background-image: linear-gradient(180deg, rgba(8, 28, 31, 0.9) 0%, rgba(13, 47, 53, 0.74) 58%, rgba(13, 47, 53, 0.52) 100%), url("magok-commercial-hero.png");
+        background-position: center top;
+      }
+      .consumer-hero::after { inset: 8px; }
+      .consumer-hero-content { gap: 12px; align-self: end; }
+      .consumer-hero .eyebrow { font-size: 10px; padding: 6px 8px; }
+      .consumer-hero h2 { font-size: clamp(30px, 10vw, 42px); line-height: 1.08; word-break: keep-all; }
+      .consumer-hero p { font-size: 14px; line-height: 1.58; word-break: keep-all; }
+      .reference-notice { width: 100%; padding: 9px 10px; font-size: 11px; }
+      .reference-notice span { flex: 1 1 180px; }
+      .consumer-hero-actions { display: grid; grid-template-columns: 1fr; gap: 8px; }
+      .consumer-hero-actions a { width: 100%; min-height: 46px; }
+      .consumer-hero-mini { width: 100%; padding: 13px; }
+      .consumer-hero-mini strong { font-size: 27px; }
+
+      .kpis { margin: 0; }
+      .kpi-strip { display: flex; gap: 8px; overflow-x: auto; padding: 10px; scroll-snap-type: x proximity; }
+      .kpi-strip span { flex: 0 0 auto; scroll-snap-align: start; }
+      .data-note { padding: 10px 12px; font-size: 12px; line-height: 1.55; }
+      .dashboard-intent { padding: 10px 12px; gap: 5px; }
+      .dashboard-intent strong { font-size: 15px; }
+      .dashboard-intent span { font-size: 12px; line-height: 1.45; }
+      .mode-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+      .mode-button { min-height: 48px; padding: 9px 10px; font-size: 12px; }
+
+      .toolbar { gap: 8px; padding: 10px; margin-bottom: 10px; }
+      label { gap: 5px; font-size: 11px; }
+      input, select { min-height: 44px; padding: 0 12px; font-size: 15px; }
+      .search-field input { font-size: 17px; }
+      .search-suggestions { max-height: 280px; }
+      .suggestion-button { grid-template-columns: 1fr; gap: 4px; padding: 10px 12px; }
+
+      .plain-guide, .valuation-dashboard, .pyeong-dashboard, .detail-table-pack, .building-result-shell { border-radius: 8px; }
+      .plain-guide, .valuation-dashboard { padding: 13px; }
+      .plain-guide h2, .valuation-dashboard h2, .building-side-card h3, .building-chart-card h3, .building-recent-card h3, .building-mini-card h3 { font-size: 18px; line-height: 1.22; }
+      .plain-guide p, .market-report-head p, .muted { font-size: 12px; line-height: 1.55; }
+      .plain-cards, .workflow-steps { grid-template-columns: 1fr; }
+      .market-report-head { gap: 10px; padding: 13px; }
+      .valuation-toolbar { gap: 8px; }
+      .core-story, .valuation-summary, .pyeong-summary, .usage-metrics { gap: 8px; }
+      .core-card, .valuation-stat, .pyeong-stat { padding: 11px 12px; min-height: auto; }
+      .valuation-chart { overflow-x: auto; min-height: 310px; }
+      .valuation-chart svg { min-width: 720px; }
+      .chart-scroll-hint { position: sticky; left: 10px; width: max-content; }
+      .table-scroll { max-height: 420px; border-radius: 8px; overflow: auto; }
+      .table-scroll table { min-width: 620px; }
+      th, td { padding: 8px 7px; font-size: 12px; }
+
+      .building-result-topbar { display: grid; grid-template-columns: 1fr; gap: 4px; padding: 2px 0 10px; }
+      .building-profile-card { grid-template-columns: 1fr; gap: 13px; padding: 14px; }
+      .building-profile-card img { width: 100%; height: 142px; }
+      .building-profile-copy h2 { font-size: 27px; }
+      .building-profile-copy p { font-size: 13px; line-height: 1.45; }
+      .building-meta-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+      .building-meta-strip .meta-address { grid-column: 1 / -1; min-width: 0; font-size: 12px; }
+      .building-meta-strip .meta-chip { min-width: 0; justify-content: center; white-space: normal; text-align: center; }
+      .building-profile-chips { gap: 6px; }
+      .building-profile-actions { display: grid; grid-template-columns: 1fr; width: 100%; }
+      .building-profile-actions .button { width: 100%; min-height: 44px; }
+      .building-view-tabs { gap: 16px; overflow-x: auto; flex-wrap: nowrap; padding: 12px 4px 8px; }
+      .building-view-tabs .detail-tab { flex: 0 0 auto; font-size: 13px; }
+      .commercial-summary { grid-template-columns: 1fr; gap: 8px; }
+      .commercial-summary div { min-height: auto; padding: 14px 14px 14px 62px; }
+      .commercial-summary div::before { left: 14px; width: 38px; height: 38px; font-size: 20px; }
+      .commercial-summary strong { font-size: 24px; }
+      .commercial-status { text-align: left; }
+      .building-result-grid, .building-lower-grid { grid-template-columns: 1fr; gap: 10px; }
+      .building-side-card, .building-recent-card, .building-mini-card, .building-chart-card { padding: 14px; }
+      .building-map-preview { height: 150px; }
+      .building-info-row { grid-template-columns: 76px minmax(0, 1fr); font-size: 12px; }
+      .building-chart-card .detail-chart { overflow-x: auto; }
+      .building-chart-card svg { min-width: 620px; }
+      .building-recent-card .table-scroll { max-height: none; overflow-x: auto; }
+      .building-recent-card table { min-width: 520px; table-layout: fixed; }
+      .building-recent-card table th, .building-recent-card table td { padding: 8px 6px; font-size: 11px; }
+      .mini-compare { grid-template-columns: 1fr; }
+      .mini-vs { width: 100%; height: 34px; border-radius: 8px; }
+      .bar-row { grid-template-columns: 58px 1fr 64px; gap: 8px; }
+
+      details > summary { min-height: 54px; padding: 13px 14px; gap: 8px; }
+      details > summary span:first-child { font-size: 15px; line-height: 1.25; }
+      .disclosure-body { padding: 12px; }
+      .expert-pack-head, .pyeong-report-head { padding: 13px; }
+      .expert-pack-head h3, .pyeong-report-head h3 { font-size: 22px; }
+      .expert-pack-metrics { grid-template-columns: 1fr; }
+      .detail-table-pack .table-scroll table, .pyeong-heatmap table { min-width: 720px; }
+      .pyeong-layout { gap: 10px; }
+      .pyeong-toolbar { gap: 8px; }
+      .pyeong-filter-feedback { padding: 10px 12px; }
+      .usage-split-layout, .analysis-band, .grid { gap: 10px; }
+      .usage-panel { padding: 12px; }
+    }
+
+    @media (max-width: 420px) {
+      main { padding-left: 8px; padding-right: 8px; }
+      .consumer-hero { padding: 18px 14px; }
+      .consumer-hero h2 { font-size: 30px; }
+      .building-profile-copy h2 { font-size: 24px; }
+      .building-meta-strip { grid-template-columns: 1fr; }
+      .mode-switch { grid-template-columns: 1fr; }
+      .commercial-summary div { padding-left: 58px; }
+      .valuation-chart svg, .building-chart-card svg { min-width: 560px; }
+      .table-scroll table { min-width: 560px; }
+    }
+
   </style>
 </head>
 <body>
