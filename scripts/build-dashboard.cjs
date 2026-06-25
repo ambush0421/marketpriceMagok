@@ -1616,10 +1616,50 @@ function escapeHtml(value) {
     .replace(/"/g, "&quot;");
 }
 
-const selectedGroups = payload.parcel_groups
-  .filter((group) => group.transaction_count >= 8)
-  .slice(0, 24)
-  .map((group) => group.parcel_key);
+
+function compactNumber(value, digits = 2) {
+  return Number.isFinite(value) ? Number(value.toFixed(digits)) : undefined;
+}
+
+function cleanCompactObject(value) {
+  return Object.fromEntries(Object.entries(value).filter(([, item]) => {
+    if (item === undefined || item === null || item === "") return false;
+    if (Array.isArray(item) && item.length === 0) return false;
+    return true;
+  }));
+}
+
+function compactRecord(record) {
+  return cleanCompactObject({
+    parcel_key: record.parcel_key,
+    month: record.month,
+    year: record.year,
+    contract_day: record.contract_day,
+    parcel_label: record.parcel_label,
+    parcel: record.parcel,
+    road: record.road,
+    building_name: record.building_name,
+    building_name_status: record.building_name_status,
+    is_masked_parcel: record.is_masked_parcel ? true : undefined,
+    probable_parcel_key: record.probable_parcel_key,
+    main_use: record.main_use,
+    floor: record.floor,
+    area_sqm: compactNumber(record.area_sqm, 2),
+    exclusive_pyeong: compactNumber(record.exclusive_pyeong, 3),
+    supply_area_sqm: compactNumber(record.supply_area_sqm, 2),
+    supply_pyeong: compactNumber(record.supply_pyeong, 3),
+    contract_area_sqm: compactNumber(record.contract_area_sqm, 2),
+    contract_pyeong: compactNumber(record.contract_pyeong, 3),
+    price_manwon: compactNumber(record.price_manwon, 0),
+    price_per_sqm_manwon: compactNumber(record.price_per_sqm_manwon, 4),
+    exclusive_ppyeong_manwon: compactNumber(record.exclusive_ppyeong_manwon, 3),
+    supply_ppyeong_manwon: compactNumber(record.supply_ppyeong_manwon, 3),
+    contract_ppyeong_manwon: compactNumber(record.contract_ppyeong_manwon, 3),
+    transaction_type: record.transaction_type,
+    analysis_eligible: record.analysis_eligible === false ? false : undefined,
+    analysis_exclusion_reasons: record.analysis_exclusion_reasons,
+  });
+}
 
 const compactPayload = {
   methodology: payload.methodology,
@@ -1639,64 +1679,7 @@ const compactPayload = {
   buildingMonthlySeries: payload.building_monthly_series,
   topMovers: payload.top_movers,
   yearly: payload.yearly,
-  records: payload.records.map((record) => ({
-    parcel_key: record.parcel_key,
-    month: record.month,
-    year: record.year,
-    contract_day: record.contract_day,
-    parcel_label: record.parcel_label,
-    parcel: record.parcel,
-    road: record.road,
-    building_name: record.building_name,
-    building_name_status: record.building_name_status,
-    building_name_source: record.building_name_source,
-    official_title_confirmed: record.official_title_confirmed,
-    official_single_candidate_match: record.official_single_candidate_match,
-    masked_match_stage: record.masked_match_stage,
-    is_masked_parcel: record.is_masked_parcel,
-    probable_parcel_key: record.probable_parcel_key,
-    building_match_confidence: record.building_match_confidence,
-    building_match_note: record.building_match_note,
-    main_use: record.main_use,
-    floor: record.floor,
-    area_sqm: record.area_sqm,
-    exclusive_pyeong: record.exclusive_pyeong,
-    common_area_sqm: record.common_area_sqm,
-    direct_common_area_sqm: record.direct_common_area_sqm,
-    shared_common_area_sqm: record.shared_common_area_sqm,
-    supply_area_sqm: record.supply_area_sqm,
-    supply_pyeong: record.supply_pyeong,
-    contract_area_sqm: record.contract_area_sqm,
-    contract_pyeong: record.contract_pyeong,
-    price_manwon: record.price_manwon,
-    price_per_sqm_manwon: record.price_per_sqm_manwon,
-    exclusive_ppyeong_manwon: record.exclusive_ppyeong_manwon,
-    supply_ppyeong_manwon: record.supply_ppyeong_manwon,
-    contract_ppyeong_manwon: record.contract_ppyeong_manwon,
-    contract_area_source: record.contract_area_source,
-    contract_area_confidence: record.contract_area_confidence,
-    area_source: record.area_source,
-    area_basis: record.area_basis,
-    area_confidence: record.area_confidence,
-    transaction_type: record.transaction_type,
-    broker_location: record.broker_location,
-    share_type: record.share_type,
-    bulk_deal_candidate: record.bulk_deal_candidate,
-    bulk_deal_record_count: record.bulk_deal_record_count,
-    bulk_deal_floor_count: record.bulk_deal_floor_count,
-    bulk_deal_total_area_sqm: record.bulk_deal_total_area_sqm,
-    bulk_deal_total_price_manwon: record.bulk_deal_total_price_manwon,
-    analysis_eligible: record.analysis_eligible,
-    analysis_exclusion_reasons: record.analysis_exclusion_reasons,
-    refinement_tier: record.refinement_tier,
-    refinement_score: record.refinement_score,
-    refinement_reasons: record.refinement_reasons,
-    refinement_promotion: record.refinement_promotion,
-    refinement_outlier_candidate: record.refinement_outlier_candidate,
-    refinement_cohort_key: record.refinement_cohort_key,
-    refinement_cohort_count: record.refinement_cohort_count,
-  })),
-  selectedGroups,
+  records: payload.records.map(compactRecord),
 };
 
 const html = `<!doctype html>
@@ -4657,25 +4640,6 @@ const html = `<!doctype html>
       if (category === "retail") return "상가";
       if (category === "all") return "전체";
       return "기타";
-    }
-
-    function roomValidationLabel(row) {
-      const confidence = String(row.contract_area_confidence || "");
-      const count = Number(row.contract_area_matched_room_count);
-      if (!confidence) return "미검증";
-      if (confidence === "high" && count === 1) return "단일 호실 후보";
-      if (confidence === "same_area_multi_room") return "동일면적 " + fmt.format(count || 0) + "호 후보";
-      if (confidence === "rough_floor_area_nearest") return "근사면적 후보";
-      if (confidence.includes("unique_room")) return "유일 호실 후보";
-      if (confidence.includes("same_area_rooms")) return "동일면적 복수 후보";
-      return "호실 후보 있음";
-    }
-
-    function roomCandidateText(row) {
-      const unit = row.contract_area_matched_unit_sample || "";
-      const count = Number(row.contract_area_matched_room_count);
-      if (!unit && !count) return "-";
-      return (unit || "호실 후보") + (count > 1 ? " 외 " + fmt.format(count - 1) + "개" : "");
     }
 
     function averageClient(values) {

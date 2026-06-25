@@ -328,8 +328,6 @@ for (const marker of [
   "호실검증",
   "전용면적 오차㎡",
   "호실 후보검증",
-  "roomValidationLabel",
-  "roomCandidateText",
   "선택 건물 동일일자·동일층 묶음 거래",
   "detailSameDayBundleTable",
   "detailBundleMeta",
