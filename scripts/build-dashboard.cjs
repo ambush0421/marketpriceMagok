@@ -1836,7 +1836,6 @@ const html = `<!doctype html>
     .kpis { order: 7; }
     #plainGuideBoard { order: 8; }
     #aggregateTrendSection { order: 9; }
-    #dataRefinementBoard { order: 10; }
     #userDetailAnalysisPack { order: 11; }
     #secondaryDashboardPack { order: 12; }
     #pyeongDashboardSection { order: 13; }
@@ -3260,91 +3259,6 @@ const html = `<!doctype html>
       height: 28px;
       overflow: visible;
     }
-    .trust-board {
-      margin: 14px 0 0;
-      display: grid;
-      grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
-      gap: 12px;
-      align-items: stretch;
-    }
-    .trust-score-card {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(21, 111, 120, 0.22);
-      border-radius: 8px;
-      padding: 18px;
-      background: linear-gradient(145deg, #0f3d43 0%, #176f78 68%, #f2a23f 160%);
-      color: #fff;
-      box-shadow: 0 16px 34px rgba(15, 61, 67, 0.18);
-    }
-    .trust-score-card::after {
-      content: "";
-      position: absolute;
-      inset: auto -24px -42px auto;
-      width: 148px;
-      height: 148px;
-      border: 22px solid rgba(255, 255, 255, 0.12);
-      border-radius: 999px;
-    }
-    .trust-score-card span { display: block; color: rgba(255,255,255,0.72); font-size: 12px; font-weight: 900; }
-    .trust-score-card strong { display: block; margin-top: 10px; font-size: clamp(34px, 4vw, 54px); line-height: 0.94; }
-    .trust-score-card p { margin-top: 10px; color: rgba(255,255,255,0.84); font-size: 13px; line-height: 1.45; }
-    .trust-score-card small { display: inline-flex; margin-top: 14px; padding: 5px 8px; border-radius: 999px; background: rgba(255,255,255,0.14); color: #fff; font-size: 11px; font-weight: 900; }
-    .quality-funnel {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(130px, 1fr));
-      gap: 8px;
-    }
-    .quality-step {
-      border: 1px solid #dce7f1;
-      border-radius: 8px;
-      background: #fff;
-      padding: 11px 12px;
-      box-shadow: 0 8px 18px rgba(33, 51, 84, 0.05);
-    }
-    .quality-step span {
-      display: block;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 900;
-    }
-    .quality-step strong {
-      display: block;
-      margin-top: 5px;
-      color: #0d2238;
-      font-size: 20px;
-    }
-    .quality-step small {
-      display: block;
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.35;
-    }
-    .tier-bars {
-      display: grid;
-      gap: 8px;
-      margin-top: 10px;
-      padding: 12px;
-      border: 1px solid #dce7f1;
-      border-radius: 8px;
-      background: #fbfdff;
-    }
-    .tier-bar {
-      display: grid;
-      grid-template-columns: 74px 1fr 58px;
-      gap: 9px;
-      align-items: center;
-      font-size: 12px;
-      font-weight: 900;
-      color: #29445f;
-    }
-    .tier-track { height: 9px; border-radius: 999px; background: #e8eef6; overflow: hidden; }
-    .tier-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #176f78, #66c3b8); }
-    .tier-bar[data-tier="B 참고"] .tier-fill { background: linear-gradient(90deg, #5b8def, #9ab9ff); }
-    .tier-bar[data-tier="C 보조"] .tier-fill { background: linear-gradient(90deg, #f0a23e, #ffd08a); }
-    .tier-bar[data-tier="D 확인"] .tier-fill, .tier-bar[data-tier="제외"] .tier-fill { background: linear-gradient(90deg, #a8b3c4, #d7dee8); }
-    .refinement-table-wrap { margin-top: 12px; }
     .plain-guide {
       margin: 0 0 14px;
       border: 1px solid #bfd8d4;
@@ -3919,8 +3833,6 @@ const html = `<!doctype html>
       .commercial-actions { justify-content: flex-start; min-width: 0; }
       .analysis-band { grid-template-columns: 1fr; }
       .detail-table-pack .table-scroll table { min-width: 760px; }
-      .trust-board { grid-template-columns: 1fr; }
-      .quality-funnel { grid-template-columns: 1fr 1fr; }
       .method-grid { grid-template-columns: 1fr; }
       .pyeong-layout { grid-template-columns: 1fr; }
       .valuation-layout { grid-template-columns: 1fr; }
@@ -3941,7 +3853,7 @@ const html = `<!doctype html>
       .consumer-hero { grid-template-columns: 1fr; min-height: 560px; align-items: end; padding: 22px; background-position: center; }
       .consumer-hero-mini { justify-self: stretch; }
       .consumer-hero-actions a { flex: 1 1 180px; }
-      .toolbar, .grid, .pyeong-toolbar, .pyeong-summary, .valuation-toolbar, .valuation-summary, .usage-controls, .usage-metrics, .core-story, .commercial-summary, .quality-funnel, .expert-pack-metrics { grid-template-columns: 1fr; }
+      .toolbar, .grid, .pyeong-toolbar, .pyeong-summary, .valuation-toolbar, .valuation-summary, .usage-controls, .usage-metrics, .core-story, .commercial-summary, .expert-pack-metrics { grid-template-columns: 1fr; }
       .pyeong-filter-feedback { grid-template-columns: 1fr; }
       .expert-pack-head { padding: 13px; }
       .expert-pack #valuationDashboardSection .valuation-toolbar { grid-template-columns: 1fr; }
@@ -4058,22 +3970,6 @@ const html = `<!doctype html>
         <div class="valuation-chart chart-scroll-x" id="aggregateTrendScroll"><div class="chart-scroll-hint"><span>좌우로 밀어 월별 흐름을 확인하세요</span><span>최근 월은 오른쪽</span></div><svg id="aggregateTrendChart" viewBox="0 0 980 420" role="img" aria-label="집합건물 연도별 월별 거래가격과 평당가"></svg></div>
       </div>
       <div class="table-scroll" style="margin-top:12px"><table id="aggregateTrendTable"></table></div>
-    </section>
-
-    <section class="valuation-dashboard" id="dataRefinementBoard">
-      <div class="detail-title">
-        <h2>2. 이 숫자는 얼마나 믿을 만한가?</h2>
-        <span class="badge">믿고 볼 거래 · 확인할 거래 분리</span>
-      </div>
-      <p class="muted">원자료를 그대로 평균내지 않고, 기준값으로 쓸 거래와 확인이 필요한 거래를 분리합니다.</p>
-      <div class="trust-board">
-        <div class="trust-score-card" id="refinementTrustScore"></div>
-        <div>
-          <div class="quality-funnel" id="refinementFunnel"></div>
-          <div class="tier-bars" id="refinementTierBars"></div>
-        </div>
-      </div>
-      <div class="table-scroll refinement-table-wrap"><table id="refinementTierTable"></table></div>
     </section>
 
     <details class="pyeong-dashboard compact-disclosure expert-pack" id="secondaryDashboardPack">
@@ -5139,46 +5035,7 @@ const html = `<!doctype html>
     }
 
     function renderRefinementBoard() {
-      const summary = data.refinementSummary || {};
-      const tierCounts = summary.tier_counts || [];
-      const tierMap = new Map(tierCounts.map((row) => [row.tier, row.count]));
-      const reliable = Number(summary.refined_benchmark_records || 0);
-      const analysis = Number(summary.analysis_records || 0);
-      const total = Number(summary.total_records || 0);
-      const excluded = Number(summary.analysis_excluded_records || 0);
-      const outliers = Number(summary.outlier_candidate_records || 0);
-      const reliableRate = analysis ? (reliable / analysis) * 100 : null;
-      const trustLabel = reliableRate >= 95 ? "높음" : reliableRate >= 85 ? "양호" : "확인 필요";
-      document.getElementById("refinementTrustScore").innerHTML =
-        '<span>상담 기준 신뢰도</span>' +
-        '<strong>' + escapeSvg(trustLabel) + '</strong>' +
-        '<p>A/B 등급 ' + escapeSvg(fmt.format(reliable)) + '건만 기준값으로 우선 반영했습니다. 이상치와 제외 후보는 평균에서 분리했습니다.</p>' +
-        '<small>정제율 ' + escapeSvg(pct(reliableRate)) + ' · 원자료 ' + escapeSvg(fmt.format(total)) + '건</small>';
-      document.getElementById("refinementFunnel").innerHTML = [
-        ["원자료", fmt.format(total) + "건", "공공데이터·CSV 수집 거래"],
-        ["기준값 반영", fmt.format(analysis) + "건", "해제·지분·일괄 후보 제외"],
-        ["A/B 우선", fmt.format(reliable) + "건", "상담 기준값에 먼저 사용"],
-        ["검토 분리", fmt.format(outliers + excluded) + "건", "이상치·확인 필요 거래"],
-      ].map(([label, value, note]) => '<div class="quality-step"><span>' + escapeSvg(label) + '</span><strong>' + escapeSvg(value) + '</strong><small>' + escapeSvg(note) + '</small></div>').join("");
-      const maxTier = Math.max(...tierCounts.map((row) => row.count || 0), 1);
-      document.getElementById("refinementTierBars").innerHTML = ["A 기준", "B 참고", "C 보조", "D 확인", "제외"].map((tier) => {
-        const count = tierMap.get(tier) || 0;
-        const width = Math.max(count ? 4 : 0, Math.round((count / maxTier) * 100));
-        return '<div class="tier-bar" data-tier="' + escapeSvg(tier) + '"><span>' + escapeSvg(tier) + '</span><div class="tier-track"><div class="tier-fill" style="width:' + width + '%"></div></div><strong>' + escapeSvg(fmt.format(count)) + '</strong></div>';
-      }).join("");
-      document.getElementById("refinementTierTable").innerHTML =
-        '<thead><tr><th>등급</th><th>건수</th><th>판단 기준</th></tr></thead><tbody>' +
-        ["A 기준", "B 참고", "C 보조", "D 확인", "제외"].map((tier) => {
-          const meaning = {
-            "A 기준": "공식 표제부와 단일 후보 매칭까지 확인된 기준값 후보",
-            "B 참고": "일부 보완점은 있지만 시장 흐름 참고 가능",
-            "C 보조": "미확정·이상치·표본 부족 요소가 있어 보조 자료로만 사용",
-            "D 확인": "개별 거래 검증이 먼저 필요한 자료",
-            "제외": "해제·지분·일괄·저단가 등 기준값 산식 제외",
-          }[tier];
-          return '<tr><td><span class="badge">' + escapeSvg(tier) + '</span></td><td>' + fmt.format(tierMap.get(tier) || 0) + '</td><td>' + escapeSvg(meaning) + '</td></tr>';
-        }).join("") +
-        '</tbody>';
+      // Intentionally hidden from the consumer dashboard; refinement is used internally for benchmark calculations.
     }
 
     function renderPlainGuide() {
