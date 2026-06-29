@@ -9,6 +9,10 @@ function App() {
   const summaryUrl = `${assetBase}${SUMMARY_FILE}`;
   const heroImage = `url("${assetBase}magok-commercial-hero.png")`;
   const [summary, setSummary] = useState(null);
+  const generatedAt = summary?.generatedAt
+    ? new Intl.DateTimeFormat("ko-KR", { dateStyle: "medium", timeStyle: "short" }).format(new Date(summary.generatedAt))
+    : "";
+  const searchExamples = summary?.topBuildings?.slice(0, 3) || [];
 
   useEffect(() => {
     let cancelled = false;
@@ -43,6 +47,22 @@ function App() {
             <strong>참고자료</strong>
             <span>법적 효력이나 투자 판단을 보장하지 않으며, 계약 전 원자료와 전문가 확인이 필요합니다.</span>
           </div>
+          {summary?.source ? (
+            <dl className="source-strip" aria-label="데이터 출처 요약">
+              <div>
+                <dt>출처</dt>
+                <dd>{summary.source.system}</dd>
+              </div>
+              <div>
+                <dt>기간</dt>
+                <dd>{summary.source.period} · {summary.source.monthCount}개월</dd>
+              </div>
+              <div>
+                <dt>대시보드 생성</dt>
+                <dd>{generatedAt}</dd>
+              </div>
+            </dl>
+          ) : null}
         </div>
         <div className="hero-actions">
           <a className="primary-action" href={dashboardUrl} target="_blank" rel="noreferrer">
@@ -81,7 +101,10 @@ function App() {
 
             <div className="detail-grid">
               <section className="detail-panel" aria-label="거래건수 상위 건물">
-                <h3>거래건수 상위 건물</h3>
+                <div className="panel-title">
+                  <h3>거래건수 상위 건물</h3>
+                  <a href="#dashboard-frame">대시보드로 이동</a>
+                </div>
                 <ol className="building-list">
                   {summary.topBuildings.map((building) => (
                     <li key={`${building.name}-${building.parcel}`}>
@@ -104,6 +127,18 @@ function App() {
                 </ul>
               </section>
             </div>
+
+            <section className="search-guide" aria-label="대시보드에서 확인할 대표 건물">
+              <h3>대시보드에서 확인할 대표 건물</h3>
+              <div>
+                {searchExamples.map((building) => (
+                  <a href="#dashboard-frame" key={building.name}>
+                    {building.name}
+                    <span>{building.road || building.parcel}</span>
+                  </a>
+                ))}
+              </div>
+            </section>
           </>
         ) : (
           <p className="summary-fallback">요약 파일을 불러오는 중입니다. 전체 대시보드는 아래에서 바로 볼 수 있습니다.</p>
