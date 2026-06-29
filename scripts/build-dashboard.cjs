@@ -1682,6 +1682,72 @@ const compactPayload = {
   records: payload.records.map(compactRecord),
 };
 
+function formatCount(value, suffix = "건") {
+  return `${Math.round(value || 0).toLocaleString("ko-KR")}${suffix}`;
+}
+
+function formatPyeongPrice(value) {
+  return Number.isFinite(value) ? `${Math.round(value).toLocaleString("ko-KR")}만원/평` : "확인 필요";
+}
+
+function formatRatio(value, total) {
+  if (!Number.isFinite(value) || !Number.isFinite(total) || total <= 0) return "비율 확인 필요";
+  return `${Math.round((value / total) * 100).toLocaleString("ko-KR")}%`;
+}
+
+const dashboardSummary = {
+  generatedAt: payload.generated_at,
+  source: {
+    mode: payload.source.mode,
+    system: payload.source.system,
+    query: payload.source.query,
+    apiGeneratedAt: payload.source.api?.generated_at || "",
+    period: `${years[0]}-${years[years.length - 1]}`,
+    monthCount: payload.source.available_months.length,
+    referenceCount: payload.methodology.official_references.length,
+  },
+  metricCards: [
+    {
+      label: "활성 거래",
+      value: formatCount(payload.metrics.total_records),
+      note: `해제 ${formatCount(payload.source.api?.canceled_rows || 0)} 제외`,
+    },
+    {
+      label: "분석 기준값",
+      value: formatCount(payload.metrics.analysis_records),
+      note: `${formatCount(payload.metrics.analysis_excluded_records)}은 지분·일괄·복수후보 제외`,
+    },
+    {
+      label: "건물명 확인",
+      value: `${formatCount(payload.metrics.building_name_enriched_groups, "개")} / ${formatCount(payload.metrics.exact_parcel_groups, "개")}`,
+      note: "건축HUB 표제부·공식 후보 근거",
+    },
+    {
+      label: "계약면적 매칭",
+      value: formatCount(payload.metrics.contract_area_matched_records),
+      note: `전체 대비 ${formatRatio(payload.metrics.contract_area_matched_records, payload.metrics.total_records)}`,
+    },
+    {
+      label: "미확정 마스킹",
+      value: formatCount(payload.metrics.masked_parcel_records),
+      note: `고신뢰 미해결 ${formatCount(payload.metrics.unresolved_high_confidence_masked_records)}`,
+    },
+  ],
+  topBuildings: payload.parcel_groups.slice(0, 5).map((group) => ({
+    name: group.building_name,
+    parcel: group.parcel_label || group.parcel,
+    road: group.road,
+    transactionCount: group.transaction_count,
+    medianExclusivePyeongPrice: formatPyeongPrice(group.median_exclusive_ppyeong_manwon),
+    contractAreaStatus: group.contract_area_status,
+  })),
+  qualityNotes: [
+    "해제 거래, 지분 거래, 통건물 의심 거래는 기준값 산식에서 제외합니다.",
+    "마스킹 지번은 공식 후보·전유면적·가격연속성 근거가 있을 때만 건물 후보로 승격합니다.",
+    "계약평당가는 전용+공용 면적이 안전하게 매칭된 거래에만 표시합니다.",
+  ],
+};
+
 const html = `<!doctype html>
 <html lang="ko">
 <head>
@@ -2328,6 +2394,12 @@ const html = `<!doctype html>
     tr.clickable:hover {
       outline: 2px solid rgba(21, 111, 120, 0.22);
       background: #f4faf9;
+    }
+    .suggestion-item:focus-visible,
+    .graph-card:focus-visible,
+    tr.clickable:focus-visible {
+      outline: 3px solid #ffb24a;
+      outline-offset: -2px;
     }
     .graph-card.selected,
     tr.selected {
@@ -3905,7 +3977,7 @@ const html = `<!doctype html>
       input, select { min-height: 44px; padding: 0 12px; font-size: 15px; }
       .search-field input { font-size: 17px; }
       .search-suggestions { max-height: 280px; }
-      .suggestion-button { grid-template-columns: 1fr; gap: 4px; padding: 10px 12px; }
+      .suggestion-item { grid-template-columns: 1fr; gap: 4px; padding: 10px 12px; }
 
       .plain-guide, .valuation-dashboard, .pyeong-dashboard, .detail-table-pack, .building-result-shell { border-radius: 8px; }
       .plain-guide, .valuation-dashboard { padding: 13px; }
@@ -4127,7 +4199,7 @@ const html = `<!doctype html>
 
     <div class="toolbar">
       <label class="search-field">건물 검색
-        <input id="search" type="search" placeholder="건물명·지번·도로명 입력 예: 퀸즈파크나인, 797-1" autocomplete="off" aria-controls="searchSuggestions" aria-expanded="false">
+        <input id="search" type="search" role="combobox" placeholder="건물명·지번·도로명 입력 예: 퀸즈파크나인, 797-1" autocomplete="off" aria-autocomplete="list" aria-controls="searchSuggestions" aria-expanded="false">
         <div id="searchSuggestions" class="search-suggestions" role="listbox"></div>
       </label>
       <label>주소 범위<select id="maskFilter"><option value="all">전체</option><option value="exact">확인된 건물</option><option value="masked">보조그룹</option></select></label>
@@ -4625,12 +4697,12 @@ const html = `<!doctype html>
         .toLowerCase()
         .replace(/엠/g, "m")
         .replace(/[()]/g, " ")
-        .replace(/\s+/g, " ")
+        .replace(/\\s+/g, " ")
         .trim();
     }
 
     function compactSearchValue(value) {
-      return normalizeSearchValue(value).replace(/\s+/g, "");
+      return normalizeSearchValue(value).replace(/\\s+/g, "");
     }
 
     function queryMatches(row, query, fields = []) {
@@ -4638,8 +4710,8 @@ const html = `<!doctype html>
       if (!normalizedQuery) return true;
       const compactQuery = compactSearchValue(query);
       const haystack = normalizeSearchValue([row.search_text, ...fields].filter(Boolean).join(" "));
-      const compactHaystack = haystack.replace(/\s+/g, "");
-      const tokenMatched = normalizedQuery.split(" ").filter(Boolean).every((token) => haystack.includes(token) || compactHaystack.includes(token.replace(/\s+/g, "")));
+      const compactHaystack = haystack.replace(/\\s+/g, "");
+      const tokenMatched = normalizedQuery.split(" ").filter(Boolean).every((token) => haystack.includes(token) || compactHaystack.includes(token.replace(/\\s+/g, "")));
       return haystack.includes(normalizedQuery) || compactHaystack.includes(compactQuery) || tokenMatched;
     }
 
@@ -4652,7 +4724,7 @@ const html = `<!doctype html>
       const parcel = normalizeSearchValue(row.parcel_label);
       const road = normalizeSearchValue(row.road);
       const haystack = normalizeSearchValue([row.search_text, row.parcel_label, row.parcel, row.building_name, row.road, row.main_use, row.zoning].filter(Boolean).join(" "));
-      const compactHaystack = haystack.replace(/\s+/g, "");
+      const compactHaystack = haystack.replace(/\\s+/g, "");
       let score = 0;
       if (buildingCompact === cq) score += 1200;
       if (buildingCompact.includes(cq)) score += 850;
@@ -4687,7 +4759,9 @@ const html = `<!doctype html>
       const box = document.getElementById("searchSuggestions");
       box.classList.remove("open");
       box.innerHTML = "";
-      document.getElementById("search").setAttribute("aria-expanded", "false");
+      const input = document.getElementById("search");
+      input.setAttribute("aria-expanded", "false");
+      input.removeAttribute("aria-activedescendant");
     }
 
     function renderSearchSuggestions() {
@@ -4701,7 +4775,8 @@ const html = `<!doctype html>
       state.suggestionIndex = Math.max(0, Math.min(state.suggestionIndex, rows.length - 1));
       box.innerHTML = rows.map(({ group, score }, index) => {
         const active = index === state.suggestionIndex;
-        return '<button type="button" class="suggestion-item ' + (active ? "active" : "") + '" role="option" aria-selected="' + (active ? "true" : "false") + '" data-parcel-key="' + escapeSvg(group.parcel_key) + '">' +
+        const id = "searchSuggestion" + index;
+        return '<button id="' + id + '" type="button" class="suggestion-item ' + (active ? "active" : "") + '" role="option" aria-selected="' + (active ? "true" : "false") + '" data-parcel-key="' + escapeSvg(group.parcel_key) + '">' +
           '<span class="suggestion-title">' + escapeSvg(buildingTitle(group)) + '</span>' +
           '<span class="suggestion-score">' + fmt.format(Math.round(score)) + '</span>' +
           '<span class="suggestion-meta">' + escapeSvg([group.parcel_label, group.road || "도로명 없음", fmt.format(group.transaction_count) + "건"].join(" · ")) + '</span>' +
@@ -4709,6 +4784,7 @@ const html = `<!doctype html>
       }).join("");
       box.classList.add("open");
       input.setAttribute("aria-expanded", "true");
+      input.setAttribute("aria-activedescendant", "searchSuggestion" + state.suggestionIndex);
     }
 
     function selectedMonthlyGroup() {
@@ -4783,6 +4859,10 @@ const html = `<!doctype html>
 
     function markSelectedBuilding() {
       document.querySelectorAll("[data-parcel-key]").forEach((element) => {
+        if (!element.matches("button, a, input, select, textarea")) {
+          element.tabIndex = 0;
+          element.setAttribute("role", "button");
+        }
         element.classList.toggle("selected", element.dataset.parcelKey === state.selectedParcelKey);
       });
     }
@@ -6863,6 +6943,13 @@ const html = `<!doctype html>
       renderTables();
     });
     document.getElementById("valuationPeriod").addEventListener("change", (event) => { state.valuationPeriod = event.target.value; renderDecisionBoards(); });
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      const target = event.target.closest("[data-parcel-key]");
+      if (!target || target.closest("#searchSuggestions")) return;
+      event.preventDefault();
+      selectBuilding(target.dataset.parcelKey);
+    });
     document.addEventListener("click", (event) => {
       const scrollAction = event.target.closest("[data-scroll-target]");
       if (scrollAction) {
@@ -7103,6 +7190,7 @@ for (const [fileName, content] of Object.entries({
     contract_area_basis: "official exclusive plus common area only when parcel, floor, and exclusive area match uniquely",
     output_files: ["data/processed/magok-commercial-transactions-dashboard.json", "docs/ai-output/20260608-magok-commercial-price-dashboard.html"],
   },
+  "dashboard-summary.json": dashboardSummary,
   "monetization.json": {
     revenue_goal: "내부 분석 시간 절감과 투자/영업 후보 선별 정확도 개선",
     expected_traffic: "월 4-12회 내부 검토",
@@ -7130,4 +7218,3 @@ console.log(JSON.stringify({
   html: path.join(docsDir, "20260608-magok-commercial-price-dashboard.html"),
   data: path.join(dataDir, "magok-commercial-transactions-dashboard.json"),
 }, null, 2));
-

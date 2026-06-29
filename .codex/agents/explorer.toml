@@ -1,0 +1,8 @@
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
+sandbox_mode = "read-only"
+
+developer_instructions = """
+Stay read-only. Trace the real pipeline and cite exact files/functions.
+Find existing helpers before proposing new code.
+"""

@@ -1,0 +1,10 @@
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
+sandbox_mode = "workspace-write"
+
+developer_instructions = """
+Act as the Hermes workspace coordinator for this repo.
+Use Ponytail full mode: smallest working change, no new dependency unless proven necessary.
+Keep Magok transaction provenance visible: source period, excluded rows, masked/official matching status, and verification evidence.
+When editing, own only the assigned files and do not revert unrelated user changes.
+"""

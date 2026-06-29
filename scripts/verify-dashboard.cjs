@@ -5,6 +5,7 @@ const path = require("path");
 const root = path.resolve(__dirname, "..");
 const dataPath = path.join(root, "data", "processed", "magok-commercial-transactions-dashboard.json");
 const htmlPath = path.join(root, "docs", "ai-output", "20260608-magok-commercial-price-dashboard.html");
+const summaryPath = path.join(root, "docs", "ai-output", "dashboard-summary.json");
 
 function assert(condition, message) {
   if (!condition) {
@@ -14,9 +15,11 @@ function assert(condition, message) {
 
 assert(fs.existsSync(dataPath), "processed dashboard JSON is missing");
 assert(fs.existsSync(htmlPath), "dashboard HTML is missing");
+assert(fs.existsSync(summaryPath), "dashboard summary JSON is missing");
 
 const data = JSON.parse(fs.readFileSync(dataPath, "utf8"));
 const html = fs.readFileSync(htmlPath, "utf8");
+const summary = JSON.parse(fs.readFileSync(summaryPath, "utf8"));
 
 function normalizeSearch(value) {
   return String(value ?? "")
@@ -99,6 +102,85 @@ assert(mSignatureRows.some((record) => record.floor === "9" && record.area_sqm =
 assert(data.records.every((record) => !Number.isFinite(record.contract_area_sqm) || !Number.isFinite(record.area_sqm) || record.contract_area_sqm + 0.001 >= record.area_sqm), "contract area should never be smaller than exclusive area");
 assert(data.records.every((record) => !Number.isFinite(record.contract_area_sqm) || !Number.isFinite(record.area_sqm) || record.area_sqm <= 0 || (record.contract_area_sqm / record.area_sqm >= 1 && record.contract_area_sqm / record.area_sqm <= 5)), "contract/exclusive area ratio should stay within a sane commercial-building range");
 const embeddedPayload = JSON.parse(html.match(/<script id="dashboardData" type="application\/json">([\s\S]*?)<\/script>/)[1]);
+assert(embeddedPayload.records.length === data.records.length, "embedded dashboard records should match processed JSON");
+assert(embeddedPayload.parcelGroups.length === data.parcel_groups.length, "embedded dashboard parcel groups should match processed JSON");
+assert(embeddedPayload.metrics.total_records === data.metrics.total_records, "embedded total record metric should match processed JSON");
+assert(embeddedPayload.metrics.contract_area_matched_records === data.metrics.contract_area_matched_records, "embedded contract-area metric should match processed JSON");
+function formatCount(value, suffix = "건") {
+  return `${Math.round(value || 0).toLocaleString("ko-KR")}${suffix}`;
+}
+
+function formatPyeongPrice(value) {
+  return Number.isFinite(value) ? `${Math.round(value).toLocaleString("ko-KR")}만원/평` : "확인 필요";
+}
+
+function formatRatio(value, total) {
+  if (!Number.isFinite(value) || !Number.isFinite(total) || total <= 0) return "비율 확인 필요";
+  return `${Math.round((value / total) * 100).toLocaleString("ko-KR")}%`;
+}
+
+function assertJsonEqual(actual, expected, message) {
+  const actualJson = JSON.stringify(actual);
+  const expectedJson = JSON.stringify(expected);
+  assert(actualJson === expectedJson, `${message}: expected ${expectedJson}, got ${actualJson}`);
+}
+
+const summaryYears = data.source.available_years;
+assert(typeof summary.generatedAt === "string" && summary.generatedAt, "summary should expose its generated timestamp");
+assertJsonEqual(summary.source, {
+  mode: data.source.mode,
+  system: data.source.system,
+  query: data.source.query,
+  apiGeneratedAt: data.source.api?.generated_at || "",
+  period: `${summaryYears[0]}-${summaryYears[summaryYears.length - 1]}`,
+  monthCount: data.source.available_months.length,
+  referenceCount: data.methodology.official_references.length,
+}, "summary source should match processed JSON");
+assertJsonEqual(summary.metricCards, [
+  {
+    label: "활성 거래",
+    value: formatCount(data.metrics.total_records),
+    note: `해제 ${formatCount(data.source.api?.canceled_rows || 0)} 제외`,
+  },
+  {
+    label: "분석 기준값",
+    value: formatCount(data.metrics.analysis_records),
+    note: `${formatCount(data.metrics.analysis_excluded_records)}은 지분·일괄·복수후보 제외`,
+  },
+  {
+    label: "건물명 확인",
+    value: `${formatCount(data.metrics.building_name_enriched_groups, "개")} / ${formatCount(data.metrics.exact_parcel_groups, "개")}`,
+    note: "건축HUB 표제부·공식 후보 근거",
+  },
+  {
+    label: "계약면적 매칭",
+    value: formatCount(data.metrics.contract_area_matched_records),
+    note: `전체 대비 ${formatRatio(data.metrics.contract_area_matched_records, data.metrics.total_records)}`,
+  },
+  {
+    label: "미확정 마스킹",
+    value: formatCount(data.metrics.masked_parcel_records),
+    note: `고신뢰 미해결 ${formatCount(data.metrics.unresolved_high_confidence_masked_records)}`,
+  },
+], "summary metric cards should match processed JSON");
+assertJsonEqual(summary.topBuildings, data.parcel_groups.slice(0, 5).map((group) => ({
+  name: group.building_name,
+  parcel: group.parcel_label || group.parcel,
+  road: group.road,
+  transactionCount: group.transaction_count,
+  medianExclusivePyeongPrice: formatPyeongPrice(group.median_exclusive_ppyeong_manwon),
+  contractAreaStatus: group.contract_area_status,
+})), "summary top buildings should match processed JSON");
+assertJsonEqual(summary.qualityNotes, [
+  "해제 거래, 지분 거래, 통건물 의심 거래는 기준값 산식에서 제외합니다.",
+  "마스킹 지번은 공식 후보·전유면적·가격연속성 근거가 있을 때만 건물 후보로 승격합니다.",
+  "계약평당가는 전용+공용 면적이 안전하게 매칭된 거래에만 표시합니다.",
+], "summary quality notes should stay exact");
+assert(html.includes("/\\s+/g"), "generated search regex should preserve whitespace backslashes");
+assert(!html.includes("replace(/s+/g"), "generated search regex lost its whitespace backslash");
+assert(html.includes("role=\"combobox\""), "search input should expose combobox semantics");
+assert(html.includes("aria-activedescendant"), "search input should expose the active suggestion");
+assert(html.includes("document.addEventListener(\"keydown\""), "parcel rows/cards should support keyboard selection");
 const embeddedMSignatureSixFloor = embeddedPayload.records.filter((record) => record.parcel_key === "PARCEL|798-14" && record.month === "2025-03" && record.contract_day === 25 && record.floor === "6");
 assert(embeddedMSignatureSixFloor.some((record) => record.area_sqm === 49.45 && record.contract_area_sqm === 112.8), "embedded dashboard should render M signature 6F 49.45m2 as 112.80m2 contract area");
 assert(data.metrics.contract_area_matched_records === 1679, `expected 1679 contract-area matched records including full-candidate probable M signature records, got ${data.metrics.contract_area_matched_records}`);

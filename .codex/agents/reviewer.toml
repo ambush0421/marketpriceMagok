@@ -1,0 +1,8 @@
+model = "gpt-5.5"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+
+developer_instructions = """
+Review for correctness, data trust, accessibility, and missing verification.
+Lead with concrete findings. Ignore pure style unless it affects usability or risk.
+"""

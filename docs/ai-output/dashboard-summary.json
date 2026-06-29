@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-06-29T04:01:18.751Z",
+  "source": {
+    "mode": "public-api",
+    "system": "국토교통부 실거래가 공개시스템",
+    "query": "상업업무용(매매), 서울특별시 강서구 마곡동, 공공데이터 API 월단위",
+    "apiGeneratedAt": "2026-06-08T11:48:46.487Z",
+    "period": "2017-2026",
+    "monthCount": 113,
+    "referenceCount": 3
+  },
+  "metricCards": [
+    {
+      "label": "활성 거래",
+      "value": "2,832건",
+      "note": "해제 153건 제외"
+    },
+    {
+      "label": "분석 기준값",
+      "value": "2,365건",
+      "note": "467건은 지분·일괄·복수후보 제외"
+    },
+    {
+      "label": "건물명 확인",
+      "value": "122개 / 126개",
+      "note": "건축HUB 표제부·공식 후보 근거"
+    },
+    {
+      "label": "계약면적 매칭",
+      "value": "1,679건",
+      "note": "전체 대비 59%"
+    },
+    {
+      "label": "미확정 마스킹",
+      "value": "0건",
+      "note": "고신뢰 미해결 0건"
+    }
+  ],
+  "topBuildings": [
+    {
+      "name": "두산더랜드파크",
+      "parcel": "757 추정",
+      "road": "서울특별시 강서구 마곡중앙로 161-8 (마곡동)",
+      "transactionCount": 202,
+      "medianExclusivePyeongPrice": "2,143만원/평",
+      "contractAreaStatus": "계약면적 있음"
+    },
+    {
+      "name": "두산더랜드타워",
+      "parcel": "759-1 추정",
+      "road": "서울특별시 강서구 마곡서로 152 (마곡동)",
+      "transactionCount": 160,
+      "medianExclusivePyeongPrice": "2,225만원/평",
+      "contractAreaStatus": "계약면적 있음"
+    },
+    {
+      "name": "퀸즈파크나인",
+      "parcel": "797-1 추정",
+      "road": "서울특별시 강서구 공항대로 247 (마곡동)",
+      "transactionCount": 85,
+      "medianExclusivePyeongPrice": "2,328만원/평",
+      "contractAreaStatus": "계약면적 있음"
+    },
+    {
+      "name": "사이언스타",
+      "parcel": "774-9 가격연속 후보",
+      "road": "서울특별시 강서구 마곡중앙6로 42 (마곡동)",
+      "transactionCount": 77,
+      "medianExclusivePyeongPrice": "1,844만원/평",
+      "contractAreaStatus": "계약면적 있음"
+    },
+    {
+      "name": "파인스퀘어",
+      "parcel": "799-11 추정",
+      "road": "서울특별시 강서구 마곡중앙4로 22 (마곡동)",
+      "transactionCount": 75,
+      "medianExclusivePyeongPrice": "2,383만원/평",
+      "contractAreaStatus": "계약면적 있음"
+    }
+  ],
+  "qualityNotes": [
+    "해제 거래, 지분 거래, 통건물 의심 거래는 기준값 산식에서 제외합니다.",
+    "마스킹 지번은 공식 후보·전유면적·가격연속성 근거가 있을 때만 건물 후보로 승격합니다.",
+    "계약평당가는 전용+공용 면적이 안전하게 매칭된 거래에만 표시합니다."
+  ]
+}

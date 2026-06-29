@@ -1,10 +1,29 @@
+import { useEffect, useState } from "react";
+
 const DASHBOARD_FILE = "20260608-magok-commercial-price-dashboard.html";
+const SUMMARY_FILE = "dashboard-summary.json";
 
 function App() {
-  const assetBase = import.meta.env.BASE_URL || "/";
+  const assetBase = import.meta.env.BASE_URL || "./";
   const dashboardUrl = `${assetBase}${DASHBOARD_FILE}`;
-  const heroImageUrl = new URL("magok-commercial-hero.png", window.location.href).href;
-  const heroImage = `url("${heroImageUrl}")`;
+  const summaryUrl = `${assetBase}${SUMMARY_FILE}`;
+  const heroImage = `url("${assetBase}magok-commercial-hero.png")`;
+  const [summary, setSummary] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    fetch(summaryUrl, { cache: "no-store" })
+      .then((response) => (response.ok ? response.json() : null))
+      .then((data) => {
+        if (!cancelled && data) setSummary(data);
+      })
+      .catch(() => {});
+
+    return () => {
+      cancelled = true;
+    };
+  }, [summaryUrl]);
 
   return (
     <main className="app-shell">
@@ -35,6 +54,62 @@ function App() {
         </div>
       </section>
 
+      <section className="summary-stage" aria-label="마곡동 실거래 핵심 요약">
+        <div className="summary-header">
+          <div>
+            <span className="section-label">Verified summary</span>
+            <h2>원자료와 검증 상태 먼저 보기</h2>
+          </div>
+          {summary?.source ? (
+            <p>
+              {summary.source.period}년 · {summary.source.monthCount}개월 · 공식 출처 {summary.source.referenceCount}개
+            </p>
+          ) : null}
+        </div>
+
+        {summary ? (
+          <>
+            <div className="metric-grid">
+              {summary.metricCards.map((card) => (
+                <article className="metric-card" key={card.label}>
+                  <span>{card.label}</span>
+                  <strong>{card.value}</strong>
+                  <p>{card.note}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="detail-grid">
+              <section className="detail-panel" aria-label="거래건수 상위 건물">
+                <h3>거래건수 상위 건물</h3>
+                <ol className="building-list">
+                  {summary.topBuildings.map((building) => (
+                    <li key={`${building.name}-${building.parcel}`}>
+                      <div>
+                        <strong>{building.name}</strong>
+                        <span>{building.parcel} · {building.transactionCount.toLocaleString("ko-KR")}건</span>
+                      </div>
+                      <em>{building.medianExclusivePyeongPrice}</em>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+
+              <section className="detail-panel" aria-label="정제 기준">
+                <h3>정제 기준</h3>
+                <ul className="quality-list">
+                  {summary.qualityNotes.map((note) => (
+                    <li key={note}>{note}</li>
+                  ))}
+                </ul>
+              </section>
+            </div>
+          </>
+        ) : (
+          <p className="summary-fallback">요약 파일을 불러오는 중입니다. 전체 대시보드는 아래에서 바로 볼 수 있습니다.</p>
+        )}
+      </section>
+
       <section className="dashboard-stage" aria-label="마곡동 실거래 대시보드">
         <div className="stage-header">
           <div>
@@ -49,6 +124,7 @@ function App() {
           id="dashboard-frame"
           title="마곡동 상업용 부동산 실거래 대시보드"
           src={dashboardUrl}
+          loading="lazy"
         />
       </section>
     </main>

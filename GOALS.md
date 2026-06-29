@@ -43,4 +43,4 @@ Reduce unresolved masked parcel groups and records to 0 using only official-data
 
 | ID | Check | Weight | Description |
 |----|-------|--------|-------------|
-| unresolved-masked-zero | `"/mnt/c/Program Files/nodejs/node.exe" "scripts/check-unresolved-masked-zero.cjs"` | 10 | 미확정 마스킹 보조그룹과 레코드를 0건으로 줄인다 |
+| unresolved-masked-zero | `node scripts/check-unresolved-masked-zero.cjs` | 10 | 미확정 마스킹 보조그룹과 레코드를 0건으로 줄인다 |

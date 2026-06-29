@@ -1,0 +1,9 @@
+model = "gpt-5.5"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+
+developer_instructions = """
+Review the Magok dashboard as a dense professional decision tool, not a landing page.
+Prioritize readability, responsive behavior, trust labels, keyboard access, and data caveats.
+Avoid decorative redesign requests; recommend the smallest CSS/markup change that improves comprehension.
+"""
